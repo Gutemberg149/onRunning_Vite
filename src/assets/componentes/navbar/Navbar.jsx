@@ -1,29 +1,28 @@
 import styled from "styled-components";
 import { AiOutlineUser } from "react-icons/ai";
+import { IoIosCloseCircle } from "react-icons/io";
 import { BsBag, BsSearch } from "react-icons/bs";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import SearchDropDown from "./SearchDropDown";
 import Cart from "./cartCheckout/Cart";
 import { ProdDetailContetx } from "../../contexts/ProdetailContext";
 import CartEmpty from "./cartCheckout/cartempty/CartEmpty";
-import { useRef } from "react";
 import { useUserAuth } from "../../contexts/UserAuthContext";
 import Login_SignUp from "./login_register/Login_SignUp";
 import NavBarAccount from "./NavBarAccount";
 import { OpensignUpContext } from "../../contexts/OpenSigUpContext";
+// import { useDropdown } from "../../contexts/CloseBtnContext";
 
 //These two parameters comes from SignUpPage.
 const Navbar = ({ signUp, handleSignUp }) => {
-  const [togglevisibility, setTogglevisibility] = useState(false);
-  const [togglevisibility2, setTogglevisibility2] = useState(false);
-  const [togglevisibilitySearch, setTogglevisibilitySearch] = useState(false);
-  const [togglevisibilityCart, setTogglevisibilityCart] = useState(false);
-
   const [show, setShow] = useState(false);
+  const [navBarHight, setNavBarHight] = useState(0);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const { user } = useUserAuth(); //if the user is logged in, shows his profile
+
+  // ---------------------------------------------------------------------------------
 
   //the code capture the name set in localStore in the UserAuthContext file ,then user only the first word in case the user has signed with name and family name, then send the reult to line 187.
   let localStorageUserName = JSON.parse(localStorage.getItem("localStorageUserName")) || [];
@@ -32,6 +31,21 @@ const Navbar = ({ signUp, handleSignUp }) => {
     UserNameTrimmed = localStorageUserName.split(" ")[0];
   }
 
+  //Here it is getting the width of the screen so the code can place the hight of the navbar in the right hight position using state navBarHight. Vide line 106.
+  useEffect(() => {
+    function handleResize() {
+      const windowSize = window.innerWidth;
+      if (windowSize > 899) {
+        setNavBarHight(30);
+      } else {
+        setNavBarHight(0);
+      }
+    }
+
+    handleResize();
+  }, []);
+
+  // ---------------------------------------------------------------------------------
   const handleNAvbarShow = () => {
     if (window.scrollY < lastScrollY || window.scrollY <= 33) {
       // if scroll down hide the navbar
@@ -44,7 +58,7 @@ const Navbar = ({ signUp, handleSignUp }) => {
     setLastScrollY(window.scrollY);
   };
 
-  // ------------------------------------------------------
+  // ---------------------------------------------------------------------------------
   //usecontext to set the number of itens at the top of item bag
   const { countShopBag, cartItems } = useContext(ProdDetailContetx);
 
@@ -60,12 +74,20 @@ const Navbar = ({ signUp, handleSignUp }) => {
   //it takes info from signUpPage and  Login_signUp page.
   const effectRan = useRef(false);
 
-  //this use context is to open and close the sigUp container in case we click on the sign up bottom or hover out of sign up container and in case there is no user logged in and the user try to check out the items, it will send the user to sign up page and open the sign up box automaticaly.
+  //this use context is to open and close the sigUp container in case we click on the sign up bottom or hover out of sign up container and in case there is no user logged in and the user try to check out the items, it will send the user to sign up page and open the sign up box automatically.
   const {
     togglevisibilitySignUp,
     setTogglevisibilitySignUp,
     allowToggleVisibility, //this code changes the togglevisibilitySignUp with user effect, line 76.
     setAllowToggleVisibility, //this code changes the togglevisibilitySignUp in every LINK in navbar.
+    togglevisibilityCart, //this code open and close the basket shop container in navbar.Line 185 and CartPage
+    setTogglevisibilityCart, //this code open and close the basket shop container in navbar.Line 191.
+    togglevisibilitySearch, //this code open and close the search dropdown container navbar.Line 176 and search page.
+    setTogglevisibilitySearch, //this code open and close the search dropdown container navbar.Line 179.
+    togglevisibility2, //this code open and close the explore dropdown container navbar.Line 155.
+    setTogglevisibility2, //this code open and close the explore dropdown container navbar.Line 158.
+    togglevisibility, //this code open and close the shop dropdown container navbar.Line 114.
+    setTogglevisibility, //this code open and close the shop dropdown container navbar.Line 116.
   } = useContext(OpensignUpContext);
 
   useEffect(() => {
@@ -87,7 +109,7 @@ const Navbar = ({ signUp, handleSignUp }) => {
 
   return (
     <Wrapper>
-      <div className="navContainer" style={{ top: `${show ? "-90" : "30"}px` }}>
+      <div className="navContainer" style={{ top: `${show > 1000 ? "-90" : navBarHight}px` }}>
         <div className="navLeftContainer">
           <div className="navBtnDropDown" onMouseEnter={() => setTogglevisibility(true)} onMouseLeave={() => setTogglevisibility(false)}>
             <p>Shop</p>
@@ -101,7 +123,9 @@ const Navbar = ({ signUp, handleSignUp }) => {
                     <li onClick={() => setAllowToggleVisibility(false)}>FEATURED</li>
                   </Link>
                 </ul>
-
+                <div id="closeBtnNav" onMouseEnter={() => setTogglevisibility(false)} onMouseLeave={() => setTogglevisibility(true)}>
+                  <IoIosCloseCircle className="close-icon" />
+                </div>
                 <ul className="liBtnContainer">
                   <Link to={"/orderstatus"}>
                     <li className="liBttm" onClick={() => setAllowToggleVisibility(false)}>
@@ -147,11 +171,15 @@ const Navbar = ({ signUp, handleSignUp }) => {
                   <li onClick={() => setAllowToggleVisibility(false)}>ABOUT ON</li>
                 </Link>
               </ul>
+              <div id="closeBtnNav" onMouseEnter={() => setTogglevisibility2(false)} onMouseLeave={() => setTogglevisibility2(true)}>
+                <IoIosCloseCircle className="close-icon" />
+              </div>
             </div>
           </div>
         </div>
 
         <div className="navRightContainer">
+          {/* ---------------------------- Search -------------------------------------------------- */}
           <div className="navBtnDropDown" onMouseEnter={() => setTogglevisibilitySearch(true)} onMouseLeave={() => setTogglevisibilitySearch(false)}>
             <BsSearch className="iconBtn " />
 
@@ -160,8 +188,7 @@ const Navbar = ({ signUp, handleSignUp }) => {
             </div>
           </div>
 
-          {/* ----------------------------Bag-------------------------------------------------- */}
-          {/* basket of Shop */}
+          {/* ----------------------------Bag - basket of Shop -------------------------------------------------- */}
 
           <div className="navBtnDropDown " onMouseEnter={() => setTogglevisibilityCart(true)} onMouseLeave={() => setTogglevisibilityCart(false)}>
             <div className="containerForCountIcon">
@@ -171,7 +198,7 @@ const Navbar = ({ signUp, handleSignUp }) => {
 
             <div className={`${togglevisibilityCart ? "dropDowcontainer" : "dropDowNoShow"}`}>{cartItems.length > 0 ? <Cart /> : <CartEmpty />}</div>
           </div>
-          {/* ------------------------ SignUp Login -------------------------- */}
+          {/* --------------------------- SignUp Login ---------------------------------------------------------- */}
 
           <div className="navBtnDropDown " onMouseEnter={() => setTogglevisibilitySignUp(true)} onMouseLeave={() => setTogglevisibilitySignUp(false)}>
             <AiOutlineUser className="iconBtn " />
@@ -180,7 +207,7 @@ const Navbar = ({ signUp, handleSignUp }) => {
               {user ? <NavBarAccount /> : <Login_SignUp handleSignUp={handleSignUp} />}
             </div>
           </div>
-          {/* ------------------------ User -------------------------- */}
+          {/* -------------------------------------------- User ------------------------------------------------- */}
           <div className="userName">
             <p>{UserNameTrimmed}</p>
           </div>
@@ -234,12 +261,13 @@ const Wrapper = styled.nav`
         background-color: white;
         width: 75rem;
         height: 80vh;
-        flex-direction: column;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
         box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
         transition: all ease-in-out 0.2s;
-
+        #closeBtnNav {
+          display: none;
+        }
         li {
           margin-left: 2.75rem;
           list-style: none;
@@ -274,6 +302,7 @@ const Wrapper = styled.nav`
       justify-content: space-between;
       width: 15rem;
       height: 4rem;
+
       .navBtnDropDown {
         display: flex;
         align-items: center;
@@ -324,10 +353,12 @@ const Wrapper = styled.nav`
         box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
         transition: all ease-in-out 0.2s;
       }
+
       .dropDowNoShow {
         visibility: hidden;
         position: absolute;
       }
+
       .userName {
         font-size: 1.3rem;
         font-weight: 400;
@@ -379,12 +410,20 @@ const Wrapper = styled.nav`
           background-color: white;
           width: 100%;
           height: 80vh;
-          flex-direction: column;
           border-bottom-left-radius: 1rem;
           border-bottom-right-radius: 1rem;
           box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
           transition: all ease-in-out 0.2s;
-
+          #closeBtnNav {
+            position: absolute;
+            display: block;
+            top: 1rem;
+            right: 1rem;
+            .close-icon {
+              color: #af0303;
+              font-size: 1.8rem;
+            }
+          }
           li {
             margin-left: 2rem;
             list-style: none;
@@ -471,6 +510,7 @@ const Wrapper = styled.nav`
           border-bottom-right-radius: 1rem;
           box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
           transition: all ease-in-out 0.2s;
+          z-index: 100;
         }
         .dropDowNoShow {
           visibility: hidden;
@@ -535,6 +575,17 @@ const Wrapper = styled.nav`
           box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
           transition: all ease-in-out 0.2s;
 
+          #closeBtnNav {
+            position: absolute;
+            display: block;
+            top: 1.5rem;
+            right: 2rem;
+            .close-icon {
+              color: #af0303;
+              font-size: 2rem;
+            }
+          }
+
           li {
             margin-left: 2rem;
             list-style: none;
@@ -576,7 +627,7 @@ const Wrapper = styled.nav`
           justify-content: center;
           width: 100%;
           height: 100%;
-
+          z-index: 100;
           .iconBtn {
             font-size: 1.5rem;
             color: #3c3b3b;
@@ -685,6 +736,17 @@ const Wrapper = styled.nav`
           box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
           transition: all ease-in-out 0.2s;
 
+          #closeBtnNav {
+            position: absolute;
+            display: block;
+            top: 2rem;
+            right: 2.5rem;
+            .close-icon {
+              color: #af0303;
+              font-size: 2.1rem;
+            }
+          }
+
           li {
             margin-left: 2rem;
             list-style: none;
@@ -726,7 +788,7 @@ const Wrapper = styled.nav`
           justify-content: center;
           width: 100%;
           height: 100%;
-
+          z-index: 100;
           .iconBtn {
             font-size: 1.7rem;
             color: #3c3b3b;

@@ -1,31 +1,32 @@
 import styled from "styled-components";
 import { BsTrash } from "react-icons/bs";
+import { IoIosCloseCircle } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
-
 import { useContext } from "react";
 import { ProdDetailContetx } from "../../../contexts/ProdetailContext";
-
+import { OpensignUpContext } from "../../../contexts/OpenSigUpContext";
 const Cart = () => {
   const { id } = useParams();
 
-  //context to send and delete itens from the cart
-  const {
-    removeProduct,
-    cartItems,
-    decreaseProducQty,
-    increaseProducQty,
-    total,
-    countShopBag,
-  } = useContext(ProdDetailContetx);
+  //context to send and delete itens from the cart.
+  const { removeProduct, cartItems, decreaseProducQty, increaseProducQty, total, countShopBag } = useContext(ProdDetailContetx);
   cartItems;
+
+  //This context is to open and close dropDown container using the X icon when the screen is small.
+  const { setTogglevisibilityCart } = useContext(OpensignUpContext);
 
   return (
     <Wrapper>
       <div className="cartBody">
         <div className="innerCartBody">
-          <h1>Your cart</h1>
-          <div className="numberOfItens">
-            {countShopBag} {countShopBag > "1" ? <p> Items</p> : <p>Item</p>}
+          <div className="topCart">
+            <h1>Your cart</h1>
+            <div className="numberOfItens">
+              {countShopBag} {countShopBag > "1" ? <p> Items</p> : <p>Item</p>}
+            </div>
+            <div id="closeBtnNav" onMouseEnter={() => setTogglevisibilityCart(false)} onMouseLeave={() => setTogglevisibilityCart(true)}>
+              <IoIosCloseCircle className="close-icon" />
+            </div>
           </div>
 
           {cartItems.map((item) => {
@@ -39,17 +40,11 @@ const Cart = () => {
                     <p className="color">{item.color}</p>
                     <p className="size">BR {item.size} (mens)</p>
                     <div className="buttonContainer">
-                      <div
-                        className="btn minus"
-                        onClick={() => decreaseProducQty(item.id)}
-                      >
+                      <div className="btn minus" onClick={() => decreaseProducQty(item.id)}>
                         -
                       </div>
                       <div className="qtd">{item.qty}</div>
-                      <div
-                        className="btn plus"
-                        onClick={() => increaseProducQty(item.id)}
-                      >
+                      <div className="btn plus" onClick={() => increaseProducQty(item.id)}>
                         +
                       </div>
                     </div>
@@ -59,10 +54,7 @@ const Cart = () => {
                 <div className="right">
                   <div className="price">R$ {item && item.price}</div>
                   <div className="deleteContainer">
-                    <BsTrash
-                      className="delete"
-                      onClick={() => removeProduct(item.id)}
-                    />
+                    <BsTrash className="delete" onClick={() => removeProduct(item.id)} />
                   </div>
                 </div>
               </div>
@@ -78,9 +70,7 @@ const Cart = () => {
             </div>
             <div className="total">
               <p>Total</p>
-              <p>
-                R$ {total.toLocaleString("pt-br", { minimumFractionDigits: 2 })}
-              </p>
+              <p>R$ {total.toLocaleString("pt-br", { minimumFractionDigits: 2 })}</p>
             </div>
           </div>
           <Link to={"/checkout"} className="checkout">
@@ -106,19 +96,25 @@ const Wrapper = styled.div`
     .innerCartBody {
       padding: 4rem;
 
-      h1 {
-        font-size: 3rem;
-        font-weight: 500;
-      }
-      .numberOfItens {
-        margin-top: 1rem;
-        margin-left: 0.5rem;
-        font-size: 1.5rem;
-        display: flex;
-        p {
-          margin-left: 1rem;
+      .topCart {
+        h1 {
+          font-size: 3rem;
+          font-weight: 500;
+        }
+        .numberOfItens {
+          margin-top: 1rem;
+          margin-left: 0.5rem;
+          font-size: 1.5rem;
+          display: flex;
+          p {
+            margin-left: 1rem;
+          }
+        }
+        #closeBtnNav {
+          display: none;
         }
       }
+
       .prodInCart {
         display: flex;
         justify-content: space-between;
@@ -278,17 +274,37 @@ const Wrapper = styled.div`
         padding: 0.3rem;
         height: 100%;
         width: 100%;
-        h1 {
-          font-size: 1.5rem;
-        }
-        .numberOfItens {
-          margin-top: 1rem;
-          margin-left: 0.5rem;
-          font-size: 1.2rem;
+
+        .topCart {
           display: flex;
-          p {
+          justify-content: space-around;
+          align-items: center;
+          h1 {
+            font-size: 1.5rem;
+          }
+          .numberOfItens {
+            margin-top: 0rem;
+            margin-left: 0rem;
+            font-size: 1.2rem;
+            display: flex;
+            p {
+            }
+          }
+          #closeBtnNav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 3rem;
+            width: 3rem;
+            top: 0rem;
+            right: 0.5rem;
+            .close-icon {
+              color: #af0303;
+              font-size: 1.8rem;
+            }
           }
         }
+
         .prodInCart {
           display: flex;
           justify-content: space-between;
@@ -454,17 +470,37 @@ const Wrapper = styled.div`
         padding: 1rem;
         height: 100%;
         width: 100%;
-        h1 {
-          font-size: 1.8rem;
-        }
-        .numberOfItens {
-          margin-top: 1rem;
-          margin-left: 0.5rem;
-          font-size: 1.3rem;
+
+        .topCart {
           display: flex;
-          p {
+          justify-content: space-around;
+          align-items: center;
+          h1 {
+            font-size: 1.8rem;
+          }
+          .numberOfItens {
+            margin-top: 0rem;
+            margin-left: 0rem;
+            font-size: 1.3rem;
+            display: flex;
+            p {
+            }
+          }
+          #closeBtnNav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 3rem;
+            width: 3rem;
+            top: 0rem;
+            right: 0.5rem;
+            .close-icon {
+              color: #af0303;
+              font-size: 2rem;
+            }
           }
         }
+
         .prodInCart {
           display: flex;
           justify-content: space-between;
@@ -632,17 +668,37 @@ const Wrapper = styled.div`
         padding: 0.3rem;
         height: 100%;
         width: 100%;
-        h1 {
-          font-size: 2rem;
-        }
-        .numberOfItens {
-          margin-top: 1rem;
-          margin-left: 0.5rem;
-          font-size: 1.5rem;
+
+        .topCart {
           display: flex;
-          p {
+          justify-content: space-around;
+          align-items: center;
+          h1 {
+            font-size: 2rem;
+          }
+          .numberOfItens {
+            margin-top: 0rem;
+            margin-left: 0rem;
+            font-size: 1.5rem;
+            display: flex;
+            p {
+            }
+          }
+          #closeBtnNav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 3rem;
+            width: 3rem;
+            top: 0rem;
+            right: 0.5rem;
+            .close-icon {
+              color: #af0303;
+              font-size: 2.1rem;
+            }
           }
         }
+
         .prodInCart {
           display: flex;
           justify-content: space-between;

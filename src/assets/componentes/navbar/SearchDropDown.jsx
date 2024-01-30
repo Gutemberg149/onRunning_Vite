@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { IoIosCloseCircle } from "react-icons/io";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { listProduct } from "../../utils/APIArray";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { OpensignUpContext } from "../../contexts/OpenSigUpContext";
 
 const SearchDropDown = () => {
   const [handleFAQS, setHandleFAQs] = useState(-100); //move carrossel FAQs
@@ -18,7 +20,7 @@ const SearchDropDown = () => {
 
   const [toggleAllProds, setToggleAllProds] = useState(true);
 
-  //----------Move carrossel------------------
+  //---------------------------- Move carrossel ------------------------------
   const handleFAQsFunctionLeft = () => {
     if (handleFAQS === 0) {
       return;
@@ -33,7 +35,7 @@ const SearchDropDown = () => {
       setHandleFAQs(handleFAQS - 20);
     }
   };
-  //-------------Handle search----------------
+  //------------------------------ Handle search ---------------------------
 
   useEffect(() => {
     const timeOutID = setTimeout(() => {
@@ -46,21 +48,20 @@ const SearchDropDown = () => {
     setHandleSearch(e.target.value);
   };
 
-  // -------------------------------------------
+  // ------------------------------------------------------------------------
 
   const sugestedFunction = (e) => {
     const text = e.target.textContent;
     setSugestedOption(text);
   };
 
+  //This context is to open and close dropDown container using the X icon when the screen is small.
+  const { setTogglevisibilitySearch } = useContext(OpensignUpContext);
+
   useEffect(() => {
     const sugested = listProduct.filter((item) => {
-      const sugestedLowerCase = sugestedOption
-        .toLocaleLowerCase()
-        .replace(/\s/g, "");
-      return (
-        item.title.toLocaleLowerCase().replace(/\s/g, "") === sugestedLowerCase
-      );
+      const sugestedLowerCase = sugestedOption.toLocaleLowerCase().replace(/\s/g, "");
+      return item.title.toLocaleLowerCase().replace(/\s/g, "") === sugestedLowerCase;
     });
     setData(sugested);
   }, [sugestedOption]);
@@ -80,20 +81,17 @@ const SearchDropDown = () => {
           {toggleAllProds ? (
             <BsSearch className="searchIcon" />
           ) : (
-            <AiOutlineCloseCircle
-              className="searchIcon"
-              style={{ fontSize: "1.6rem" }}
-              onClick={() => setToggleAllProds(true)}
-            />
+            <AiOutlineCloseCircle className="searchIcon" style={{ fontSize: "1.6rem" }} onClick={() => setToggleAllProds(true)} />
           )}
+
+          <div id="closeBtnNav" onMouseEnter={() => setTogglevisibilitySearch(false)} onMouseLeave={() => setTogglevisibilitySearch(true)}>
+            <IoIosCloseCircle className="close-icon" />
+          </div>
         </section>
         {toggleAllProds && (
           <section className="suggestedSearch">
             <p className="pSugested">Suggested Search</p>
-            <div
-              className="innerSugested"
-              onClick={() => setToggleAllProds(false)}
-            >
+            <div className="innerSugested" onClick={() => setToggleAllProds(false)}>
               <div className="sugested" onClick={(e) => sugestedFunction(e)}>
                 <p>Cloud Rock</p>
               </div>
@@ -123,9 +121,7 @@ const SearchDropDown = () => {
               {listProduct
                 .filter((item) => {
                   const prodTitle = item.title.toLowerCase().replace(/\s/g, "");
-                  const productQueryFinal = productQuery
-                    .toLowerCase()
-                    .replace(/\s/g, "");
+                  const productQueryFinal = productQuery.toLowerCase().replace(/\s/g, "");
 
                   return prodTitle.includes(productQueryFinal);
                 })
@@ -178,87 +174,62 @@ const SearchDropDown = () => {
           <div className="innerFaqs" style={{ left: `${handleFAQS}rem` }}>
             <div className="faqsContainer">
               <h5>What is an exchange?</h5>
-              <p>
-                A exchange is when you need a differentsize. We simply swap the
-                shoes received for the shoe size you need
-              </p>
+              <p>A exchange is when you need a differentsize. We simply swap the shoes received for the shoe size you need</p>
             </div>
             <div className="faqsContainer">
               <h5>What is a recycle?</h5>
-              <p>
-                A recycle is when you are sending your Cyclon item back to us in
-                exchange for a new one.
-              </p>
+              <p>A recycle is when you are sending your Cyclon item back to us in exchange for a new one.</p>
             </div>
             <div className="faqsContainer">
               <h5>How we use your Personal Information</h5>
               <p>
-                We use your Personal Information to offer you our products and
-                provide you with and improve our services as well as for
-                communication purposes.
+                We use your Personal Information to offer you our products and provide you with and improve our services as well as for communication purposes.
               </p>
             </div>
             <div className="faqsContainer">
               <h5>What is an exchange?</h5>
               <p>
-                We took inspiration from our fastest racing shoes and equipped
-                the Cloudneo with an extreme rocker shape and lean silhouette.
-                It fits true to size and can be compared to the fit of the
-                Cloudflow.
+                We took inspiration from our fastest racing shoes and equipped the Cloudneo with an extreme rocker shape and lean silhouette. It fits true to
+                size and can be compared to the fit of the Cloudflow.
               </p>
             </div>
             <div className="faqsContainer">
               <h5>How can I submit a warranty claim?</h5>
               <p>
-                Simply go to our Warranty claim form, provide details and images
-                of the issue, and we'll get back to you with the result. Please
-                note that a claim can only be made for ... <br />
+                Simply go to our Warranty claim form, provide details and images of the issue, and we'll get back to you with the result. Please note that a
+                claim can only be made for ... <br />
                 <span>Read more</span>
               </p>
             </div>
             <div className="faqsContainer">
               <h5>How does the Cloudneo fit compared?</h5>
               <p>
-                We took inspiration from our fastest racing shoes and equipped
-                the Cloudneo with an extreme rocker shape and lean silhouette.
-                It fits true to size and can be compared to the fit of the
-                Cloudflow.
+                We took inspiration from our fastest racing shoes and equipped the Cloudneo with an extreme rocker shape and lean silhouette. It fits true to
+                size and can be compared to the fit of the Cloudflow.
               </p>
             </div>
             <div className="faqsContainer">
               <h5>How I care for my runniing shoes?</h5>
               <p>
-                If your shoes get dirty, we recommend brushing them off first to
-                release any dirt. If washing your shoes is needed, it's best to
-                wash them by hand using warm water. Washing your shoes as seldom
-                as possible is recommended.
+                If your shoes get dirty, we recommend brushing them off first to release any dirt. If washing your shoes is needed, it's best to wash them by
+                hand using warm water. Washing your shoes as seldom as possible is recommended.
               </p>
             </div>
             <div className="faqsContainer">
               <h5>What is the returning policy?</h5>
               <p>
-                All Cyclon™ products are returnable within 30 days of purchase
-                or subscription. If you'd like to return your Cloudneo, simply
-                log into your customer account, click on cancel plan, and return
-                them to us in the Cyclon™ bag. Returns can only be processed for
-                a complete refund if they're sent back within 30 days of
-                purchase and if the shoes are in original condition. Read: No
-                wear or tear.
+                All Cyclon™ products are returnable within 30 days of purchase or subscription. If you'd like to return your Cloudneo, simply log into your
+                customer account, click on cancel plan, and return them to us in the Cyclon™ bag. Returns can only be processed for a complete refund if they're
+                sent back within 30 days of purchase and if the shoes are in original condition. Read: No wear or tear.
               </p>
             </div>
           </div>
 
           <div className="btnsConatainer">
-            <div
-              className="btnContainer"
-              onClick={() => handleFAQsFunctionLeft()}
-            >
+            <div className="btnContainer" onClick={() => handleFAQsFunctionLeft()}>
               <FiArrowLeft className="btnIcon" />
             </div>
-            <div
-              className="btnContainer"
-              onClick={() => handleFAQsFunctionRight()}
-            >
+            <div className="btnContainer" onClick={() => handleFAQsFunctionRight()}>
               <FiArrowRight className="btnIcon" />
             </div>
           </div>
@@ -288,6 +259,7 @@ const Wrapper = styled.div`
       justify-content: center;
       align-items: center;
       position: relative;
+
       input {
         width: 100%;
         height: 4.5rem;
@@ -308,6 +280,9 @@ const Wrapper = styled.div`
         right: 2rem;
         font-size: 1.4rem;
         cursor: pointer;
+      }
+      #closeBtnNav {
+        display: none;
       }
     }
 
@@ -477,18 +452,30 @@ const Wrapper = styled.div`
       align-items: center;
 
       .search {
-        width: 80%;
+        width: 90%;
         margin-top: 1.5rem;
         margin-bottom: 1rem;
-
         input {
           height: 3.8rem;
           &::placeholder {
           }
         }
         .searchIcon {
+          right: 5rem;
           font-size: 1rem;
           cursor: pointer;
+        }
+        #closeBtnNav {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 3rem;
+          width: 3rem;
+          margin-left: 1rem;
+          .close-icon {
+            color: #af0303;
+            font-size: 1.8rem;
+          }
         }
       }
 
@@ -607,7 +594,7 @@ const Wrapper = styled.div`
       align-items: center;
 
       .search {
-        width: 80%;
+        width: 90%;
         margin-top: 1.5rem;
         margin-bottom: 1rem;
 
@@ -616,9 +603,23 @@ const Wrapper = styled.div`
           &::placeholder {
           }
         }
+
         .searchIcon {
-          font-size: 1rem;
+          right: 6rem;
+          font-size: 1.2rem;
           cursor: pointer;
+        }
+        #closeBtnNav {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 3rem;
+          width: 3rem;
+          margin-left: 2rem;
+          .close-icon {
+            color: #af0303;
+            font-size: 2rem;
+          }
         }
       }
 
@@ -736,7 +737,7 @@ const Wrapper = styled.div`
       align-items: center;
 
       .search {
-        width: 80%;
+        width: 90%;
         margin-top: 1.5rem;
         margin-bottom: 1rem;
 
@@ -745,9 +746,23 @@ const Wrapper = styled.div`
           &::placeholder {
           }
         }
+
         .searchIcon {
-          font-size: 1rem;
+          right: 7rem;
+          font-size: 1.3rem;
           cursor: pointer;
+        }
+        #closeBtnNav {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 3rem;
+          width: 3rem;
+          margin-left: 2rem;
+          .close-icon {
+            color: #af0303;
+            font-size: 2.1rem;
+          }
         }
       }
 

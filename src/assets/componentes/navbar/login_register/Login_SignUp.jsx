@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import SignUp from "./SignUp";
 import Login from "./Login";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
+import { IoIosCloseCircle } from "react-icons/io";
 
+import { OpensignUpContext } from "../../../contexts/OpenSigUpContext";
 const Login_SignUp = ({ handleSignUp }) => {
-  let { btnToggle, setBtnToggle } = useUserAuth(); //To chenge the from sign up to login pages.
+  let { btnToggle, setBtnToggle } = useUserAuth(); //To change the from sign up to login pages.
 
   //this snipt of code is to always make the drop dowm menu from navbar be on sign up mode.
   //when the bottom sign up is pressed.
@@ -19,10 +21,18 @@ const Login_SignUp = ({ handleSignUp }) => {
       effectRan.current = true;
     };
   }, [handleSignUp]);
+  // --------------------------------------------------------------------------------------
+  //This context is to open and close dropDown container using the X icon when the screen is small.
+  const { setTogglevisibilitySignUp } = useContext(OpensignUpContext);
 
+  // --------------------------------------------------------------------------------------
   return (
     <Wrapper>
       <main>
+        <div id="closeBtnNav" onMouseEnter={() => setTogglevisibilitySignUp(false)} onMouseLeave={() => setTogglevisibilitySignUp(true)}>
+          <IoIosCloseCircle className="close-icon" />
+        </div>
+
         <div className="togglebutton">
           <div className="login_signUp">
             <div className="backContainer">
@@ -56,7 +66,9 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
-
+    #closeBtnNav {
+      display: none;
+    }
     .togglebutton {
       margin-bottom: 1rem;
 
@@ -136,10 +148,25 @@ const Wrapper = styled.div`
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     main {
+      position: relative;
       margin: 0;
       margin: 0.5rem 0rem 0rem 0rem;
       width: 100%;
 
+      #closeBtnNav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        width: 3rem;
+        position: absolute;
+        top: 0rem;
+        right: 0.5rem;
+        .close-icon {
+          color: #af0303; /* Set the color as per your styling */
+          font-size: 1.8rem; /* Set the font size as per your styling */
+        }
+      }
       .togglebutton {
         height: 2.1rem;
 
@@ -161,6 +188,7 @@ const Wrapper = styled.div`
             z-index: 97;
             width: 90%;
             cursor: pointer;
+
             p {
               font-size: 1.1rem;
               width: 19rem;
@@ -227,6 +255,21 @@ const Wrapper = styled.div`
       margin: 0;
       margin-top: 0.6rem;
       width: 80vw;
+
+      #closeBtnNav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        width: 3rem;
+        position: absolute;
+        top: 0.7rem;
+        right: 0.5rem;
+        .close-icon {
+          color: #af0303; /* Set the color as per your styling */
+          font-size: 2rem; /* Set the font size as per your styling */
+        }
+      }
 
       .togglebutton {
         height: 1.8rem;
@@ -321,6 +364,22 @@ const Wrapper = styled.div`
       justify-content: center;
       overflow-x: hidden;
       width: 100%;
+
+      #closeBtnNav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 4rem;
+        width: 4rem;
+        position: absolute;
+        top: 1rem;
+        right: 0.5rem;
+
+        .close-icon {
+          color: #af0303; /* Set the color as per your styling */
+          font-size: 2.1rem; /* Set the font size as per your styling */
+        }
+      }
 
       .togglebutton {
         margin-bottom: 0rem;
