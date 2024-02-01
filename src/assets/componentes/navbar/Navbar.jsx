@@ -12,7 +12,6 @@ import { useUserAuth } from "../../contexts/UserAuthContext";
 import Login_SignUp from "./login_register/Login_SignUp";
 import NavBarAccount from "./NavBarAccount";
 import { OpensignUpContext } from "../../contexts/OpenSigUpContext";
-// import { useDropdown } from "../../contexts/CloseBtnContext";
 
 //These two parameters comes from SignUpPage.
 const Navbar = ({ signUp, handleSignUp }) => {

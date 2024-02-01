@@ -105,5 +105,107 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) {
+    margin: 0.5rem;
+    h4 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .p1 {
+      width: 100%;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .container1 {
+      width: 100%;
+
+      padding: 0.5rem;
+      h5 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 0.8rem;
+      }
+      .email {
+        margin-bottom: 2rem;
+        .pEmail {
+          font-size: 1.1rem;
+          font-weight: 300;
+          color: #383838;
+          margin-bottom: 0.5rem;
+        }
+        .userEmail {
+          font-size: 1.1rem;
+          font-weight: 400;
+          color: #2c2b2b;
+        }
+      }
+      .dataContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .datas {
+          .p01 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+          }
+          .p02 {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) {
+    margin: 0.5rem;
+
+    h4 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .p1 {
+      width: 100%;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .container1 {
+      width: 100%;
+      padding: 1rem;
+      h5 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+      .email {
+        margin-bottom: 2rem;
+        .pEmail {
+          font-size: 1.1rem;
+          font-weight: 300;
+          color: #383838;
+          margin-bottom: 0.5rem;
+        }
+        .userEmail {
+          font-size: 1.1rem;
+          font-weight: 400;
+          color: #2c2b2b;
+        }
+      }
+      .dataContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .datas {
+          .p01 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+          }
+          .p02 {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
 `;
 export default Profile;

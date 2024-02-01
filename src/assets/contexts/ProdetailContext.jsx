@@ -1,11 +1,12 @@
 import { createContext, useEffect, useState, useContext } from "react";
 import { SizeChosenContext } from "./SizeChosenContex";
+
 export const ProdDetailContetx = createContext();
 
 const ProdDetailProvider = ({ children }) => {
   const initializeState = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-  const [cartItems, setCartItens] = useState(initializeState); //array of boject, cart.
+  const [cartItems, setCartItens] = useState(initializeState); //array of object, cart.
   const [total, setTotal] = useState(0); //array of boject, cart.
   const [countShopBag, setCountShopBag] = useState(0);
   const { chosenSize } = useContext(SizeChosenContext); //pick to product's size
@@ -18,9 +19,7 @@ const ProdDetailProvider = ({ children }) => {
     const newID = Math.floor(Math.random() * 100); // to give a new Id for each product, this way it will change quantity only the one product with this ID.
 
     // using title instead of ID to identify the product, beacuse the ID changes every time addProduct is called but the title is not.
-    const existingItem = cartItems.find(
-      (item) => item.title === prod.title && item.size === chosenSize
-    );
+    const existingItem = cartItems.find((item) => item.title === prod.title && item.size === chosenSize);
 
     if (existingItem) {
       // Update the quantity if the size is the same
@@ -56,9 +55,7 @@ const ProdDetailProvider = ({ children }) => {
       setCartItens(newCartItem);
       setCountShopBag(0);
     } else {
-      const newCartItem = cartItems.map((item) =>
-        item.id === id ? { ...exist, qty: exist.qty - 1 } : item
-      );
+      const newCartItem = cartItems.map((item) => (item.id === id ? { ...exist, qty: exist.qty - 1 } : item));
       setCartItens(newCartItem);
     }
   };
@@ -67,9 +64,7 @@ const ProdDetailProvider = ({ children }) => {
   const increaseProducQty = (id) => {
     const prodExist = cartItems.find((item) => item.id === id);
     if (prodExist) {
-      const newCartItem = cartItems.map((item) =>
-        item.id === id ? { ...prodExist, qty: prodExist.qty + 1 } : item
-      );
+      const newCartItem = cartItems.map((item) => (item.id === id ? { ...prodExist, qty: prodExist.qty + 1 } : item));
       setCartItens(newCartItem);
     }
   };
@@ -77,14 +72,12 @@ const ProdDetailProvider = ({ children }) => {
   const decreaseProducQty = (id) => {
     const exist = cartItems.find((item) => item.id === id);
     if (exist && exist.qty > 1) {
-      const newCartItem = cartItems.map((item) =>
-        item.id === id ? { ...exist, qty: exist.qty - 1 } : item
-      );
+      const newCartItem = cartItems.map((item) => (item.id === id ? { ...exist, qty: exist.qty - 1 } : item));
       setCartItens(newCartItem);
     }
   };
 
-  // calc the final
+  // calc the final bill
   useEffect(() => {
     const totalShop = cartItems.reduce((acc, currVal) => {
       return acc + currVal.qty * currVal.price;
@@ -96,10 +89,7 @@ const ProdDetailProvider = ({ children }) => {
   useEffect(() => {
     const shopBagNumber = () => {
       if (cartItems.length > 0) {
-        const sum = cartItems.reduce(
-          (total, currVal) => total + currVal.qty,
-          0
-        );
+        const sum = cartItems.reduce((total, currVal) => total + currVal.qty, 0);
         setCountShopBag(sum);
       }
     };

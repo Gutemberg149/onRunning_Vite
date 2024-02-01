@@ -9,23 +9,20 @@ const UserAccount = () => {
         <div className="topText">
           <h1>Hello</h1>
           <p>
-            Stay one step ahead. Here you can easily manage your account, track
-            orders, return items and talk to our Happiness <br />
+            Stay one step ahead. Here you can easily manage your account, track orders, return items and talk to our Happiness <br />
             Delivery team.
           </p>
         </div>
         <div className="container">
           <h4>Your Orders</h4>
           <p>
-            First time making an order? Here's a good place to start.{" "}
-            <Link to={"/ShoesPage"}> Shop Now.</Link>
+            First time making an order? Here's a good place to start. <Link to={"/ShoesPage"}> Shop Now.</Link>
           </p>
         </div>
         <div className="container">
           <h4>Your Cyclon</h4>
           <p>
-            Manage your <Link to={"/featured"}>Cyclon™</Link> subscription and
-            stay in the loop.
+            Manage your <Link to={"/featured"}>Cyclon™</Link> subscription and stay in the loop.
           </p>
         </div>
       </main>
@@ -33,18 +30,19 @@ const UserAccount = () => {
   );
 };
 const Wrapper = styled.div`
-  margin: 0 4rem;
+  margin: 0 0.5rem;
   .topText {
     margin-bottom: 5rem;
+    width: 100vw;
     h1 {
-      font-size: 5.5rem;
+      font-size: 2.5rem;
       font-weight: 500;
       margin-bottom: 2rem;
     }
     p {
-      font-size: 1.8rem;
+      font-size: 1rem;
       font-weight: 300;
-      width: 55rem;
+      width: 100%;
       line-height: 3rem;
     }
   }
@@ -64,6 +62,42 @@ const Wrapper = styled.div`
         color: black;
         font-weight: 500;
         text-decoration: underline;
+      }
+    }
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) {
+    .topText {
+      margin-bottom: 2rem;
+      width: 97vw;
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 2rem;
+      }
+      p {
+        font-size: 1rem;
+        font-weight: 300;
+        width: 100%;
+        line-height: 2rem;
+      }
+    }
+    .container {
+      margin-bottom: 3rem;
+      h4 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+      }
+      p {
+        font-size: 1.1rem;
+        font-weight: 300;
+        color: #313030;
+        margin-bottom: 2.5rem;
+        a {
+          color: black;
+          font-weight: 500;
+          text-decoration: underline;
+        }
       }
     }
   }

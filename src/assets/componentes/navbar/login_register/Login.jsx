@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
-// xxxxx
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const { logIn, errorSignIn } = useUserAuth(); //to make loin and show error message in case the login is wrong.
+  const { logIn, errorSignIn } = useUserAuth(); //to do login and show error message in case the login is wrong.
 
   const handleSubmit = async (e) => {
     e.preventDefault();

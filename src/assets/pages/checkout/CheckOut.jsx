@@ -15,7 +15,7 @@ const CheckOut = () => {
 
   const { user } = useUserAuth();
 
-  //context to change checout from shipping details to payment details, line 53
+  //context to change checkout from shipping details to payment details, line 53
   const { movetoPayment } = useContext(ShippingContext);
   return (
     <Wrapper>
@@ -34,10 +34,7 @@ const CheckOut = () => {
           <hr />
         </div>
         <div className="trailBall ">
-          <span
-            className="span current"
-            style={{ backgroundColor: movetoPayment ? "gray" : "black" }}
-          >
+          <span className="span current" style={{ backgroundColor: movetoPayment ? "gray" : "black" }}>
             2
           </span>
           <div className="trailBallTittle ">SHIPPING</div>
@@ -46,10 +43,7 @@ const CheckOut = () => {
           <hr />
         </div>
         <div className="trailBall">
-          <span
-            className="span"
-            style={{ backgroundColor: movetoPayment ? "black" : "gray" }}
-          >
+          <span className="span" style={{ backgroundColor: movetoPayment ? "black" : "gray" }}>
             3
           </span>
           <div className="trailBallTittle">PAYMENT</div>
@@ -62,7 +56,7 @@ const CheckOut = () => {
           {cartItems.map((item) => {
             return (
               <>
-                <div className="containerRightSide">
+                <div className="containerRightSide" key={item.id}>
                   <div className="prodInfo">
                     <div className="left">
                       <img src={item.img01} alt="image of the product" />
@@ -96,7 +90,7 @@ const CheckOut = () => {
         <div className="leftCart">
           <div className="UserEmailContainer">
             <p className="UserEmailTitle">Email</p>
-            <p className="UserEmail">{user.email}</p>
+            <p className="UserEmail">{user ? user.email : ""}</p>
           </div>
 
           {movetoPayment ? <Payment /> : <Shipping />}

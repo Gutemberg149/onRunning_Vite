@@ -44,6 +44,7 @@ const Account = () => {
 
 const Wrapper = styled.div`
   background-color: #fff8f0;
+  width: 100vw;
   nav {
     padding: 0 4rem;
     .logo {
@@ -57,9 +58,9 @@ const Wrapper = styled.div`
     width: 30rem;
     ul {
       display: flex;
-      list-style: none;
       justify-content: space-between;
       align-items: center;
+      list-style: none;
       li {
         font-size: 2rem;
         font-weight: 500;
@@ -84,6 +85,52 @@ const Wrapper = styled.div`
         cursor: pointer;
         &:hover {
           background-position: left bottom;
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) {
+    margin: 0rem;
+    nav {
+      padding: 0rem;
+      .logo {
+        width: 3.25rem;
+        margin: 0;
+        margin-top: 4.5rem;
+        border-radius: 50%;
+      }
+    }
+    .menuList {
+      margin: 1rem;
+      width: 90vw;
+
+      ul {
+        width: 100%;
+        li {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) {
+    nav {
+      width: 95%;
+      padding: 0 0rem;
+      .logo {
+        width: 4.25rem;
+        margin: 0;
+        margin-top: 7rem;
+        border-radius: 50%;
+      }
+    }
+    .menuList {
+      margin: 1rem;
+      width: 90vw;
+
+      ul {
+        width: 100%;
+        li {
+          font-size: 1.5rem;
         }
       }
     }

@@ -17,6 +17,8 @@ const CartToggleProvider = ({ children }) => {
   useEffect(() => {
     if (screenSizeMethod <= 600) {
       setShowCart(-screenSizeMethod + screenSizeMethod / 100);
+    } else if (screenSizeMethod >= 600 && screenSizeMethod <= 900) {
+      setShowCart(-screenSizeMethod + screenSizeMethod / 100);
     } else {
       setShowCart(-700 + (700 / 100) * 15);
     }
@@ -31,8 +33,20 @@ const CartToggleProvider = ({ children }) => {
       if (parseInt(showCart) === parseInt(0)) {
         setShowCart(-screenSizeMethod + screenSizeMethod / 100);
       }
-    } else if (screenSizeMethod <= 900) {
-    } else if (screenSizeMethod <= 1300) {
+    } else if (screenSizeMethod >= 600 && screenSizeMethod <= 900) {
+      if (parseInt(showCart) >= -screenSizeMethod + screenSizeMethod / 100) {
+        setShowCart(0);
+      }
+      if (parseInt(showCart) === parseInt(0)) {
+        setShowCart(-screenSizeMethod + screenSizeMethod / 100);
+      }
+    } else if (screenSizeMethod >= 900 && screenSizeMethod <= 1390) {
+      if (parseInt(showCart) >= -700 + (700 / 100) * 15) {
+        setShowCart(0);
+      }
+      if (parseInt(showCart) === 0) {
+        setShowCart(-700 + (700 / 100) * 15);
+      }
     } else {
       if (parseInt(showCart) >= -700 + (700 / 100) * 15) {
         setShowCart(40);

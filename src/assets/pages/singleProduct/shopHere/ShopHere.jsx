@@ -562,19 +562,19 @@ const Wrapper = styled.div`
       }
     }
   }
-  /* @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
     .cartShopConatiner {
-      width: 100%;
-      display: flex;
-      justify-content: start;
+      width: 100vw;
+      display: grid;
+      grid-template-columns: 15% 85%;
+      justify-content: null;
 
       .hiddenTag {
-        width: 4rem;
-        height: 5rem;
-        left: -4rem;
+        width: 5.5rem;
+        height: 3rem;
+        left: -5.5rem;
         top: 0rem;
         background-color: #770202;
-        display: flex;
         align-items: center;
         justify-content: start;
         color: white;
@@ -586,7 +586,8 @@ const Wrapper = styled.div`
         animation: pulse 2s infinite;
         cursor: pointer;
         p {
-          margin-left: 0.6rem;
+          margin-left: 0.9rem;
+          font-size: 0.8rem;
         }
       }
 
@@ -606,69 +607,72 @@ const Wrapper = styled.div`
           box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
         }
       }
-      .topCartBody {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5rem 1rem;
-        .topLeft {
-          display: flex;
+      .cartBody {
+        width: 100vw;
+        height: 90%;
+        padding: 0.8rem;
+        background-color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin-bottom: 5rem;
+        z-index: 99;
 
-          span {
-            font-size: 0.9rem;
-            color: #353434;
-          }
-          .dot {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.2rem;
-            margin: 0 0.5rem;
-            color: #353434;
-          }
-          span {
-            font-size: 0.9rem;
-            color: #353434;
-          }
-          .dot {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 0.2rem;
-            margin: 0 0.5rem;
-            color: #353434;
-          }
-        }
-        .topRight {
-          width: 2rem;
-          height: 2rem;
+        .topCartBody {
+          width: 100%;
           display: flex;
+          justify-content: space-between;
           align-items: center;
-          justify-content: center;
-          display: none;
-          cursor: pointer;
-          .closeIcon {
-            font-size: 1.3rem;
+          padding: 0.5rem 1rem;
+
+          .topLeft {
+            display: flex;
+
+            span {
+              font-size: 1.1rem;
+              color: #353434;
+            }
+            .dot {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 0.4rem;
+              margin: 0 0.5rem;
+              color: #353434;
+            }
+          }
+          .topRight {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #7b0606;
+            margin-right: 1rem;
+            color: #edecec;
+            cursor: pointer;
+            .closeIcon {
+              font-size: 1.3rem;
+            }
           }
         }
-      }
         .topMain {
           display: flex;
           align-items: center;
           justify-content: space-between;
           margin-bottom: 1rem;
+          width: 100%;
 
           h3 {
             font-size: 1.6rem;
             color: #343333;
           }
           p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
           }
         }
         .mainDescription {
-          width: 95%;
+          width: 100%;
           font-size: 1rem;
           color: #343333;
           margin-bottom: 2rem;
@@ -679,7 +683,7 @@ const Wrapper = styled.div`
           height: 3rem;
           background-color: #edecec;
           border-radius: 10rem;
-          margin-bottom: 1rem;
+          margin-bottom: 2rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -696,7 +700,7 @@ const Wrapper = styled.div`
             padding: 0 2rem;
             cursor: pointer;
             p {
-              font-size: 0.8rem;
+              font-size: 1rem;
               width: 2rem;
               height: 100%;
               display: flex;
@@ -713,10 +717,10 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             background-color: white;
-            width: 45%;
+            width: 52%;
             height: 100%;
             border-radius: 10rem;
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 500;
             z-index: 98;
             cursor: pointer;
@@ -729,7 +733,7 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             background-color: white;
-            width: 45%;
+            width: 52%;
             height: 100%;
             border-radius: 10rem;
             font-size: 1rem;
@@ -738,17 +742,20 @@ const Wrapper = styled.div`
 
             cursor: pointer;
           }
-
         }
 
         .tableSizeContainer {
+          display: flex;
+          flex-direction: column;
+          margin-left: 0.5rem;
           .rulerContainer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 8.5rem;
+            width: 50%;
             margin-top: 1rem;
-            margin-left: 0.5rem;
+            margin-left: 0rem;
+            padding: 0 1.5rem;
             .rulerIcon {
               font-size: 1.4rem;
             }
@@ -784,6 +791,6 @@ const Wrapper = styled.div`
         }
       }
     }
-  } */
+  }
 `;
 export default CartShop;

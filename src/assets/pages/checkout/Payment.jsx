@@ -1,11 +1,88 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { BsCreditCard2Back } from "react-icons/bs";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { CheckingCardContext } from "../../contexts/CheckCartContext";
 const Payment = () => {
-  const [checkCard, setCheckCard] = useState(false);
+  const [cardContainerOpen, setCardContainerOpen] = useState(false);
+  // const [checkCard, setCheckCard] = useState(false);
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardNumbValido, setCardNumbValido] = useState(false);
+  const [numberValueMonth, setNumberValueMonth] = useState("");
+  const [numberValueYear, setNumberValueYear] = useState("");
+  const [numberValueSecurityNumber, setNumberValueSecurityNumber] = useState("");
+  const [nameValue, setNameValue] = useState("");
+
+  // This usedContext bellow was necessary bcs the "checkCard" is been used in OrderPlaced page to reload the page and clear the Cart, before that, despite the localstorage has been cleared as the Paymentent is complited, the cart would not automatically clear.
+  const { checkCard, setCheckCard } = useContext(CheckingCardContext);
+
+  //The codes bellow are to handle the  max length of value in month and year input. The last one is to restrict input name only to letters no numbers.
+  const handleInputCardNumber = (e) => {
+    const inputValue = e.target.value;
+    const isValidInput = /^\d{0,15}$/.test(inputValue);
+
+    if (isValidInput) {
+      const formattedValue = inputValue.slice(0, 16);
+      setCardNumber(formattedValue);
+      setCardNumbValido(false);
+    } else {
+      setCardNumbValido(true);
+    }
+  };
+
+  const handleInputMonth = (e) => {
+    const inputValue = e.target.value;
+    const parsedValue = parseInt(inputValue, 10);
+
+    if (!isNaN(parsedValue) && parsedValue >= 0 && parsedValue <= 12) {
+      const formattedValue = parsedValue < 10 ? `0${parsedValue}` : parsedValue.toString();
+      setNumberValueMonth(formattedValue);
+      console.log(parsedValue);
+    }
+  };
+
+  const handleInputYear = (e) => {
+    const inputValue = e.target.value;
+    const parsedValue = parseInt(inputValue, 10);
+
+    if (!isNaN(parsedValue) && parsedValue >= 0 && parsedValue <= 40) {
+      const formattedValue = parsedValue < 10 ? `0${parsedValue}` : parsedValue.toString();
+      setNumberValueYear(formattedValue);
+    }
+  };
+
+  const handleInputSecurityNumber = (e) => {
+    const inputValue = e.target.value;
+    const parsedValue = parseInt(inputValue, 10);
+
+    if (!isNaN(parsedValue) && parsedValue >= 0 && parsedValue <= 999) {
+      const formattedValue = parsedValue < 10 ? `00${parsedValue}` : parsedValue < 100 ? `0${parsedValue}` : parsedValue.toString();
+
+      setNumberValueSecurityNumber(formattedValue);
+    }
+  };
+
+  const handleInputName = (e) => {
+    const value = e.target.value;
+    if (!/\d/.test(value)) {
+      setNameValue(value);
+    }
+  };
+  //The codes bellow is to assure all inputs are filled out after that the user can finalize the purchase.
+  useEffect(() => {
+    if (numberValueMonth >= 1 && numberValueYear >= 1 && numberValueSecurityNumber >= 1 && cardNumbValido === true && nameValue != "") {
+      setCheckCard(true);
+    } else {
+      setCheckCard(false);
+    }
+  }, [numberValueMonth, numberValueYear, numberValueSecurityNumber, cardNumbValido, nameValue]);
+  //This function is to clea the lcal storage once the payment is finalized.
+  function clearLocalStorage() {
+    if (checkCard) {
+      localStorage.removeItem("cartItems");
+    }
+  }
   return (
     <Wrapper>
       <div className="shipping">
@@ -18,19 +95,12 @@ const Payment = () => {
       </div>
       <div className="payment">
         <h5>Payment</h5>
-        <div
-          className={`${
-            checkCard
-              ? "credcardContainer"
-              : "credcardContainer credcardContainerFull"
-          }`}
-        >
-          {/* style={{ height: checkCard ? "33rem" : "6rem" }} */}
+        <div className={`${cardContainerOpen ? "credcardContainer" : "credcardContainer credcardContainerOpen"}`}>
           <div className="credCarttop">
             <div
               className="checkCircle"
-              onClick={() => setCheckCard(!checkCard)}
-              style={{ backgroundColor: checkCard ? "#7fc655" : "white" }}
+              onClick={() => setCardContainerOpen(!cardContainerOpen)}
+              style={{ backgroundColor: cardContainerOpen ? "#7fc655" : "white" }}
             >
               <div className="smallCircle"></div>
             </div>
@@ -42,26 +112,51 @@ const Payment = () => {
           <form>
             <div className="cardInfoContainer">
               <label htmlFor="">Card number</label>
-              <input type="text" placeholder="xxxx xxxx xxxx xxxx" />
+
+              <input
+                id="cCardnumber"
+                type="number"
+                placeholder="xxxx xxxx xxxx xxxx"
+                value={cardNumber}
+                onChange={handleInputCardNumber}
+                pattern="\d{0,5}"
+                required
+              />
             </div>
             <div className="cardInfoContainerDouble">
-              <div className="infoCard infoCardMarginRight">
+              <div className="infoCardExpireDate ">
                 <label>Expiry date</label>
-                <input type="text" placeholder="MM/YY" />
+                <div className="inputDate">
+                  <input
+                    className="expireDate expireDate1"
+                    type="number"
+                    placeholder="MM"
+                    value={numberValueMonth}
+                    onChange={handleInputMonth}
+                    pattern="\d{0,2}"
+                    required
+                  />
+
+                  <input className="expireDate" type="number" placeholder="YY" value={numberValueYear} onChange={handleInputYear} pattern="\d{0,2}" required />
+                </div>
               </div>
               <div className="infoCard">
-                <label>Expiry date</label>
-                <input type="text" placeholder="3 digts" />
+                <label>Security number</label>
+                <input type="number" placeholder="3 digts" value={numberValueSecurityNumber} onChange={handleInputSecurityNumber} pattern="\d{0,3}" required />
               </div>
             </div>
             <div className="cardInfoContainer">
               <label htmlFor="">Name on the card</label>
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Name" value={nameValue} onChange={handleInputName} />
             </div>
-            <Link to={"/orderplaced"}>
-              <button className="PlaceOrder">Place your order</button>
-            </Link>
           </form>
+          <Link to={`${checkCard ? "/orderplaced" : ""}`}>
+            <div className="btnPlaceOrder">
+              <button className={`${checkCard ? "PlaceOrder cardInfoChecked" : "PlaceOrder "}`} onClick={clearLocalStorage}>
+                Place your order
+              </button>
+            </div>
+          </Link>
         </div>
       </div>
     </Wrapper>
@@ -154,6 +249,11 @@ const Wrapper = styled.div`
           width: 30rem;
           height: 5rem;
           margin: 0.5rem 0;
+
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+          }
           input {
             border: #b9b9b9 1px solid;
             width: 30rem;
@@ -161,6 +261,7 @@ const Wrapper = styled.div`
             outline: none;
             padding-left: 2rem;
             font-size: 1.2rem;
+
             &:focus {
               border: #575656 1px solid;
             }
@@ -171,6 +272,33 @@ const Wrapper = styled.div`
         }
         .cardInfoContainerDouble {
           display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 95%;
+          .infoCardExpireDate {
+            .inputDate {
+              border: 1px solid #b9b9b9;
+              height: 3rem;
+              width: 12rem;
+              margin-right: 1rem;
+              margin-bottom: 0.3rem;
+              display: flex;
+              input::-webkit-outer-spin-button,
+              input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+              }
+              .expireDate {
+                border: none;
+                width: 50%;
+                padding-left: 15%;
+                outline: none;
+                font-size: 1.1rem;
+              }
+              .expireDate1 {
+                border-right: 1px solid #b9b9b9;
+              }
+            }
+          }
           .infoCard {
             width: 100%;
             height: 5rem;
@@ -178,10 +306,15 @@ const Wrapper = styled.div`
             display: flex;
             flex-direction: column;
             justify-content: center;
+            padding-left: 2rem;
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+            }
             input {
               border: #b9b9b9 1px solid;
               width: 15rem;
-              height: 3.3rem;
+              height: 3rem;
               outline: none;
               padding-left: 2rem;
               font-size: 1.2rem;
@@ -190,29 +323,36 @@ const Wrapper = styled.div`
               }
             }
           }
-          .infoCardMarginRight {
-            margin-right: 0.5rem;
-          }
+
           label {
             font-size: 0.8rem;
           }
         }
       }
-      .PlaceOrder {
-        margin: 2rem 0;
-        width: 30rem;
-        height: 4rem;
-        color: white;
-        font-size: 1.2rem;
-        background-color: black;
-        border: none;
-        border-radius: 3rem;
-        cursor: pointer;
-        cursor: pointer;
+      .btnPlaceOrder {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        .PlaceOrder {
+          width: 12rem;
+          height: 3.5rem;
+          color: white;
+          font-size: 1rem;
+          background-color: #616060;
+          border: none;
+          border-radius: 3rem;
+          cursor: pointer;
+          cursor: pointer;
+        }
+        .cardInfoChecked {
+          background-color: black;
+        }
       }
     }
 
-    .credcardContainerFull {
+    .credcardContainerOpen {
       height: 33rem;
     }
   }
@@ -220,7 +360,7 @@ const Wrapper = styled.div`
     .shipping {
       display: flex;
       width: 100vw;
-      padding: 0 1rem;
+      padding: 0.5rem 1rem;
       justify-content: space-between;
       margin-top: 2rem;
       padding-bottom: 0.5rem;
@@ -242,7 +382,7 @@ const Wrapper = styled.div`
     .payment {
       margin-top: 1rem;
       width: 100vw;
-      padding: 0rem;
+      padding: 1rem;
 
       h5 {
         font-size: 1.2rem;
@@ -253,7 +393,7 @@ const Wrapper = styled.div`
         flex-direction: column;
         border: transparent 1px solid;
         margin-top: 1rem;
-        width: 100vw;
+        width: 100%;
         overflow: hidden;
         padding: 0;
         overflow: visible;
@@ -261,7 +401,7 @@ const Wrapper = styled.div`
         .credCarttop {
           display: flex;
           align-items: center;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
           .checkCircle {
             display: flex;
             align-items: center;
@@ -270,7 +410,8 @@ const Wrapper = styled.div`
             height: 1.2rem;
             border: #323131 1px solid;
             border-radius: 50%;
-            margin: 0 1rem;
+            margin: 0rem;
+            margin-right: 0.5rem;
             cursor: pointer;
             .smallCircle {
               width: 0.6rem;
@@ -298,23 +439,22 @@ const Wrapper = styled.div`
           }
         }
         form {
-          width: 100vw;
-
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
 
           .cardInfoContainer {
-            width: 100vw;
-            height: 5rem;
+            width: 100%;
+            height: 4rem;
             margin: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
+
             input {
               border: #b9b9b9 1px solid;
-              width: 99%;
+              width: 100%;
               height: 3rem;
               outline: none;
               padding-left: 1rem;
@@ -329,9 +469,23 @@ const Wrapper = styled.div`
             }
           }
           .cardInfoContainerDouble {
-            display: flex;
-            align-items: center;
-            width: 100vw;
+            .infoCardExpireDate {
+              .inputDate {
+                height: 3rem;
+                width: 10rem;
+                margin-right: 0rem;
+                margin-bottom: 0.3rem;
+
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                }
+                .expireDate {
+                }
+                .expireDate1 {
+                }
+              }
+            }
             .infoCard {
               width: 100%;
               height: 5rem;
@@ -352,28 +506,27 @@ const Wrapper = styled.div`
                 }
               }
             }
-            .infoCardMarginRight {
-              margin-right: 0.2rem;
-            }
+
             label {
               font-size: 0.9rem;
             }
           }
         }
-        .PlaceOrder {
-          margin: 2rem 0;
-          width: 80vw;
-          height: 3rem;
-          color: white;
-          font-size: 1.2rem;
-          background-color: black;
-          border: none;
-          border-radius: 3rem;
-          cursor: pointer;
+        .btnPlaceOrder {
+          margin-top: 1rem;
+          .PlaceOrder {
+            margin: 1rem 0;
+            width: 8rem;
+            height: 3rem;
+            font-size: 0.9rem;
+          }
+          .cardInfoChecked {
+            background-color: black;
+          }
         }
       }
 
-      .credcardContainerFull {
+      .credcardContainerOpen {
         height: 65vh;
       }
     }

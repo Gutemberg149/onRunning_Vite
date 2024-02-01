@@ -8,6 +8,7 @@ import ProdDetailProvider from "./assets/contexts/ProdetailContext.jsx";
 import ShippingProvider from "./assets/contexts/ShippingContext.jsx";
 import ContactUsProvider from "./assets/contexts/ContactUsContext.jsx";
 import OpensignUpProvider from "./assets/contexts/OpenSigUpContext";
+import CheckingCardProvider from "./assets/contexts/CheckCartContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <OpensignUpProvider>
@@ -17,7 +18,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <CartToggleProvider>
             <SizeChosenProvider>
               <ProdDetailProvider>
-                <App />
+                <CheckingCardProvider>
+                  <App />
+                </CheckingCardProvider>
               </ProdDetailProvider>
             </SizeChosenProvider>
           </CartToggleProvider>

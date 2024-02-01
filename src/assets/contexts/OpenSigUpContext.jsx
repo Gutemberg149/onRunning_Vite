@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const OpensignUpContext = createContext();
 
 const OpensignUpProvider = ({ children }) => {
-  const [togglevisibilitySignUp, setTogglevisibilitySignUp] = useState("");
+  const [togglevisibilitySignUp, setTogglevisibilitySignUp] = useState(false);
   const [allowToggleVisibility, setAllowToggleVisibility] = useState(false);
   const [togglevisibilityCart, setTogglevisibilityCart] = useState(false);
   const [togglevisibilitySearch, setTogglevisibilitySearch] = useState(false);

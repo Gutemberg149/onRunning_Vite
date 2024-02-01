@@ -2,30 +2,59 @@ import styled from "styled-components";
 import { BsTrash } from "react-icons/bs";
 import { IoIosCloseCircle } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ProdDetailContetx } from "../../../contexts/ProdetailContext";
 import { OpensignUpContext } from "../../../contexts/OpenSigUpContext";
+import { userAuthContext } from "../../../contexts/UserAuthContext";
+
 const Cart = () => {
   const { id } = useParams();
+  const [warningSignal, setWarningSignal] = useState(false);
 
   //context to send and delete itens from the cart.
   const { removeProduct, cartItems, decreaseProducQty, increaseProducQty, total, countShopBag } = useContext(ProdDetailContetx);
+
   cartItems;
 
   //This context is to open and close dropDown container using the X icon when the screen is small.
   const { setTogglevisibilityCart } = useContext(OpensignUpContext);
+
+  //this context is for display warning that the user has to be logged in in order to proceed to checkoutPage. The use state is in UserAuthContext because it needs to be changed when the user loggin sign up. Also when the user is logged in useEffect set the setWarningSignal to false making it not showing.
+  const { blockLinkDiv, setBlockLink } = useContext(userAuthContext);
+  let user = JSON.parse(localStorage.getItem("userAuth"));
+  useEffect(() => {
+    if (user === false) {
+      setBlockLink(true);
+    } else {
+      setBlockLink(false);
+      setWarningSignal(false);
+    }
+    //when the user first access the site he/she gets an "userAUth===false" in localStorage, avoiding errors bcs of userAuth === null.
+    if (user === null) {
+      localStorage.setItem("userAuth", JSON.stringify(false));
+    }
+  }, [user]);
 
   return (
     <Wrapper>
       <div className="cartBody">
         <div className="innerCartBody">
           <div className="topCart">
-            <h1>Your cart</h1>
-            <div className="numberOfItens">
-              {countShopBag} {countShopBag > "1" ? <p> Items</p> : <p>Item</p>}
+            <div className="leftSide">
+              <h1>Your cart</h1>
+              <div className="numberOfItens">
+                {countShopBag} {countShopBag > "1" ? <p> Items</p> : <p>Item</p>}
+              </div>
             </div>
-            <div id="closeBtnNav" onMouseEnter={() => setTogglevisibilityCart(false)} onMouseLeave={() => setTogglevisibilityCart(true)}>
-              <IoIosCloseCircle className="close-icon" />
+
+            <div className="rightSide">
+              <div id="closeBtnNav" onMouseEnter={() => setTogglevisibilityCart(false)} onMouseLeave={() => setTogglevisibilityCart(true)}>
+                <IoIosCloseCircle className="close-icon" />
+              </div>
+
+              <div className="warningNoUser" style={{ display: `${warningSignal ? "block" : "none"}` }}>
+                <p>Login or Sign-up to proceed to check out</p>
+              </div>
             </div>
           </div>
 
@@ -73,9 +102,13 @@ const Cart = () => {
               <p>R$ {total.toLocaleString("pt-br", { minimumFractionDigits: 2 })}</p>
             </div>
           </div>
-          <Link to={"/checkout"} className="checkout">
-            <p>Check out</p>
-          </Link>
+
+          <div className="checkOutDiv">
+            <div className="blockLink" style={{ display: `${blockLinkDiv ? "block" : "none"}` }} onClick={() => setWarningSignal(true)}></div>
+            <Link to={"/checkout"} className="checkout">
+              <p>Check out</p>
+            </Link>
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -95,23 +128,39 @@ const Wrapper = styled.div`
 
     .innerCartBody {
       padding: 4rem;
-
       .topCart {
-        h1 {
-          font-size: 3rem;
-          font-weight: 500;
-        }
-        .numberOfItens {
-          margin-top: 1rem;
-          margin-left: 0.5rem;
-          font-size: 1.5rem;
-          display: flex;
-          p {
-            margin-left: 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        .leftSide {
+          h1 {
+            font-size: 3rem;
+            font-weight: 500;
+          }
+          .numberOfItens {
+            margin-top: 1rem;
+            margin-left: 0.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            p {
+              margin-left: 1rem;
+            }
           }
         }
-        #closeBtnNav {
-          display: none;
+        .rightSide {
+          #closeBtnNav {
+            display: none;
+          }
+          .warningNoUser {
+            background-color: #a70303e2;
+            height: fit-content;
+            padding: 0.2rem 0.8rem;
+            border-radius: 1rem;
+            p {
+              color: white;
+              font-size: 1rem;
+            }
+          }
         }
       }
 
@@ -214,6 +263,7 @@ const Wrapper = styled.div`
       box-shadow: 0px -2px 5px 3px #cac8c8;
       border-bottom-left-radius: 1rem;
       border-bottom-right-radius: 1rem;
+
       cursor: pointer;
       .top {
         width: 90%;
@@ -242,21 +292,34 @@ const Wrapper = styled.div`
           border-bottom: 0.5px solid gray;
         }
       }
-      .checkout {
-        background-color: #f60909;
-        width: 60%;
-        height: 4rem;
-        background-color: #1f1e1e;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #f9f5f5;
+      .checkOutDiv {
+        width: 20rem;
+        position: relative;
         border-radius: 5rem;
-        &:hover {
-          background-color: #323232;
-
-          font-size: 1.2rem;
-          border: 2px solid #393838;
+        .blockLink {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 5rem;
+          top: 0;
+          left: 0;
+          background-color: transparent;
+          z-index: 99;
+        }
+        .checkout {
+          width: 100%;
+          height: 4rem;
+          background-color: #1f1e1e;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #f9f5f5;
+          border-radius: 5rem;
+          &:hover {
+            background-color: #323232;
+            font-size: 1.2rem;
+            border: 2px solid #393838;
+          }
         }
       }
     }
@@ -277,30 +340,50 @@ const Wrapper = styled.div`
 
         .topCart {
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
-          h1 {
-            font-size: 1.5rem;
-          }
-          .numberOfItens {
-            margin-top: 0rem;
-            margin-left: 0rem;
-            font-size: 1.2rem;
-            display: flex;
-            p {
+          padding: 0 0.2rem;
+          .leftSide {
+            h1 {
+              font-size: 1.5rem;
+            }
+            .numberOfItens {
+              margin-top: 0rem;
+              margin-left: 0rem;
+              font-size: 1.2rem;
+              display: flex;
+              p {
+              }
             }
           }
-          #closeBtnNav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 3rem;
-            width: 3rem;
-            top: 0rem;
-            right: 0.5rem;
-            .close-icon {
-              color: #af0303;
-              font-size: 1.8rem;
+          .rightSide {
+            /* border: 1px solid blue; */
+            height: 4rem;
+            position: relative;
+            .warningNoUser {
+              background-color: #a70303e2;
+              height: fit-content;
+              padding: 0.1rem 0.2rem;
+              border-radius: 1rem;
+              margin-top: 2.5rem;
+              p {
+                color: white;
+                font-size: 0.7rem;
+              }
+            }
+            #closeBtnNav {
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 3rem;
+              width: 3rem;
+              top: -0.5rem;
+              right: -0.5rem;
+              .close-icon {
+                color: #af0303;
+                font-size: 1.7rem;
+              }
             }
           }
         }
@@ -437,22 +520,37 @@ const Wrapper = styled.div`
             border-bottom: 0.5px solid gray;
           }
         }
-        .checkout {
-          background-color: #f60909;
+        .checkOutDiv {
           width: 7rem;
-          height: 3rem;
-          background-color: #1f1e1e;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #f9f5f5;
+          height: 2.5rem;
+          position: relative;
           border-radius: 5rem;
-          margin-top: 1rem;
-          &:hover {
-            background-color: #323232;
+          .blockLink {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 5rem;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            z-index: 99;
+          }
+          .checkout {
+            width: 100%;
+            height: 100%;
+            background-color: #1f1e1e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f9f5f5;
+            border-radius: 5rem;
+            font-size: 0.9rem;
+            &:hover {
+              background-color: #323232;
 
-            font-size: 1.2rem;
-            border: 2px solid #393838;
+              font-size: 1rem;
+              border: 2px solid #393838;
+            }
           }
         }
       }
@@ -473,30 +571,49 @@ const Wrapper = styled.div`
 
         .topCart {
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
-          h1 {
-            font-size: 1.8rem;
-          }
-          .numberOfItens {
-            margin-top: 0rem;
-            margin-left: 0rem;
-            font-size: 1.3rem;
-            display: flex;
-            p {
+          padding: 0 0.5rem;
+          .leftSide {
+            h1 {
+              font-size: 1.8rem;
+            }
+            .numberOfItens {
+              margin-top: 0rem;
+              margin-left: 0rem;
+              font-size: 1.3rem;
+              display: flex;
+              p {
+              }
             }
           }
-          #closeBtnNav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 3rem;
-            width: 3rem;
-            top: 0rem;
-            right: 0.5rem;
-            .close-icon {
-              color: #af0303;
-              font-size: 2rem;
+          .rightSide {
+            height: 4rem;
+            position: relative;
+            .warningNoUser {
+              background-color: #a70303e2;
+              height: fit-content;
+              padding: 0.1rem 0.4rem;
+              border-radius: 1rem;
+              margin-top: 2.5rem;
+              p {
+                color: white;
+                font-size: 0.7rem;
+              }
+            }
+            #closeBtnNav {
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 3rem;
+              width: 3rem;
+              top: -0.5rem;
+              right: -0.5rem;
+              .close-icon {
+                color: #af0303;
+                font-size: 1.8rem;
+              }
             }
           }
         }
@@ -633,22 +750,38 @@ const Wrapper = styled.div`
             border-bottom: 0.5px solid gray;
           }
         }
-        .checkout {
-          background-color: #f60909;
-          width: 7rem;
-          height: 3rem;
-          background-color: #1f1e1e;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #f9f5f5;
+        .checkOutDiv {
+          width: 8rem;
+          height: 2.5rem;
+          position: relative;
           border-radius: 5rem;
-          margin-top: 1rem;
-          &:hover {
-            background-color: #323232;
-
-            font-size: 1.2rem;
-            border: 2px solid #393838;
+          margin-bottom: 1rem;
+          .blockLink {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 5rem;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            z-index: 99;
+          }
+          .checkout {
+            width: 100%;
+            height: 100%;
+            background-color: #1e1f1e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f9f5f5;
+            border-radius: 5rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            &:hover {
+              background-color: #323232;
+              font-size: 1.2rem;
+              border: 2px solid #393838;
+            }
           }
         }
       }
@@ -671,30 +804,50 @@ const Wrapper = styled.div`
 
         .topCart {
           display: flex;
-          justify-content: space-around;
+          padding: 0 0.5rem;
+          justify-content: space-between;
           align-items: center;
-          h1 {
-            font-size: 2rem;
-          }
-          .numberOfItens {
-            margin-top: 0rem;
-            margin-left: 0rem;
-            font-size: 1.5rem;
-            display: flex;
-            p {
+
+          .leftSide {
+            h1 {
+              font-size: 1.5rem;
+            }
+            .numberOfItens {
+              margin-top: 0rem;
+              margin-left: 0rem;
+              font-size: 1.5rem;
+              display: flex;
+              p {
+              }
             }
           }
-          #closeBtnNav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 3rem;
-            width: 3rem;
-            top: 0rem;
-            right: 0.5rem;
-            .close-icon {
-              color: #af0303;
-              font-size: 2.1rem;
+          .rightSide {
+            height: 4rem;
+            position: relative;
+            .warningNoUser {
+              background-color: #a70303e2;
+              height: fit-content;
+              padding: 0.1rem 0.4rem;
+              border-radius: 1rem;
+              margin-top: 2.5rem;
+              p {
+                color: whit;
+                font-size: 0.7rem;
+              }
+            }
+            #closeBtnNav {
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 3rem;
+              width: 3rem;
+              top: -0.5rem;
+              right: -0.5rem;
+              .close-icon {
+                color: #af0303;
+                font-size: 1.9rem;
+              }
             }
           }
         }
@@ -802,7 +955,6 @@ const Wrapper = styled.div`
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
         width: 100%;
-
         cursor: pointer;
         .top {
           width: 90%;
@@ -831,22 +983,38 @@ const Wrapper = styled.div`
             border-bottom: 0.5px solid gray;
           }
         }
-        .checkout {
-          background-color: #f60909;
-          width: 7rem;
+        .checkOutDiv {
+          width: 10rem;
           height: 3rem;
-          background-color: #1f1e1e;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #f9f5f5;
+          position: relative;
           border-radius: 5rem;
-          margin-top: 1rem;
-          &:hover {
-            background-color: #323232;
+          margin-bottom: 1rem;
+          .blockLink {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 5rem;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            z-index: 99;
+          }
+          .checkout {
+            width: 100%;
+            height: 100%;
+            background-color: #1f1e1e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f9f5f5;
+            border-radius: 5rem;
+            margin-top: 1rem;
+            &:hover {
+              background-color: #323232;
 
-            font-size: 1.2rem;
-            border: 2px solid #393838;
+              font-size: 1.2rem;
+              border: 2px solid #393838;
+            }
           }
         }
       }

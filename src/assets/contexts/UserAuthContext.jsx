@@ -11,6 +11,8 @@ export const UserAuthContextProvider = ({ children }) => {
   const [errorSignIn, setErrorSignIn] = useState(false); //to display message of error in Login page
   const [errorSignUp, setErrorSignUp] = useState(false); //to display message of error in Sign UP page and allow or not the page to move to login
 
+  const [blockLinkDiv, setBlockLink] = useState(false);
+
   // ------------------------------------------------------------------------------------
   const db = getFirestore();
 
@@ -25,7 +27,9 @@ export const UserAuthContextProvider = ({ children }) => {
         displayName: name,
       });
       localStorage.setItem("localStorageUserName", JSON.stringify(name));
+      localStorage.setItem("userAuth", JSON.stringify(true)); //this LocalStoarge is to display the warning in Cart Page.
       setErrorSignUp(false);
+      setBlockLink(true);
     } catch (error) {
       console.log(error);
       setErrorSignUp(true);
@@ -43,12 +47,14 @@ export const UserAuthContextProvider = ({ children }) => {
 
       const userInfoName = user.providerData[0].displayName;
       localStorage.setItem("localStorageUserName", JSON.stringify(userInfoName));
+      localStorage.setItem("userAuth", JSON.stringify(true)); //this LocalStoarge is to display the warning in Cart Page.
+      setBlockLink(true);
       setErrorSignIn(false);
-      console.log(errorSignIn);
     } catch (error) {
       setErrorSignIn(true);
       console.error("Error signing in:", error.message);
       throw new Error("Invalid email or password. Please try again.");
+      localStorage.setItem("userAuth", JSON.stringify(false));
     }
   };
 
@@ -56,6 +62,7 @@ export const UserAuthContextProvider = ({ children }) => {
 
   const logOut = () => {
     localStorage.setItem("localStorageUserName", JSON.stringify(""));
+    localStorage.setItem("userAuth", JSON.stringify(false));
     return signOut(auth);
   };
 
@@ -69,7 +76,9 @@ export const UserAuthContextProvider = ({ children }) => {
   }, []);
   // ---------------------------------------------------------------------
   return (
-    <userAuthContext.Provider value={{ signUp, logIn, logOut, user, btnToggle, setBtnToggle, errorSignIn, errorSignUp }}>{children}</userAuthContext.Provider>
+    <userAuthContext.Provider value={{ signUp, logIn, logOut, user, btnToggle, setBtnToggle, errorSignIn, errorSignUp, blockLinkDiv, setBlockLink }}>
+      {children}
+    </userAuthContext.Provider>
   );
 };
 
