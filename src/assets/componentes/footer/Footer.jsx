@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import {
-  AiFillYoutube,
-  AiOutlineInstagram,
-  AiOutlineTwitter,
-} from "react-icons/ai";
+import { AiFillYoutube, AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { BsCCircle } from "react-icons/bs";
 import { CiMail } from "react-icons/ci";
 import { BiLogoFacebook } from "react-icons/bi";
@@ -17,9 +13,7 @@ const Footer = () => {
       <div className="footerBody">
         <div className="signUpContainer">
           <h3>Sign up now</h3>
-          <span>
-            Stay in the loop, with exclusive offers and product previews.
-          </span>
+          <span>Stay in the loop, with exclusive offers and product previews.</span>
           <div className="bottomContainerSignUp">
             <Link to={"/signUpPage"}>
               <div className="signuP">Sign up here</div>
@@ -96,10 +90,7 @@ const Footer = () => {
           <a href="https://www.instagram.com/on/" target="_blank">
             <AiOutlineInstagram className="socialMediaIcon" />
           </a>
-          <a
-            href="https://www.linkedin.com/company/on-ag/?originalSubdomain=br"
-            target="_blank"
-          >
+          <a href="https://www.linkedin.com/company/on-ag/?originalSubdomain=br" target="_blank">
             <FaLinkedinIn className="socialMediaIcon" />
           </a>
           <a href="https://twitter.com/on_running" target="_blank">
@@ -696,29 +687,30 @@ const Wrapper = styled.footer`
     }
     .footerBody {
       width: 100vw;
-      padding: 3rem 8rem;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-around;
       .signUpContainer {
-        width: 30rem;
+        width: 40%;
         margin-left: 0rem;
+        padding-right: 2rem;
         h3 {
-          font-size: 2.8rem;
+          font-size: 1.6rem;
           color: #cfcccc;
         }
         span {
-          font-size: 1.4rem;
+          font-size: 1.1rem;
           color: #cfcccc;
-          margin-top: 2.5rem;
+          margin-top: 1.7rem;
         }
         .bottomContainerSignUp {
           .signuP {
             border: 2px solid #cfcccc;
             border-radius: 0.6rem;
             color: #cfcccc;
-            font-size: 1.2rem;
-            width: 15rem;
-            height: 3rem;
+            font-size: 1rem;
+            width: 9rem;
+            height: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -729,26 +721,26 @@ const Wrapper = styled.footer`
             }
           }
           .divContact {
-            width: 11.25rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: #cfcccc;
             font-size: 1.25rem;
-            margin-top: 2.5rem;
-
+            margin-top: 2rem;
+            width: fit-content;
             .iconContainer {
-              width: 3.313rem;
-              height: 3.313rem;
+              width: 2.5rem;
+              height: 2.5rem;
               border-radius: 50%;
-              font-size: 1.563rem;
+              font-size: 1.2rem;
               display: flex;
               justify-content: center;
               align-items: center;
               background-color: #8080803c;
+              margin-right: 0.5rem;
             }
             p {
-              font-size: 1.3rem;
+              font-size: 1.1rem;
             }
           }
           .brazil {
@@ -756,37 +748,45 @@ const Wrapper = styled.footer`
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 2.5rem;
-            margin-left: 0.513rem;
+            margin-top: 2rem;
+            margin-left: 0;
+            width: fit-content;
             .flag {
               width: 1.875rem;
               height: 1.875rem;
               border-radius: 50%;
+              margin-right: 0.5rem;
               background-image: url(${bandeira});
               background-size: cover;
               background-repeat: no-repeat;
               background-position: center;
             }
             p {
-              font-size: 1.25rem;
+              font-size: 1rem;
               color: #cfcccc;
             }
           }
         }
       }
       .listOfInfo {
+        width: 60%;
         display: flex;
+        justify-content: space-between;
         margin-right: 0rem;
+        margin-left: 1rem;
+
         .footerGeneralInfo {
           display: flex;
           justify-content: space-between;
           color: #cfcccc;
-          margin-left: 9.375rem;
+          margin-left: 0rem;
           cursor: pointer;
           ul {
+            width: 100%;
             list-style: none;
+
             .strongCaseLi {
-              font-size: 1.9rem;
+              font-size: 1.4rem;
               font-weight: 700;
               line-height: 3.75rem;
             }
