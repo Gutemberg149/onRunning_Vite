@@ -25,11 +25,13 @@ const CheckOut = () => {
         </Link>
       </div>
 
+      {/* the ball with line and number on the top of the page  */}
       <div className="paymentTrail">
         <div className="trailBall">
           <span className="span">1</span>
           <div className="trailBallTittle">EMAIL</div>
         </div>
+
         <div className="middleLine">
           <hr />
         </div>
@@ -55,8 +57,8 @@ const CheckOut = () => {
           <h3>Your Cart</h3>
           {cartItems.map((item) => {
             return (
-              <>
-                <div className="containerRightSide" key={item.id}>
+              <div key={item.id}>
+                <div className="containerRightSide">
                   <div className="prodInfo">
                     <div className="left">
                       <img src={item.img01} alt="image of the product" />
@@ -69,7 +71,7 @@ const CheckOut = () => {
                     <p className="prodPrice">R$ {item.price}</p>
                   </div>
                 </div>
-              </>
+              </div>
             );
           })}
           <div className="totalContainer">
@@ -87,12 +89,13 @@ const CheckOut = () => {
             </div>
           </div>
         </div>
+
         <div className="leftCart">
           <div className="UserEmailContainer">
             <p className="UserEmailTitle">Email</p>
             <p className="UserEmail">{user ? user.email : ""}</p>
           </div>
-
+          {/* Bellow is to move bettwen fiil up the for shipping and go to paymemt container. The page doe snot change just the container. */}
           {movetoPayment ? <Payment /> : <Shipping />}
         </div>
       </main>
@@ -182,20 +185,6 @@ const Wrapper = styled.div`
         .UserEmail {
           font-weight: 300;
           font-size: 1.2rem;
-        }
-      }
-
-      .goPayment {
-        width: 100%;
-        background-color: #747373;
-        height: 3.5rem;
-        color: #d8d6d6;
-        font-size: 1.1rem;
-        margin-top: 1.2rem;
-        border: none;
-        cursor: pointer;
-        &:hover {
-          background-color: #464545;
         }
       }
     }
@@ -369,20 +358,6 @@ const Wrapper = styled.div`
           .UserEmail {
             font-weight: 300;
             font-size: 1.2rem;
-          }
-        }
-
-        .goPayment {
-          width: 100%;
-          background-color: #747373;
-          height: 3.5rem;
-          color: #d8d6d6;
-          font-size: 1.1rem;
-          margin-top: 1.2rem;
-          border: none;
-          cursor: pointer;
-          &:hover {
-            background-color: #464545;
           }
         }
       }
@@ -566,20 +541,6 @@ const Wrapper = styled.div`
             font-size: 1.3rem;
           }
         }
-
-        .goPayment {
-          width: 100%;
-          background-color: #747373;
-          height: 3.5rem;
-          color: #d8d6d6;
-          font-size: 1.1rem;
-          margin-top: 1.2rem;
-          border: none;
-          cursor: pointer;
-          &:hover {
-            background-color: #464545;
-          }
-        }
       }
 
       .rightCart {
@@ -674,7 +635,125 @@ const Wrapper = styled.div`
       }
     }
   }
-  /* @media only screen and (min-device-width: 901px) and (max-device-width: 1500px) and (-webkit-min-device-pixel-ratio: 2) {
-  } */
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1500px) and (-webkit-min-device-pixel-ratio: 2) {
+    main {
+      width: 100vw;
+      display: flex;
+      margin-top: 1rem;
+      padding-bottom: 1.5rem;
+      .leftCart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1.5rem;
+        width: 40vw;
+        border-right: 2px solid gray;
+
+        .UserEmailContainer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          margin-top: 0rem;
+          padding: 0.5rem;
+          border-bottom: 0.5px solid #a2a0a0;
+          .UserEmailTitle {
+            font-weight: 500;
+            font-size: 1.2rem;
+          }
+          .UserEmail {
+            font-weight: 300;
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      .rightCart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60vw;
+        padding: 0 1.5rem;
+        /* border: 2px solid blue; */
+        h3 {
+          font-size: 1.6rem;
+          font-weight: 500;
+          border-bottom: 2px solid gray;
+          margin-bottom: 2.5rem;
+          width: 100%;
+        }
+        .containerRightSide {
+          height: auto;
+          width: 30rem;
+          /* border: 1px solid red; */
+          .prodInfo {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-bottom: 1px solid lightgray;
+            .left {
+              display: flex;
+              img {
+                width: 150px;
+                margin-right: 1.5rem;
+              }
+              .info {
+                .prodName {
+                  font-size: 1.1rem;
+                  font-weight: 500;
+                  margin-bottom: 0.6rem;
+                }
+                .prodColor,
+                .prodSize,
+                .prodQtd {
+                  font-size: 1rem;
+                  color: #343333;
+                  font-weight: 300;
+                  margin-bottom: 0.3rem;
+                }
+              }
+            }
+          }
+        }
+        .totalContainer {
+          width: 30rem;
+          margin-top: 2rem;
+          .container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            .text {
+              color: #606060;
+              font-size: 0.9rem;
+              font-weight: 300;
+            }
+            .price {
+              color: #3b3b3b;
+              font-size: 1rem;
+              font-weight: 400;
+            }
+          }
+          .total {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid darkgray;
+            padding-top: 1.5rem;
+            .totalText {
+              color: #1b1b1b;
+              font-size: 1.1rem;
+              font-weight: 600;
+            }
+            .totalPrice {
+              color: #1b1b1b;
+              font-size: 1.1rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 export default CheckOut;

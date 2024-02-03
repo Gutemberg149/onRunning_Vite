@@ -106,20 +106,12 @@ const Featured = () => {
           </div>
           <div className="text">
             <h3>Cyclon™</h3>
-            <p>
-              Run. Recycle. Repeat. Discover our groundbreaking circularity
-              program.
-            </p>
+            <p>Run. Recycle. Repeat. Discover our groundbreaking circularity program.</p>
           </div>
         </nav>
 
         <section className="IframeSection">
-          <iframe
-            src={`https://www.youtube.com/embed/viy9oyRxfdw`}
-            frameBorder={0}
-            allowFullScreen
-            allow="autoplay"
-          />
+          <iframe src={`https://www.youtube.com/embed/VtosSdRZcsA`} frameBorder={0} allowFullScreen allow="autoplay" />
         </section>
 
         <section className="sec3">
@@ -130,10 +122,8 @@ const Featured = () => {
         <section className="sec4">
           <h3>Meet The Roger</h3>
           <p>
-            A fully recyclable running shoe made from castor beans. (Yes,
-            beans.) Lightweight, agile and super responsive, it's engineered to
-            perform. And you'll never own it, because it's only available via
-            subscription to Cyclon™.
+            A fully recyclable running shoe made from castor beans. (Yes, beans.) Lightweight, agile and super responsive, it's engineered to perform. And
+            you'll never own it, because it's only available via subscription to Cyclon™.
           </p>
           <Link to={"/singleproduct/8"}>
             <button className="btnSec">Shop The Roger</button>
@@ -146,26 +136,12 @@ const Featured = () => {
 
         <section className="sec6">
           <div className="sec6Container">
-            <div
-              className="leftBcgSec6"
-              style={
-                !moveBcgImg
-                  ? { transform: `translateX(${-25}rem)` }
-                  : { transform: `translateX(${0}px)` }
-              }
-            >
+            <div className="leftBcgSec6" style={!moveBcgImg ? { transform: `translateX(${-25}rem)` } : { transform: `translateX(${0}px)` }}>
               <img src={womanRunning} alt="" />
               <div className="shadowLayer"></div>
             </div>
 
-            <div
-              className="rightBcgSec6"
-              style={
-                !moveBcgImg
-                  ? { transform: `translateX(${-25}rem)` }
-                  : { transform: `translateX(${0}px)` }
-              }
-            >
+            <div className="rightBcgSec6" style={!moveBcgImg ? { transform: `translateX(${-25}rem)` } : { transform: `translateX(${0}px)` }}>
               <img src={womanRunning} alt="" style={{ width: "100vw" }} />
               <div className="shadowLayer"></div>
             </div>
@@ -173,18 +149,11 @@ const Featured = () => {
             <div
               className="boxMission"
               onClick={() => setMoveFunction(!moveFunction)}
-              style={
-                moveFunction
-                  ? { transform: `translateX(${-62.5}rem)`, opacity: "0.5" }
-                  : { transform: `translateX(${0}px)`, opacity: "1" }
-              }
+              style={moveFunction ? { transform: `translateX(${-62.5}rem)`, opacity: "0.5" } : { transform: `translateX(${0}px)`, opacity: "1" }}
             >
               <h4>Our mission</h4>
               <p>Ignite the power of the human spirit through movement</p>
-              <button
-                className="containerReadMore"
-                onClick={() => setMoveFunction(!moveFunction)}
-              >
+              <button className="containerReadMore" onClick={() => setMoveFunction(!moveFunction)}>
                 <div className="btnReadMore">
                   <div className="redmoreImg"></div>
                   <p>Read more</p>
@@ -195,11 +164,7 @@ const Featured = () => {
 
           <div
             className="OverlayContainer"
-            style={
-              moveBcgImg
-                ? { transform: `translateX(${moveOverlayContainer}px)` }
-                : { transform: `translateX(${moveOverlayContainer}px)` }
-            }
+            style={moveBcgImg ? { transform: `translateX(${moveOverlayContainer}px)` } : { transform: `translateX(${moveOverlayContainer}px)` }}
           >
             <div className="bigBox">
               <h4>Inspired by athletes.</h4>
@@ -223,10 +188,7 @@ const Featured = () => {
               <div className="shadowLayerSmallBox"></div>
             </div>
             <div className="bigBox">
-              <h4>
-                ...Or developing innovative new technologies for a more
-                sustainable future.
-              </h4>
+              <h4>...Or developing innovative new technologies for a more sustainable future.</h4>
               <img src={whiteShoe} alt="" />
               <div className="shadowLayerBigBox"></div>
             </div>
@@ -238,28 +200,16 @@ const Featured = () => {
           </div>
           {moveFunction && (
             <div className="sec6Btns">
-              <button
-                className="ClickVolta"
-                onClick={() => setMoveFunction(!moveFunction)}
-              >
+              <button className="ClickVolta" onClick={() => setMoveFunction(!moveFunction)}>
                 <AiOutlineClose className="iconX" />
               </button>
 
               <div className="divbtn">
                 <div className="sec6BtnLeft" onClick={() => moveOverlayLeft()}>
-                  <FiArrowLeft
-                    className="arowLefet"
-                    style={{ fontSize: "1.875rem" }}
-                  />
+                  <FiArrowLeft className="arowLefet" style={{ fontSize: "1.875rem" }} />
                 </div>
-                <div
-                  className="sec6BtnRight"
-                  onClick={() => moveOverlayRight()}
-                >
-                  <FiArrowRight
-                    className="arowRight"
-                    style={{ fontSize: "1.875rem" }}
-                  />
+                <div className="sec6BtnRight" onClick={() => moveOverlayRight()}>
+                  <FiArrowRight className="arowRight" style={{ fontSize: "1.875rem" }} />
                 </div>
               </div>
             </div>
@@ -269,21 +219,13 @@ const Featured = () => {
         <section className="sec7">
           <h3>The tee you'll never trash</h3>
           <p>
-            Meet the 100% recyclable, bio-based Cyclon-T. (Yes, made from castor
-            beans.) Exclusively available to Cloudneo subscribers*, this time,
-            you can own it. Run in it. Wear it proud. Wear it until it’s all
-            worn out. Then, send it back to us. And you know … Recycle. Repeat.
-            *To purchase the Cyclon-T, you must be a Cloudneo subscriber. If you
-            haven’t joined the community yet, now’s your chance.
+            Meet the 100% recyclable, bio-based Cyclon-T. (Yes, made from castor beans.) Exclusively available to Cloudneo subscribers*, this time, you can own
+            it. Run in it. Wear it proud. Wear it until it’s all worn out. Then, send it back to us. And you know … Recycle. Repeat. *To purchase the Cyclon-T,
+            you must be a Cloudneo subscriber. If you haven’t joined the community yet, now’s your chance.
           </p>
         </section>
         <section className="IframeSection">
-          <iframe
-            src={`https://www.youtube.com/embed/gdjan_DKShM`}
-            frameBorder={0}
-            allowFullScreen
-            allow="autoplay"
-          />
+          <iframe src={`https://www.youtube.com/embed/gdjan_DKShM`} frameBorder={0} allowFullScreen allow="autoplay" />
         </section>
       </main>
 
@@ -412,12 +354,7 @@ const Wrapper = styled.div`
           position: absolute;
           bottom: 0;
           z-index: 95;
-          background-image: linear-gradient(
-            to top,
-            #000000a2,
-            #000000a2,
-            transparent
-          );
+          background-image: linear-gradient(to top, #000000a2, #000000a2, transparent);
         }
       }
       .rightBcgSec6 {
@@ -433,12 +370,7 @@ const Wrapper = styled.div`
           position: absolute;
           bottom: 0;
           z-index: 95;
-          background-image: linear-gradient(
-            to top,
-            #000000a2,
-            #000000a2,
-            transparent
-          );
+          background-image: linear-gradient(to top, #000000a2, #000000a2, transparent);
         }
       }
       .boxMission {
@@ -518,8 +450,7 @@ const Wrapper = styled.div`
           height: 41.688rem;
           margin: 0 1.9rem;
           border-radius: 0.7rem;
-          box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
-            rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+          box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
           cursor: pointer;
           h4 {
             position: absolute;
@@ -551,8 +482,7 @@ const Wrapper = styled.div`
           width: 28.125rem;
           height: 37.5rem;
           border-radius: 0.7rem;
-          box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
-            rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+          box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
           cursor: pointer;
           h4 {
             position: absolute;
@@ -801,12 +731,7 @@ const Wrapper = styled.div`
             position: absolute;
             bottom: 0;
             z-index: 95;
-            background-image: linear-gradient(
-              to top,
-              #000000b9,
-              #000000a2,
-              transparent
-            );
+            background-image: linear-gradient(to top, #000000b9, #000000a2, transparent);
           }
         }
         .rightBcgSec6 {
@@ -823,12 +748,7 @@ const Wrapper = styled.div`
             position: absolute;
             bottom: 0;
             z-index: 95;
-            background-image: linear-gradient(
-              to top,
-              #000000a2,
-              #000000a2,
-              transparent
-            );
+            background-image: linear-gradient(to top, #000000a2, #000000a2, transparent);
           }
         }
         .boxMission {
@@ -911,8 +831,7 @@ const Wrapper = styled.div`
             height: 20rem;
             margin: 0 1.9rem;
             border-radius: 0.7rem;
-            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
-              rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
             cursor: pointer;
             h4 {
               position: absolute;
@@ -944,8 +863,7 @@ const Wrapper = styled.div`
             width: 12rem;
             height: 18rem;
             border-radius: 0.7rem;
-            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
-              rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
             overflow: hidden;
             cursor: pointer;
             h4 {
@@ -1201,12 +1119,7 @@ const Wrapper = styled.div`
             position: absolute;
             bottom: 0;
             z-index: 95;
-            background-image: linear-gradient(
-              to top,
-              #000000b9,
-              #000000a2,
-              transparent
-            );
+            background-image: linear-gradient(to top, #000000b9, #000000a2, transparent);
           }
         }
         .rightBcgSec6 {
@@ -1223,12 +1136,7 @@ const Wrapper = styled.div`
             position: absolute;
             bottom: 0;
             z-index: 95;
-            background-image: linear-gradient(
-              to top,
-              #000000a2,
-              #000000a2,
-              transparent
-            );
+            background-image: linear-gradient(to top, #000000a2, #000000a2, transparent);
           }
         }
         .boxMission {
@@ -1312,8 +1220,7 @@ const Wrapper = styled.div`
             height: 20rem;
             margin: 0 1.9rem;
             border-radius: 0.7rem;
-            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
-              rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
             cursor: pointer;
             h4 {
               position: absolute;
@@ -1345,8 +1252,7 @@ const Wrapper = styled.div`
             width: 12rem;
             height: 18rem;
             border-radius: 0.7rem;
-            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
-              rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
             overflow: hidden;
             cursor: pointer;
             h4 {
@@ -1603,12 +1509,7 @@ const Wrapper = styled.div`
             position: absolute;
             bottom: 0;
             z-index: 95;
-            background-image: linear-gradient(
-              to top,
-              #000000b9,
-              #000000a2,
-              transparent
-            );
+            background-image: linear-gradient(to top, #000000b9, #000000a2, transparent);
           }
         }
         .rightBcgSec6 {
@@ -1625,12 +1526,7 @@ const Wrapper = styled.div`
             position: absolute;
             bottom: 0;
             z-index: 95;
-            background-image: linear-gradient(
-              to top,
-              #000000a2,
-              #000000a2,
-              transparent
-            );
+            background-image: linear-gradient(to top, #000000a2, #000000a2, transparent);
           }
         }
         .boxMission {
@@ -1714,8 +1610,7 @@ const Wrapper = styled.div`
             height: 23rem;
             margin: 0 1.9rem;
             border-radius: 0.7rem;
-            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
-              rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
             cursor: pointer;
             h4 {
               position: absolute;
@@ -1747,8 +1642,7 @@ const Wrapper = styled.div`
             width: 16rem;
             height: 21rem;
             border-radius: 0.7rem;
-            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
-              rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
             overflow: hidden;
             cursor: pointer;
             h4 {

@@ -83,14 +83,18 @@ const Payment = () => {
       localStorage.removeItem("cartItems");
     }
   }
+  // {"firstname":"SimonV","lastname":"Habibi","docnumber":"7812365872","street":"Rue Jadore ","neighbohood":"Magnific","city":"Paris","state":"FR","postCode":"32678532","country":""}
+  let UserDatas = JSON.parse(localStorage.getItem("UserDatas")) || [];
   return (
     <Wrapper>
       <div className="shipping">
         <p className="pShipping">Shipping</p>
         <div className="userInfo">
-          <p className="pName">Gutemberg</p>
-          <p className="pAddress">Rua caio prado 363</p>
-          <p className="pCity">Sao paulo,SP 01303001</p>
+          <p className="pName">{UserDatas.firstname}</p>
+          <p className="pAddress">{UserDatas.street}</p>
+          <p className="pCity">
+            {UserDatas.city}, {UserDatas.state} {UserDatas.postCode}
+          </p>
         </div>
       </div>
       <div className="payment">
@@ -335,6 +339,7 @@ const Wrapper = styled.div`
         align-items: center;
         justify-content: center;
         margin-top: 2rem;
+
         .PlaceOrder {
           width: 12rem;
           height: 3.5rem;
@@ -514,9 +519,10 @@ const Wrapper = styled.div`
         }
         .btnPlaceOrder {
           margin-top: 1rem;
+
           .PlaceOrder {
             margin: 1rem 0;
-            width: 8rem;
+            width: 10rem;
             height: 3rem;
             font-size: 0.9rem;
           }
@@ -534,6 +540,216 @@ const Wrapper = styled.div`
   @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
   }
   @media only screen and (min-device-width: 901px) and (max-device-width: 1500px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 100%;
+    .shipping {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.5px solid #a2a0a0;
+
+      .pShipping {
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+      .userInfo {
+        p {
+          font-weight: 300;
+          font-size: 0.9rem;
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 0.3rem;
+        }
+      }
+    }
+    .payment {
+      margin-top: 0.5rem;
+      width: 100%;
+
+      h5 {
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+      .credcardContainer {
+        padding: 0.5rem 0;
+        display: flex;
+        flex-direction: column;
+        border: none;
+        height: 6rem;
+        margin-top: 0.5rem;
+        overflow: null;
+        width: 100%;
+        .credCarttop {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          margin-bottom: 2rem;
+          width: 100%;
+          padding: 0;
+          height: 3rem;
+          .checkCircle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: #323131 1px solid;
+            border-radius: 50%;
+            margin: 0;
+            margin-right: 0.5em;
+            cursor: pointer;
+            .smallCircle {
+              width: 0.6rem;
+              height: 0.6rem;
+              border-radius: 50%;
+              background-color: white;
+            }
+          }
+          .credCardBox {
+            border: #323131 1px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem;
+            height: 2.2rem;
+            border-radius: 0.3rem;
+            margin-right: 1rem;
+            .creditCard {
+              font-size: 1.5rem;
+            }
+          }
+          p {
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+        }
+        form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .cardInfoContainer {
+            width: 100%;
+            height: 5rem;
+            margin: 0;
+            margin-bottom: 1rem;
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+            }
+            input {
+              border: #b9b9b9 1px solid;
+              width: 100%;
+              height: 2.5rem;
+              outline: none;
+              padding-left: 0.5rem;
+              font-size: 1rem;
+
+              &:focus {
+                border: #575656 1px solid;
+              }
+            }
+            label {
+              font-size: 0.7rem;
+            }
+          }
+          .cardInfoContainerDouble {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 1rem;
+            .infoCardExpireDate {
+              width: 50%;
+              margin: 0;
+              height: 5rem;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              .inputDate {
+                border: 1px solid #b9b9b9;
+                height: 2.4rem;
+                width: 9rem;
+                margin-right: 0.5rem;
+                margin-bottom: 0.3rem;
+                display: flex;
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                }
+                .expireDate {
+                  border: none;
+                  width: 50%;
+                  padding-left: 15%;
+                  outline: none;
+                  font-size: 1rem;
+                }
+                .expireDate1 {
+                  border-right: 1px solid #b9b9b9;
+                }
+              }
+            }
+
+            .infoCard {
+              width: 50%;
+              height: 5rem;
+              margin: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding-left: 0.5rem;
+              input::-webkit-outer-spin-button,
+              input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+              }
+              input {
+                border: #b9b9b9 1px solid;
+                width: 8rem;
+                height: 2.4rem;
+                outline: none;
+                padding-left: 2rem;
+                font-size: 1.2rem;
+                &:focus {
+                  border: #575656 1px solid;
+                }
+              }
+            }
+
+            label {
+              font-size: 0.8rem;
+            }
+          }
+        }
+        .btnPlaceOrder {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 2rem;
+
+          .PlaceOrder {
+            width: 10rem;
+            height: 3rem;
+            color: white;
+            font-size: 1rem;
+            background-color: #616060;
+            border: none;
+            border-radius: 3rem;
+            cursor: pointer;
+            cursor: pointer;
+          }
+          .cardInfoChecked {
+            background-color: black;
+          }
+        }
+      }
+
+      .credcardContainerOpen {
+        height: 33rem;
+      }
+    }
   }
 `;
 export default Payment;
