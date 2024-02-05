@@ -106,24 +106,25 @@ const Footer = () => {
 };
 const Wrapper = styled.footer`
   background-color: #131420;
+
   a {
     color: #c9c8c8;
     cursor: pointer;
   }
   .footerBody {
     width: 100vw;
-    padding: 3rem 4.5rem;
+    padding: 1rem 0.5rem;
     display: flex;
     justify-content: space-around;
     .signUpContainer {
-      width: 30rem;
+      width: 25rem;
 
       h3 {
-        font-size: 2.8rem;
+        font-size: 2rem;
         color: #cfcccc;
       }
       span {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         color: #cfcccc;
         margin-top: 2.5rem;
       }
@@ -132,9 +133,9 @@ const Wrapper = styled.footer`
           border: 2px solid #cfcccc;
           border-radius: 0.6rem;
           color: #cfcccc;
-          font-size: 1.2rem;
-          width: 15rem;
-          height: 3rem;
+          font-size: 1rem;
+          width: 10rem;
+          height: 2.5rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -145,34 +146,34 @@ const Wrapper = styled.footer`
           }
         }
         .divContact {
-          width: 11.25rem;
+          width: 10rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
           color: #cfcccc;
-          font-size: 1.25rem;
-          margin-top: 2.5rem;
+          font-size: 1rem;
+          margin-top: 1.5rem;
 
           .iconContainer {
-            width: 3.313rem;
-            height: 3.313rem;
+            width: 3rem;
+            height: 3rem;
             border-radius: 50%;
-            font-size: 1.563rem;
+            font-size: 1.4rem;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #8080803c;
           }
           p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
           }
         }
         .brazil {
-          max-width: 7.5rem;
+          max-width: 6.5rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-top: 2.5rem;
+          margin-top: 1.5rem;
           margin-left: 0.513rem;
           .flag {
             width: 1.875rem;
@@ -192,22 +193,26 @@ const Wrapper = styled.footer`
     }
     .listOfInfo {
       display: flex;
-      margin-right: 5rem;
+      margin-right: 3rem;
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
       .footerGeneralInfo {
         display: flex;
         justify-content: space-between;
         color: #cfcccc;
-        margin-left: 9.375rem;
+        margin-left: 0rem;
+
         cursor: pointer;
         ul {
           list-style: none;
           .strongCaseLi {
-            font-size: 1.9rem;
+            font-size: 1.6rem;
             font-weight: 700;
             line-height: 3.75rem;
           }
           li {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             line-height: 3.125rem;
             position: relative;
             width: fit-content;
@@ -407,6 +412,7 @@ const Wrapper = styled.footer`
         display: flex;
         justify-content: space-around;
         margin-right: 0rem;
+        width: 100%;
 
         .footerGeneralInfo {
           display: flex;
@@ -425,7 +431,7 @@ const Wrapper = styled.footer`
             }
             li {
               font-size: 0.7rem;
-              line-height: 2rem;
+              line-height: 1.3rem;
               position: relative;
               width: fit-content;
               &::after {
@@ -498,7 +504,6 @@ const Wrapper = styled.footer`
       flex-direction: column;
       justify-content: center;
       padding: 1rem 1.5rem;
-
       .signUpContainer {
         margin: 0;
         height: 8rem;
@@ -520,7 +525,7 @@ const Wrapper = styled.footer`
           margin-bottom: 0.5rem;
         }
         .bottomContainerSignUp {
-          margin-top: 1rem;
+          margin-top: 0.5rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -593,11 +598,12 @@ const Wrapper = styled.footer`
       }
       .listOfInfo {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: start;
         margin-right: 0rem;
         margin-left: 0;
         margin-top: 1rem;
+        width: 100%;
         .footerGeneralInfo {
           margin-top: 2rem;
           display: flex;

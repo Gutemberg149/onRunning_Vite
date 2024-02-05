@@ -102,10 +102,10 @@ const Cart = () => {
               <p>R$ {total.toLocaleString("pt-br", { minimumFractionDigits: 2 })}</p>
             </div>
           </div>
-
+          {/* onMouseEnter={() => setTogglevisibilityCart(false)} */}
           <div className="checkOutDiv">
             <div className="blockLink" style={{ display: `${blockLinkDiv ? "block" : "none"}` }} onClick={() => setWarningSignal(true)}></div>
-            <Link to={"/checkout"} className="checkout">
+            <Link to={"/checkout"} className="checkout" onClick={() => setTogglevisibilityCart(false)}>
               <p>Check out</p>
             </Link>
           </div>

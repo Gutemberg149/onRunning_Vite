@@ -387,6 +387,15 @@ const Wrapper = styled.main`
     background: url(${backpic2}) no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
+    width: 100vw;
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(0deg, black, #0000009f, #00000039, #00000016);
+    }
     .logo {
       mix-blend-mode: color-dodge;
       width: 6.25rem;
@@ -925,18 +934,7 @@ const Wrapper = styled.main`
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .section1 {
-      background: url(${backpic2}) fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      width: 100vw;
       .overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background: linear-gradient(0deg, black, #0000009f, #00000039, #00000016);
       }
       .logo {
         display: none;
@@ -967,12 +965,12 @@ const Wrapper = styled.main`
         }
         .btnsContainer {
           button {
-            width: 8rem;
-            height: 4rem;
+            width: 6rem;
+            height: 2.5rem;
             border-radius: 2.5rem;
             border: none;
             background-color: white;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             margin-right: 1.25rem;
             transition: all 0.2s ease-in-out;

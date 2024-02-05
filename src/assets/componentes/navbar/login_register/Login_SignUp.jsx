@@ -23,13 +23,13 @@ const Login_SignUp = ({ handleSignUp }) => {
   }, [handleSignUp]);
   // --------------------------------------------------------------------------------------
   //This context is to open and close dropDown container using the X icon when the screen is small.
-  const { setTogglevisibilitySignUp } = useContext(OpensignUpContext);
+  const { setTogglevisibilitySignUp, togglevisibilitySignUp } = useContext(OpensignUpContext);
 
   // --------------------------------------------------------------------------------------
   return (
     <Wrapper>
       <main>
-        <div id="closeBtnNav" onMouseEnter={() => setTogglevisibilitySignUp(false)} onMouseLeave={() => setTogglevisibilitySignUp(true)}>
+        <div id="closeBtnNav" onClick={() => setTogglevisibilitySignUp(false)} onMouseLeave={() => setTogglevisibilitySignUp(true)}>
           <IoIosCloseCircle className="close-icon" />
         </div>
 
@@ -161,7 +161,7 @@ const Wrapper = styled.div`
         width: 3rem;
         position: absolute;
         top: 0rem;
-        right: 0.5rem;
+        right: 0rem;
         .close-icon {
           color: #af0303; /* Set the color as per your styling */
           font-size: 1.8rem; /* Set the font size as per your styling */
@@ -169,10 +169,10 @@ const Wrapper = styled.div`
       }
       .togglebutton {
         height: 2.1rem;
-
+        width: 15rem;
         .login_signUp {
           position: relative;
-          width: 18rem;
+          width: 15rem;
           height: 3rem;
           border-radius: 10rem;
           margin-bottom: 2rem;

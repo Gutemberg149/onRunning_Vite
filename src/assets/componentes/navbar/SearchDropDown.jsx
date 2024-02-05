@@ -36,7 +36,6 @@ const SearchDropDown = () => {
     }
   };
   //------------------------------ Handle search ---------------------------
-
   useEffect(() => {
     const timeOutID = setTimeout(() => {
       setproductQuery(handleSearch);
@@ -56,7 +55,7 @@ const SearchDropDown = () => {
   };
 
   //This context is to open and close dropDown container using the X icon when the screen is small.
-  const { setTogglevisibilitySearch } = useContext(OpensignUpContext);
+  const { setTogglevisibilitySearch, togglevisibilitySearch } = useContext(OpensignUpContext);
 
   useEffect(() => {
     const sugested = listProduct.filter((item) => {
@@ -117,7 +116,7 @@ const SearchDropDown = () => {
         <section className="products">
           <p className="pProd">Products</p>
           {toggleAllProds ? (
-            <div className="prodsContainer">
+            <div className="prodsContainer" onClick={() => setTogglevisibilitySearch(false)}>
               {listProduct
                 .filter((item) => {
                   const prodTitle = item.title.toLowerCase().replace(/\s/g, "");

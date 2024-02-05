@@ -77,7 +77,7 @@ const Navbar = ({ signUp, handleSignUp }) => {
   const {
     togglevisibilitySignUp,
     setTogglevisibilitySignUp,
-    allowToggleVisibility, //this code changes the togglevisibilitySignUp with user effect, line 76.
+    allowToggleVisibility, //this code changes the togglevisibilitySignUp with user effect.
     setAllowToggleVisibility, //this code changes the togglevisibilitySignUp in every LINK in navbar.
     togglevisibilityCart, //this code open and close the basket shop container in navbar.Line 185 and CartPage
     setTogglevisibilityCart, //this code open and close the basket shop container in navbar.Line 191.
@@ -110,10 +110,12 @@ const Navbar = ({ signUp, handleSignUp }) => {
     <Wrapper>
       <div className="navContainer" style={{ top: `${show > 1000 ? "-90" : navBarHight}px` }}>
         <div className="navLeftContainer">
+          {/* ------------------------------------------------------------------------------------------ */}
           <div className="navBtnDropDown" onMouseEnter={() => setTogglevisibility(true)} onMouseLeave={() => setTogglevisibility(false)}>
             <p>Shop</p>
             <div className={`${togglevisibility ? "dropDowcontainer" : "dropDowUlNoShow"}`}>
-              <div>
+              {/* Close the drodown when the link is clicked on */}
+              <div onClick={() => setTogglevisibility(!togglevisibility)}>
                 <ul className="liBtnContainer">
                   <Link to={"/ShoesPage"}>
                     <li onClick={() => setAllowToggleVisibility(false)}>SHOP</li>
@@ -122,6 +124,7 @@ const Navbar = ({ signUp, handleSignUp }) => {
                     <li onClick={() => setAllowToggleVisibility(false)}>FEATURED</li>
                   </Link>
                 </ul>
+
                 <div id="closeBtnNav" onMouseEnter={() => setTogglevisibility(false)} onMouseLeave={() => setTogglevisibility(true)}>
                   <IoIosCloseCircle className="close-icon" />
                 </div>
@@ -157,28 +160,35 @@ const Navbar = ({ signUp, handleSignUp }) => {
           <div className="navBtnDropDown" onMouseEnter={() => setTogglevisibility2(true)} onMouseLeave={() => setTogglevisibility2(false)}>
             <p>Explore</p>
             <div className={`${togglevisibility2 ? "dropDowcontainer" : "dropDowUlNoShow"}`}>
-              <ul className="liBtnContainer">
-                <Link to={"/movement"}>
-                  <li onClick={() => setAllowToggleVisibility(false)}>MOVEMENT</li>
-                </Link>
+              {/* Close the drodown when the link is clicked on */}
+              <div onClick={() => setTogglevisibility2(!togglevisibility2)}>
+                <ul className="liBtnContainer">
+                  <Link to={"/movement"}>
+                    <li onClick={() => setAllowToggleVisibility(false)}>MOVEMENT</li>
+                  </Link>
 
-                <Link to={"/innovation"}>
-                  <li onClick={() => setAllowToggleVisibility(false)}>INNOVATION</li>
-                </Link>
+                  <Link to={"/innovation"}>
+                    <li onClick={() => setAllowToggleVisibility(false)}>INNOVATION</li>
+                  </Link>
 
-                <Link to={"/abouton"}>
-                  <li onClick={() => setAllowToggleVisibility(false)}>ABOUT ON</li>
-                </Link>
-              </ul>
-              <div id="closeBtnNav" onMouseEnter={() => setTogglevisibility2(false)} onMouseLeave={() => setTogglevisibility2(true)}>
-                <IoIosCloseCircle className="close-icon" />
+                  <Link to={"/abouton"}>
+                    <li onClick={() => setAllowToggleVisibility(false)}>ABOUT ON</li>
+                  </Link>
+                </ul>
+
+                <div id="closeBtnNav" onMouseEnter={() => setTogglevisibility2(false)} onMouseLeave={() => setTogglevisibility2(true)}>
+                  <IoIosCloseCircle className="close-icon" />
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        {/* ------------------------------------------------------------------------------  */}
+        {/* -----------------------------Right side Container------------------------------ */}
+        {/* ------------------------------------------------------------------------------  */}
         <div className="navRightContainer">
-          {/* ---------------------------- Search -------------------------------------------------- */}
+          {/* ---------------------------- Search ----------------------------------------- */}
           <div className="navBtnDropDown" onMouseEnter={() => setTogglevisibilitySearch(true)} onMouseLeave={() => setTogglevisibilitySearch(false)}>
             <BsSearch className="iconBtn " />
 
@@ -187,7 +197,7 @@ const Navbar = ({ signUp, handleSignUp }) => {
             </div>
           </div>
 
-          {/* ----------------------------Bag - basket of Shop -------------------------------------------------- */}
+          {/* ----------------------------Bag - basket of Shop ---------------------------- */}
 
           <div className="navBtnDropDown " onMouseEnter={() => setTogglevisibilityCart(true)} onMouseLeave={() => setTogglevisibilityCart(false)}>
             <div className="containerForCountIcon">
@@ -197,7 +207,7 @@ const Navbar = ({ signUp, handleSignUp }) => {
 
             <div className={`${togglevisibilityCart ? "dropDowcontainer" : "dropDowNoShow"}`}>{cartItems.length > 0 ? <Cart /> : <CartEmpty />}</div>
           </div>
-          {/* --------------------------- SignUp Login ---------------------------------------------------------- */}
+          {/* --------------------------- SignUp Login ----------------------------------- */}
 
           <div className="navBtnDropDown " onMouseEnter={() => setTogglevisibilitySignUp(true)} onMouseLeave={() => setTogglevisibilitySignUp(false)}>
             <AiOutlineUser className="iconBtn " />
@@ -206,7 +216,7 @@ const Navbar = ({ signUp, handleSignUp }) => {
               {user ? <NavBarAccount /> : <Login_SignUp handleSignUp={handleSignUp} />}
             </div>
           </div>
-          {/* -------------------------------------------- User ------------------------------------------------- */}
+          {/* ------------------------------- User --------------------------------- */}
           <div className="userName">
             <p>{UserNameTrimmed}</p>
           </div>
@@ -234,11 +244,11 @@ const Wrapper = styled.nav`
     transition: all 0.4s ease-out;
 
     .navLeftContainer {
-      margin-left: 4rem;
+      margin-left: 0rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 15rem;
+      width: 25rem;
       height: 6rem;
 
       .navBtnDropDown {
@@ -247,9 +257,9 @@ const Wrapper = styled.nav`
         font-weight: 500;
         justify-content: center;
         align-items: center;
-        margin-right: 1.875rem;
         color: #232222;
-        height: 5rem;
+        height: 100%;
+        width: 50%;
         cursor: pointer;
       }
       .dropDowcontainer {
@@ -299,15 +309,16 @@ const Wrapper = styled.nav`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 15rem;
-      height: 4rem;
+      width: 25rem;
+      height: 100%;
 
       .navBtnDropDown {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 5rem;
-        height: 4.8rem;
+        width: 33%;
+        height: 100%;
+
         .iconBtn {
           font-size: 1.25rem;
           color: #3c3b3b;
