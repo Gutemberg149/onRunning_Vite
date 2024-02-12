@@ -13,7 +13,7 @@ const CartToggleProvider = ({ children }) => {
   //to get the current size of the screen
   const screenSizeMethod = screenSizeMethodMethod.current;
 
-  //use effect to handle the positioning of the cart off screen when the user access the screen.
+  //use effect to handle for the positioning of the cart off screen when the user access the screen.
   useEffect(() => {
     if (screenSizeMethod <= 600) {
       setShowCart(-screenSizeMethod + screenSizeMethod / 100);

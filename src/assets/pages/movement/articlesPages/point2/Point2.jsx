@@ -27,11 +27,9 @@ const Point2 = () => {
       <section className="sec1">
         <h1 className="h1Sec1">Point2 NYC: Dream marathon. Dream big.</h1>
         <p className="pSec1">
-          What does it take to run 26.2 miles? What lures us to dream of
-          post-run highs and picture-perfect smiles at the finish line? Is it a
-          frame of mind? An elusive drive? A determination to progress? We meet
-          Cheryl and Matthew - two runners from New York whose different
-          approaches to training is the fuel to achieving their dreams.
+          What does it take to run 26.2 miles? What lures us to dream of post-run highs and picture-perfect smiles at the finish line? Is it a frame of mind? An
+          elusive drive? A determination to progress? We meet Cheryl and Matthew - two runners from New York whose different approaches to training is the fuel
+          to achieving their dreams.
         </p>
       </section>
 
@@ -46,15 +44,10 @@ const Point2 = () => {
             A marathon is roughly 26 miles. <br /> <br />
             No, wait. Hold on.
             <br />
-            <br />A marathon is 26.2 miles. Not 26. Not 27.
-            Twenty-six-point-two. And it’s the point-two we’re talking about.
-            It’s the point-two that makes the difference. Because it’s in the
-            point-two that you find yourself. Push past the pain to shimmering
-            endorphins. Make your dreams your truth.
+            <br />A marathon is 26.2 miles. Not 26. Not 27. Twenty-six-point-two. And it’s the point-two we’re talking about. It’s the point-two that makes the
+            difference. Because it’s in the point-two that you find yourself. Push past the pain to shimmering endorphins. Make your dreams your truth.
             <br />
-            We created the Point2 experience to celebrate Point2 people. Runners
-            who get out there day after day. Fighting the fight, doing the
-            distance.
+            We created the Point2 experience to celebrate Point2 people. Runners who get out there day after day. Fighting the fight, doing the distance.
           </div>
         </div>
       </section>
@@ -67,13 +60,10 @@ const Point2 = () => {
       <section className="sectionText">
         <div className="containerSecText">
           <div className="pSecText">
-            We’re talking runners who strive to unlock their fullest potential.
-            Who keep going, no matter what. Runners who understand that the only
-            “process” is one that works for them. And the only “competition”
-            with themselves.
+            We’re talking runners who strive to unlock their fullest potential. Who keep going, no matter what. Runners who understand that the only “process”
+            is one that works for them. And the only “competition” with themselves.
             <br /> <br />
-            Cheryl and Matthew are two New Yorkers whose unique approach to
-            running lays the foundation for all they do. Here are their stories.
+            Cheryl and Matthew are two New Yorkers whose unique approach to running lays the foundation for all they do. Here are their stories.
           </div>
         </div>
       </section>
@@ -92,11 +82,9 @@ const Point2 = () => {
           <h4 className="containerText_h4">Cheryl</h4>
           <div className="pSecText">
             <br />
-            46-year old Cheryl was born to achieve. And succeed. A Marriage and
-            Family Therapist from Brooklyn, and a passionate advocate for
-            healthcare rights, determination is instilled in her bones. ‘My
-            father was a general in the army, so I was raised all over the
-            world. It’s from him that I inherited my mindset.’
+            46-year old Cheryl was born to achieve. And succeed. A Marriage and Family Therapist from Brooklyn, and a passionate advocate for healthcare rights,
+            determination is instilled in her bones. ‘My father was a general in the army, so I was raised all over the world. It’s from him that I inherited my
+            mindset.’
           </div>
         </div>
       </section>
@@ -108,21 +96,15 @@ const Point2 = () => {
       <section className="sectionText">
         <div className="containerSecText">
           <div className="pSecText">
-            But it wasn’t until the lead-up to her 40th birthday that Cheryl
-            discovered long-distance running. ‘I was bamboozled into doing the
-            Brooklyn half-marathon by my sorority sister. Which I finished in
-            under two hours. Not bad, for a beginner.’ That same year, Cheryl
-            ran five marathons and qualified for New York City.
+            But it wasn’t until the lead-up to her 40th birthday that Cheryl discovered long-distance running. ‘I was bamboozled into doing the Brooklyn
+            half-marathon by my sorority sister. Which I finished in under two hours. Not bad, for a beginner.’ That same year, Cheryl ran five marathons and
+            qualified for New York City.
             <br />
             <br />
-            Six years, three continents and fifteen marathons later, Cheryl hits
-            the sidewalk at five in the morning, six days a week. ‘Running has
-            intention. Running is strategic. Running is my coffee.’ And running
-            has taken her to places she’d have never otherwise seen, from the
-            suburbs of New York to the historical landmarks of Berlin. Following
-            the murder of George Floyd and the unrest that followed, Cheryl
-            participated in protest runs all over the country. ‘There are many
-            ways to protest. Ours is to run.’
+            Six years, three continents and fifteen marathons later, Cheryl hits the sidewalk at five in the morning, six days a week. ‘Running has intention.
+            Running is strategic. Running is my coffee.’ And running has taken her to places she’d have never otherwise seen, from the suburbs of New York to
+            the historical landmarks of Berlin. Following the murder of George Floyd and the unrest that followed, Cheryl participated in protest runs all over
+            the country. ‘There are many ways to protest. Ours is to run.’
           </div>
         </div>
       </section>
@@ -131,25 +113,18 @@ const Point2 = () => {
         <img src={point2_9} alt="" />
       </section>
 
-      <section className="sectionText">
+      <section className="sectionTextFinal">
         <div className="containerSecText">
           <div className="pSecText">
-            Today, Cheryl’s a regular speaker at anti-hate events. And her
-            latest goal? To run the Boston marathon – a height she’s had her
-            sights on since missing the qualifier by five seconds. Hit play to
-            see Cheryl’s incredible story of passion and perseverance.
+            Today, Cheryl’s a regular speaker at anti-hate events. And her latest goal? To run the Boston marathon – a height she’s had her sights on since
+            missing the qualifier by five seconds. Hit play to see Cheryl’s incredible story of passion and perseverance.
             <br />
           </div>
         </div>
       </section>
 
       <section className="IframeSection">
-        <iframe
-          src={`https://www.youtube.com/embed/VuNqZzciy4g`}
-          frameBorder={0}
-          allowFullScreen
-          allow="autoplay"
-        />
+        <iframe src={`https://www.youtube.com/embed/VuNqZzciy4g`} frameBorder={0} allowFullScreen allow="autoplay" />
       </section>
       <Footer />
     </Wrapper>
@@ -169,18 +144,18 @@ const Wrapper = styled.div`
     margin-bottom: 5rem;
     .h1Sec1 {
       color: white;
-      font-size: 6rem;
+      font-size: 3rem;
       width: 90%;
       font-weight: 500;
       line-height: 7rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
     .pSec1 {
       color: white;
-      font-size: 3rem;
+      font-size: 1.8rem;
       width: 90%;
       font-weight: 300;
-      line-height: 4rem;
+      line-height: 3rem;
     }
   }
   .secImg {
@@ -192,19 +167,19 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5rem 0;
-    margin-top: 2rem;
+    padding: 2rem;
+    margin-top: 1rem;
+    height: 35rem;
     .containerSecText {
-      width: 95rem;
       .containerText_h4 {
         color: #e6e6e6;
-        font-size: 3.5rem;
-        margin-top: 5rem;
+        font-size: 2.5rem;
+        margin-top: 1rem;
         margin-bottom: 2rem;
       }
       .pSecText {
         color: #e6e6e6;
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 3rem;
       }
     }
@@ -213,16 +188,17 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 0.5rem;
+    margin-top: 0rem;
+    padding: 2rem;
+    height: 20rem;
     .containerSecText {
-      width: 95rem;
       .containerText_h4 {
         color: #e6e6e6;
-        font-size: 3.5rem;
+        font-size: 2.5rem;
       }
       .pSecText {
         color: #e6e6e6;
-        font-size: 2rem;
+        font-size: 1.7rem;
         margin-bottom: 3rem;
       }
     }
@@ -242,6 +218,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     height: 30rem;
+
     .containerSecTriple {
       display: flex;
       align-items: center;
@@ -251,6 +228,21 @@ const Wrapper = styled.div`
       img {
         width: 25rem;
         margin: 0 0.5rem;
+      }
+    }
+  }
+  .sectionTextFinal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin-top: 1rem;
+    height: 15rem;
+    .containerSecText {
+      .pSecText {
+        color: #e6e6e6;
+        font-size: 1.7rem;
+        margin-bottom: 3rem;
       }
     }
   }

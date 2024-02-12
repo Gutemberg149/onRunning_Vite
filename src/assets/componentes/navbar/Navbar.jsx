@@ -29,8 +29,9 @@ const Navbar = ({ signUp, handleSignUp }) => {
   if (localStorageUserName.length > 0) {
     UserNameTrimmed = localStorageUserName.split(" ")[0];
   }
+  // ---------------------------------------------------------------------------------
 
-  //Here it is getting the width of the screen so the code can place the hight of the navbar in the right hight position using state navBarHight. Vide line 106.
+  //Here it is getting the width of the screen so the code can place the hight of the navbar in the right hight position using state navBarHight.
   useEffect(() => {
     function handleResize() {
       const windowSize = window.innerWidth;
@@ -44,7 +45,6 @@ const Navbar = ({ signUp, handleSignUp }) => {
     handleResize();
   }, []);
 
-  // ---------------------------------------------------------------------------------
   const handleNAvbarShow = () => {
     if (window.scrollY < lastScrollY || window.scrollY <= 33) {
       // if scroll down hide the navbar
@@ -108,7 +108,7 @@ const Navbar = ({ signUp, handleSignUp }) => {
 
   return (
     <Wrapper>
-      <div className="navContainer" style={{ top: `${show > 1000 ? "-90" : navBarHight}px` }}>
+      <div className="navContainer" style={{ top: `${show ? "-90" : navBarHight}px` }}>
         <div className="navLeftContainer">
           {/* ------------------------------------------------------------------------------------------ */}
           <div className="navBtnDropDown" onMouseEnter={() => setTogglevisibility(true)} onMouseLeave={() => setTogglevisibility(false)}>
@@ -231,8 +231,8 @@ const Wrapper = styled.nav`
     color: #3c3b3b;
   }
   .navContainer {
-    width: 75rem;
-    height: 5.65rem;
+    width: 55rem;
+    height: 4rem;
     position: fixed;
     background-color: #f5c003;
     right: 3.125rem;
@@ -265,11 +265,11 @@ const Wrapper = styled.nav`
       .dropDowcontainer {
         display: flex;
         position: absolute;
-        top: 5rem;
+        top: 3.8rem;
         left: 0rem;
         background-color: white;
-        width: 75rem;
-        height: 80vh;
+        width: 100%;
+        height: 70vh;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
         box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
@@ -280,7 +280,7 @@ const Wrapper = styled.nav`
         li {
           margin-left: 2.75rem;
           list-style: none;
-          font-size: 2.5rem;
+          font-size: 2rem;
           transition: all ease-in-out 0.3s;
           margin-bottom: 0.938rem;
           &:hover {
@@ -292,7 +292,7 @@ const Wrapper = styled.nav`
           display: flex;
           flex-direction: column;
           .liBttm {
-            font-size: 1.9rem;
+            font-size: 1.7rem;
             margin-bottom: 0.625rem;
             font-weight: 400;
           }
@@ -334,17 +334,17 @@ const Wrapper = styled.nav`
           cursor: pointer;
           .numberOfItens {
             position: absolute;
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 1rem;
+            height: 1rem;
             border-radius: 50%;
             background-color: #171717;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #f5c003;
-            top: 0.3rem;
+            top: 0.7rem;
             left: 2.2rem;
-            font-size: 1rem;
+            font-size: 0.8rem;
           }
         }
       }
@@ -353,11 +353,11 @@ const Wrapper = styled.nav`
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 5.3rem;
+        top: 3.75rem;
         left: 0rem;
         background-color: white;
-        width: 75rem;
-        height: 80vh;
+        width: 100%;
+        height: 70vh;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
         box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
@@ -702,7 +702,7 @@ const Wrapper = styled.nav`
     }
     .navContainer {
       width: 65%;
-      height: 4.5rem;
+      height: 3.8rem;
       position: fixed;
       background-color: #f5c003;
       right: 0.4rem;
@@ -735,7 +735,7 @@ const Wrapper = styled.nav`
         .dropDowcontainer {
           display: flex;
           position: absolute;
-          top: 4.2rem;
+          top: 3.5rem;
           left: 0rem;
           background-color: white;
           width: 100%;
@@ -833,7 +833,7 @@ const Wrapper = styled.nav`
         .dropDowcontainer {
           display: flex;
           position: absolute;
-          top: 4.2rem;
+          top: 3.5rem;
           left: 0rem;
           background-color: white;
           width: 100%;

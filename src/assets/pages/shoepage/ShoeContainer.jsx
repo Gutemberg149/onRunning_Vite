@@ -1,15 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const ShoeContainer = ({
-  id,
-  img,
-  price,
-  title,
-  introduction,
-  colors,
-  extraInfo,
-}) => {
+const ShoeContainer = ({ id, img, price, title, introduction, colors, extraInfo }) => {
   return (
     <Wrapper>
       <Link to={`/singleproduct/${id}`}>
@@ -38,9 +30,10 @@ const Wrapper = styled.div`
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    width: 35rem;
-    margin: 1.063rem;
-    height: 55rem;
+    width: 25rem;
+    height: 42rem;
+    margin: 1rem;
+    overflow: hidden;
     cursor: pointer;
     .imgContainer {
       width: 100%;
@@ -51,7 +44,7 @@ const Wrapper = styled.div`
       background-color: #f4f0e7;
 
       img {
-        width: 37rem;
+        width: 100%;
       }
     }
     .itemInfo {
@@ -62,19 +55,19 @@ const Wrapper = styled.div`
 
       .extraInfo {
         color: #a4740c;
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 400;
         letter-spacing: 0.21rem;
-        margin-bottom: 1.3rem;
+        margin-bottom: 0.5rem;
       }
       h4 {
-        font-size: 1.6rem;
-        margin-bottom: 1.3rem;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
       }
       .introduction {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         color: #2b2a2a;
-        margin-bottom: 1.3rem;
+        margin-bottom: 1rem;
       }
       .colors {
         font-size: 1.2rem;
@@ -82,15 +75,16 @@ const Wrapper = styled.div`
         margin-bottom: 1.3rem;
       }
       .price {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: #2b2a2a;
         margin-bottom: 1.3rem;
       }
     }
     &:hover {
       img {
-        width: 36rem;
+        width: 26rem;
         background-color: #f9f2e2;
+        overflow: hidden;
         transition: all 0.3s ease-in;
       }
     }

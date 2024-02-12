@@ -98,24 +98,25 @@ const Wrapper = styled.div`
     margin-bottom: 1rem;
   }
   table {
-    width: 60rem;
-    height: 50rem;
+    width: 40rem;
+    height: 35rem;
     border-collapse: separate;
-    border-spacing: 0.4rem;
+    border-spacing: 0.6rem;
     .bcgColor {
-      background-color: #eae2e092;
+      background-color: #dfd9d792;
     }
     th {
-      height: 4rem;
+      height: 3rem;
       color: #484747;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      box-shadow: rgba(149, 157, 165, 0.352) 0px 8px 24px;
     }
     td {
       background-color: #faf8f8;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      box-shadow: rgba(149, 157, 165, 0.416) 0px 8px 24px;
       text-align: center;
       vertical-align: middle;
       color: #484747;
+      font-size: 0.8rem;
     }
   }
 `;

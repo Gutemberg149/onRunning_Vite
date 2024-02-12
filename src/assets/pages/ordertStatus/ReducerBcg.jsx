@@ -8,8 +8,6 @@ export const initialState = {
   Li7: "liBcgDynamic",
   Li8: "liBcgDynamic",
   Li9: "liBcgDynamic",
-  Li10: "liBcgDynamic",
-  Li11: "liBcgDynamic",
 };
 
 const ReducerBcg = (state, action) => {
@@ -25,8 +23,6 @@ const ReducerBcg = (state, action) => {
       Li7: (state.Li7 = "liBcgDynamic"),
       Li8: (state.Li8 = "liBcgDynamic"),
       Li9: (state.Li9 = "liBcgDynamic"),
-      Li10: (state.Li10 = "liBcgDynamic"),
-      Li11: (state.Li11 = "liBcgDynamic"),
     };
   }
   if (action.type === "li2") {
@@ -41,8 +37,6 @@ const ReducerBcg = (state, action) => {
       Li7: (state.Li7 = "liBcgDynamic"),
       Li8: (state.Li8 = "liBcgDynamic"),
       Li9: (state.Li9 = "liBcgDynamic"),
-      Li10: (state.Li10 = "liBcgDynamic"),
-      Li11: (state.Li11 = "liBcgDynamic"),
     };
   }
   if (action.type === "li3") {
@@ -57,8 +51,6 @@ const ReducerBcg = (state, action) => {
       Li7: (state.Li7 = "liBcgDynamic"),
       Li8: (state.Li8 = "liBcgDynamic"),
       Li9: (state.Li9 = "liBcgDynamic"),
-      Li10: (state.Li10 = "liBcgDynamic"),
-      Li11: (state.Li11 = "liBcgDynamic"),
     };
   }
   if (action.type === "li4") {
@@ -73,8 +65,6 @@ const ReducerBcg = (state, action) => {
       Li7: (state.Li7 = "liBcgDynamic"),
       Li8: (state.Li8 = "liBcgDynamic"),
       Li9: (state.Li9 = "liBcgDynamic"),
-      Li10: (state.Li10 = "liBcgDynamic"),
-      Li11: (state.Li11 = "liBcgDynamic"),
     };
   }
   if (action.type === "li5") {
@@ -89,8 +79,6 @@ const ReducerBcg = (state, action) => {
       Li7: (state.Li7 = "liBcgDynamic"),
       Li8: (state.Li8 = "liBcgDynamic"),
       Li9: (state.Li9 = "liBcgDynamic"),
-      Li10: (state.Li10 = "liBcgDynamic"),
-      Li11: (state.Li11 = "liBcgDynamic"),
     };
   }
   if (action.type === "li6") {
@@ -105,8 +93,6 @@ const ReducerBcg = (state, action) => {
       Li7: (state.Li7 = "liBcgDynamic"),
       Li8: (state.Li8 = "liBcgDynamic"),
       Li9: (state.Li9 = "liBcgDynamic"),
-      Li10: (state.Li10 = "liBcgDynamic"),
-      Li11: (state.Li11 = "liBcgDynamic"),
     };
   }
   if (action.type === "li7") {
@@ -121,8 +107,6 @@ const ReducerBcg = (state, action) => {
       Li7: (state.Li7 = "Li7"),
       Li8: (state.Li8 = "liBcgDynamic"),
       Li9: (state.Li9 = "liBcgDynamic"),
-      Li10: (state.Li10 = "liBcgDynamic"),
-      Li11: (state.Li11 = "liBcgDynamic"),
     };
   }
   if (action.type === "li8") {
@@ -137,8 +121,6 @@ const ReducerBcg = (state, action) => {
       Li7: (state.Li7 = "liBcgDynamic"),
       Li8: (state.Li8 = "Li8"),
       Li9: (state.Li9 = "liBcgDynamic"),
-      Li10: (state.Li10 = "liBcgDynamic"),
-      Li11: (state.Li11 = "liBcgDynamic"),
     };
   }
   if (action.type === "li9") {
@@ -153,11 +135,9 @@ const ReducerBcg = (state, action) => {
       Li7: (state.Li7 = "liBcgDynamic"),
       Li8: (state.Li8 = "liBcgDynamic"),
       Li9: (state.Li9 = "Li9"),
-      Li10: (state.Li10 = "liBcgDynamic"),
-      Li11: (state.Li11 = "liBcgDynamic"),
     };
   }
-  if (action.type === "li10") {
+  if (action.type === null) {
     return {
       ...state,
       Li1: (state.Li1 = "liBcgDynamic"),
@@ -169,24 +149,6 @@ const ReducerBcg = (state, action) => {
       Li7: (state.Li7 = "liBcgDynamic"),
       Li8: (state.Li8 = "liBcgDynamic"),
       Li9: (state.Li9 = "liBcgDynamic"),
-      Li10: (state.Li10 = "Li10"),
-      Li11: (state.Li11 = "liBcgDynamic"),
-    };
-  }
-  if (action.type === "li11") {
-    return {
-      ...state,
-      Li1: (state.Li1 = "liBcgDynamic"),
-      Li2: (state.Li2 = "liBcgDynamic"),
-      Li3: (state.Li3 = "liBcgDynamic"),
-      Li4: (state.Li4 = "liBcgDynamic"),
-      Li5: (state.Li5 = "liBcgDynamic"),
-      Li6: (state.Li6 = "liBcgDynamic"),
-      Li7: (state.Li7 = "liBcgDynamic"),
-      Li8: (state.Li8 = "liBcgDynamic"),
-      Li9: (state.Li9 = "liBcgDynamic"),
-      Li10: (state.Li10 = "liBcgDynamic"),
-      Li11: (state.Li11 = "Li11"),
     };
   }
 };

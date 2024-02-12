@@ -56,6 +56,7 @@ const Wrapper = styled.div`
   .menuList {
     margin: 4rem;
     width: 30rem;
+    margin-bottom: 2.5rem;
     ul {
       display: flex;
       justify-content: space-between;
@@ -64,6 +65,8 @@ const Wrapper = styled.div`
       li {
         font-size: 2rem;
         font-weight: 500;
+        padding: 0 0.5rem;
+        border-radius: 1rem;
         cursor: pointer;
       }
       .orange {

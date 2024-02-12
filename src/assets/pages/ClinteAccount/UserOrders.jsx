@@ -17,8 +17,8 @@ const UserOrders = () => {
 const Wrapper = styled.div`
   margin: 0 4rem;
   h4 {
-    font-size: 4.5rem;
-    font-weight: 500;
+    font-size: 2.5rem;
+    font-weight: 600;
     margin-bottom: 3rem;
   }
   .p1 {
@@ -33,13 +33,13 @@ const Wrapper = styled.div`
     width: 40rem;
   }
   button {
-    width: 18rem;
-    height: 5.5rem;
+    width: 10rem;
+    height: 3.5rem;
     background-color: black;
     border: none;
     border-radius: 3rem;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
     margin-bottom: 6rem;
     cursor: pointer;

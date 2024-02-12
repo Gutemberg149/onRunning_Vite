@@ -24,14 +24,9 @@ const Wrapper = styled.div`
     align-items: center;
     height: 30rem;
     width: 40rem;
-    background: radial-gradient(
-      75% 75% at 89% 10%,
-      rgba(71, 170, 252, 0.1) 0%,
-      rgba(69, 97, 255, 0.1) 100%
-    );
+    background: radial-gradient(75% 75% at 89% 10%, rgba(71, 170, 252, 0.1) 0%, rgba(69, 97, 255, 0.1) 100%);
 
-    box-shadow: inset -5px 5px 5px 0px rgba(255, 255, 255, 0.1),
-      inset 0px -5px 5px 0px rgba(26, 56, 227, 0.041);
+    box-shadow: inset -5px 5px 5px 0px rgba(255, 255, 255, 0.1), inset 0px -5px 5px 0px rgba(26, 56, 227, 0.041);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     h1 {
@@ -57,6 +52,7 @@ const Wrapper = styled.div`
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     width: 100vw;
+
     .element {
       display: flex;
       flex-direction: column;
@@ -64,14 +60,9 @@ const Wrapper = styled.div`
       align-items: center;
       height: 20rem;
       width: 100%;
-      background: radial-gradient(
-        75% 75% at 89% 10%,
-        rgba(71, 171, 252, 0.229) 0%,
-        rgba(69, 97, 255, 0.266) 100%
-      );
+      background: radial-gradient(75% 75% at 89% 10%, rgba(71, 171, 252, 0.229) 0%, rgba(69, 97, 255, 0.266) 100%);
 
-      box-shadow: inset -5px 5px 5px 0px rgba(255, 255, 255, 0.201),
-        inset 0px -5px 5px 0px rgba(26, 56, 227, 0.107);
+      box-shadow: inset -5px 5px 5px 0px rgba(255, 255, 255, 0.201), inset 0px -5px 5px 0px rgba(26, 56, 227, 0.107);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       h1 {

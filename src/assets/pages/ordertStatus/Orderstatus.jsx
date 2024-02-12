@@ -2,9 +2,6 @@ import styled from "styled-components";
 import logo from "../../images/logoImg/logowhite.png";
 import mountain2 from "../../images/orderStatus/mountain2.avif";
 import { Link } from "react-router-dom";
-import { useReducer } from "react";
-import ReducerBcg from "./ReducerBcg";
-import { initialState } from "./ReducerBcg";
 import Order from "./order/Order";
 import Returns from "./returns/Returns";
 import Shipping from "./shipping/Shipping";
@@ -18,12 +15,13 @@ import { useState } from "react";
 import Order_ReturnTracker from "./Order_ReturnTracker";
 import ReturnExchangeForm from "./return _exchange_form/ReturnExchangeForm";
 import Footer from "../../componentes/footer/Footer";
+import { useBcg } from "../../contexts/OrdeStausContext";
 
 const Orderstatus = () => {
-  const [state, dispatch] = useReducer(ReducerBcg, initialState);
-  const [trackerData, setTrackerData] = useState(true);
   const [returnData, setReturnData] = useState(false);
+  const { state, dispatch, trackerData, setTrackerData } = useBcg(); //useContext was used here so it can be called in this page and also in footer's page (full explanation in OrderstausContext's page).
 
+  //this functions are fro when the buttons in sec1 be called, one box closes and the other opens.
   const handleTracker = () => {
     setTrackerData(true);
     setReturnData(false);
@@ -36,10 +34,7 @@ const Orderstatus = () => {
   return (
     <Wrapper>
       <div className="topMessage">
-        <p>
-          If your Tracking number is like MISSING_1, don’t worry. We are still
-          waiting for the Correios to provide your tracking code.
-        </p>
+        <p>If your Tracking number is like MISSING_1, don’t worry. We are still waiting for the Correios to provide your tracking code.</p>
       </div>
 
       <section className="sec1">
@@ -48,12 +43,14 @@ const Orderstatus = () => {
             <img src={logo} alt="" className="logo" />
           </Link>
           <Link to={"/"}>
-            <button className="homeBtn">back to homepage</button>
+            <button className="homeBtn">Back to homepage</button>
           </Link>
         </nav>
 
         <div className="contaText">
-          <p className="topText">HOME * HELP CENTER</p>
+          <p className="topText">
+            <Link to={"/"}>HOME</Link> * HELP CENTER
+          </p>
           <h3>How can we help you?</h3>
           <div className="btns">
             <button className="btn btn1" onClick={() => handleTracker()}>
@@ -68,117 +65,64 @@ const Orderstatus = () => {
           </div>
         </div>
       </section>
+
       <main>
         <section className="sec2">
           <div className="leftList">
             <ul>
               <li
-                onClick={() =>
-                  dispatch(
-                    { type: "li1" },
-                    setTrackerData(false),
-                    setReturnData(false)
-                  )
-                }
+                onClick={() => dispatch({ type: "li1" }, setTrackerData(false), setReturnData(false))}
                 className={state.Li1 === "Li1" ? "orange" : "liBcgDynamic"}
               >
                 Orders
               </li>
               <li
-                onClick={() =>
-                  dispatch(
-                    { type: "li2" },
-                    setTrackerData(false),
-                    setReturnData(false)
-                  )
-                }
+                onClick={() => dispatch({ type: "li2" }, setTrackerData(false), setReturnData(false))}
                 className={state.Li2 === "Li2" ? "orange" : "liBcgDynamic"}
               >
                 Returns and exchanges
               </li>
               <li
-                onClick={() =>
-                  dispatch(
-                    { type: "li3" },
-                    setTrackerData(false),
-                    setReturnData(false)
-                  )
-                }
+                onClick={() => dispatch({ type: "li3" }, setTrackerData(false), setReturnData(false))}
                 className={state.Li3 === "Li3" ? "orange" : "liBcgDynamic"}
               >
                 Shipping
               </li>
               <li
-                onClick={() =>
-                  dispatch(
-                    { type: "li4" },
-                    setTrackerData(false),
-                    setReturnData(false)
-                  )
-                }
+                onClick={() => dispatch({ type: "li4" }, setTrackerData(false), setReturnData(false))}
                 className={state.Li4 === "Li4" ? "orange" : "liBcgDynamic"}
               >
                 Product info
               </li>
 
               <li
-                onClick={() =>
-                  dispatch(
-                    { type: "li5" },
-                    setTrackerData(false),
-                    setReturnData(false)
-                  )
-                }
+                onClick={() => dispatch({ type: "li5" }, setTrackerData(false), setReturnData(false))}
                 className={state.Li5 === "Li5" ? "orange" : "liBcgDynamic"}
               >
                 Sustainability
               </li>
               <li
-                onClick={() =>
-                  dispatch(
-                    { type: "li6" },
-                    setTrackerData(false),
-                    setReturnData(false)
-                  )
-                }
+                onClick={() => dispatch({ type: "li6" }, setTrackerData(false), setReturnData(false))}
                 className={state.Li6 === "Li6" ? "orange" : "liBcgDynamic"}
               >
                 Cyclon™
               </li>
 
               <li
-                onClick={() =>
-                  dispatch(
-                    { type: "li7" },
-                    setTrackerData(false),
-                    setReturnData(false)
-                  )
-                }
+                onClick={() => dispatch({ type: "li7" }, setTrackerData(false), setReturnData(false))}
                 className={state.Li7 === "Li7" ? "orange" : "liBcgDynamic"}
               >
                 Security and privacy
               </li>
               <li
-                onClick={() =>
-                  dispatch(
-                    { type: "li8" },
-                    setTrackerData(false),
-                    setReturnData(false)
-                  )
-                }
-                className={state.Li8 === "Li10" ? "orange" : "liBcgDynamic"}
+                onClick={() => dispatch({ type: "li8" }, setTrackerData(false), setReturnData(false))}
+                className={state.Li8 === "Li8" ? "orange" : "liBcgDynamic"}
               >
                 Accessibility
               </li>
               <li
-                onClick={() =>
-                  dispatch(
-                    { type: "li9" },
-                    setTrackerData(false),
-                    setReturnData(false)
-                  )
-                }
-                className={state.Li9 === "Li11" ? "orange" : "liBcgDynamic"}
+                onClick={() => dispatch({ type: "li9" }, setTrackerData(false), setReturnData(false))}
+                className={state.Li9 === "Li9" ? "orange" : "liBcgDynamic"}
               >
                 Terms and conditions
               </li>
@@ -239,13 +183,13 @@ const Wrapper = styled.div`
         cursor: pointer;
       }
       .homeBtn {
-        width: 18rem;
-        height: 5rem;
+        width: 12rem;
+        height: 3.5rem;
         border: white 4px solid;
         color: white;
         background-color: transparent;
         border-radius: 3rem;
-        font-size: 1.6rem;
+        font-size: 1.1rem;
         cursor: pointer;
 
         &:hover {
@@ -268,9 +212,13 @@ const Wrapper = styled.div`
         letter-spacing: 4px;
         color: white;
         z-index: 96;
+        a {
+          color: white;
+          font-weight: 600;
+        }
       }
       h3 {
-        font-size: 6rem;
+        font-size: 4rem;
         color: white;
         z-index: 96;
         margin-bottom: 3rem;
@@ -301,12 +249,12 @@ const Wrapper = styled.div`
       padding: 10rem;
       background-color: #f8f6f6;
       .leftList {
-        margin-right: 2rem;
+        margin-right: 1.5rem;
         background-color: white;
-        width: 40%;
-        height: 60rem;
+        width: 45%;
+        height: 50rem;
         display: flex;
-        padding-left: 3rem;
+        padding-left: 1.5rem;
         border-radius: 1em;
         box-shadow: rgba(149, 157, 165, 0.064) 0px 8px 24px;
         ul {
@@ -317,12 +265,14 @@ const Wrapper = styled.div`
           .liBcgDynamic {
             width: fit-content;
             height: fit-content;
-            font-size: 2.3rem;
+            font-size: 1.8rem;
             font-weight: 400;
             margin-bottom: 2rem;
             background: linear-gradient(to right, #ffc250 50%, white 50%);
             background-size: 200% 100%;
             background-position: right bottom;
+            padding: 0 1rem;
+            border-radius: 2rem;
             transition: all 0.5s ease-out;
 
             cursor: pointer;
@@ -332,8 +282,10 @@ const Wrapper = styled.div`
           }
           .orange {
             width: fit-content;
+            padding: 0 1rem;
+            border-radius: 2rem;
             height: fit-content;
-            font-size: 2.3rem;
+            font-size: 2rem;
             font-weight: 400;
             margin-bottom: 1.5rem;
             background: #ffc250;
@@ -347,7 +299,7 @@ const Wrapper = styled.div`
       .RightInfo {
         background-color: #f8f6f6;
         border-radius: 1em;
-        width: 60%;
+        width: 55%;
         padding: 0 0.5rem;
       }
     }
@@ -358,11 +310,11 @@ const Wrapper = styled.div`
       align-items: center;
       justify-content: center;
       background-color: #22826aeb;
-      height: 4rem;
+      height: 3rem;
       color: #f2f2f2;
       padding: 0.2rem;
       p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
       }
     }
 
@@ -378,6 +330,7 @@ const Wrapper = styled.div`
         align-items: center;
         justify-content: space-between;
         padding: 0 1rem;
+        margin-bottom: 1rem;
         .logo {
           mix-blend-mode: darken;
           width: 3rem;
@@ -386,7 +339,7 @@ const Wrapper = styled.div`
           cursor: pointer;
         }
         .homeBtn {
-          width: 9rem;
+          width: 8rem;
           height: 2rem;
           border: white 2px solid;
           color: white;
@@ -409,33 +362,39 @@ const Wrapper = styled.div`
         padding-left: 1rem;
         z-index: 96;
         margin-top: 0rem;
+
         .topText {
           width: 50vh;
-          font-size: 1rem;
+          font-size: 0.8rem;
           font-weight: 300;
           letter-spacing: 4px;
           color: white;
           z-index: 96;
+
+          a {
+            color: white;
+            font-weight: 500;
+          }
         }
         h3 {
-          font-size: 1.8rem;
+          font-size: 1.5rem;
           color: white;
           z-index: 96;
-          margin-bottom: 0rem;
+          margin-bottom: 0.5rem;
         }
         .btns {
           display: flex;
           flex-direction: column;
 
           .btn {
-            width: 14rem;
-            height: 4rem;
+            width: 12rem;
+            height: 3rem;
             background-color: #000000e1;
             border: none;
             color: white;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             border-radius: 5rem;
-            font-size: 1rem;
+            font-size: 0.9rem;
 
             cursor: pointer;
 
@@ -470,7 +429,7 @@ const Wrapper = styled.div`
             .liBcgDynamic {
               width: fit-content;
               height: fit-content;
-              font-size: 1.4rem;
+              font-size: 1.2rem;
               font-weight: 400;
               margin-bottom: 1rem;
               background: linear-gradient(to right, #ffc250 50%, white 50%);
@@ -485,7 +444,7 @@ const Wrapper = styled.div`
             .orange {
               width: fit-content;
               height: fit-content;
-              font-size: 2.3rem;
+              font-size: 1.3rem;
               font-weight: 400;
               margin-bottom: 1.5rem;
               background: #ffc250;
@@ -540,13 +499,13 @@ const Wrapper = styled.div`
           cursor: pointer;
         }
         .homeBtn {
-          width: 9.5rem;
+          width: 9rem;
           height: 2.5rem;
           border: white 2px solid;
           color: white;
           background-color: transparent;
           border-radius: 3rem;
-          font-size: 1rem;
+          font-size: 0.9rem;
           cursor: pointer;
 
           &:hover {
@@ -565,32 +524,36 @@ const Wrapper = styled.div`
         margin-top: 0rem;
         .topText {
           width: 50vh;
-          font-size: 1.2rem;
+          font-size: 1rem;
           font-weight: 300;
           letter-spacing: 4px;
           color: white;
           z-index: 96;
+          a {
+            color: white;
+            font-weight: 600;
+          }
         }
         h3 {
-          font-size: 2rem;
+          font-size: 1.7rem;
           color: white;
           z-index: 96;
-          margin-bottom: 0rem;
+          margin-bottom: 0.5rem;
         }
         .btns {
           display: flex;
           flex-direction: column;
 
           .btn {
-            width: 16rem;
-            height: 4rem;
+            width: 14rem;
+            height: 3rem;
             background-color: #000000e1;
             border: none;
             color: white;
             margin-bottom: 0.5rem;
             border-radius: 5rem;
-            font-size: 1.2rem;
-
+            font-size: 1rem;
+            margin-bottom: 0.7rem;
             cursor: pointer;
 
             &:hover {
@@ -611,7 +574,7 @@ const Wrapper = styled.div`
           margin-right: 0rem;
           background-color: white;
           width: 90%;
-          height: 80vh;
+          height: 90vh;
           display: flex;
           padding-left: 1rem;
           border-radius: 1em;
@@ -624,7 +587,7 @@ const Wrapper = styled.div`
             .liBcgDynamic {
               width: fit-content;
               height: fit-content;
-              font-size: 1.6rem;
+              font-size: 1.5rem;
               font-weight: 400;
               margin-bottom: 1rem;
               background: linear-gradient(to right, #ffc250 50%, white 50%);
@@ -639,7 +602,7 @@ const Wrapper = styled.div`
             .orange {
               width: fit-content;
               height: fit-content;
-              font-size: 2.3rem;
+              font-size: 1.65rem;
               font-weight: 400;
               margin-bottom: 1.5rem;
               background: #ffc250;
@@ -666,7 +629,7 @@ const Wrapper = styled.div`
       align-items: center;
       justify-content: center;
       background-color: #22826aeb;
-      height: 4rem;
+      height: 3rem;
       color: #f2f2f2;
       padding: 0.1rem;
       p {
@@ -680,27 +643,28 @@ const Wrapper = styled.div`
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 55vh;
+      height: 50vh;
       nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 1rem;
+        padding: 0.5rem 1rem;
+
         .logo {
           mix-blend-mode: darken;
-          width: 5rem;
+          width: 4rem;
           margin: 0.8rem 0rem 0rem 0rem;
           z-index: 96;
           cursor: pointer;
         }
         .homeBtn {
-          width: 11rem;
-          height: 3rem;
+          width: 9rem;
+          height: 2.5rem;
           border: white 2px solid;
           color: white;
           background-color: transparent;
           border-radius: 3rem;
-          font-size: 1.1rem;
+          font-size: 0.9rem;
           cursor: pointer;
 
           &:hover {
@@ -719,31 +683,34 @@ const Wrapper = styled.div`
         margin-top: 0rem;
         .topText {
           width: 50vh;
-          font-size: 1.2rem;
+          font-size: 1rem;
           font-weight: 300;
           letter-spacing: 4px;
           color: white;
           z-index: 96;
+          a {
+            color: white;
+            font-weight: 600;
+          }
         }
         h3 {
-          font-size: 2rem;
+          font-size: 1.5rem;
           color: white;
           z-index: 96;
-          margin-bottom: 1rem;
+          margin-bottom: 0rem;
         }
         .btns {
           display: flex;
-          flex-direction: column;
-
+          margin-top: 1.5rem;
           .btn {
-            width: 18rem;
-            height: 4.5rem;
+            width: 15rem;
+            height: 3.5rem;
             background-color: #000000e1;
             border: none;
             color: white;
             margin-bottom: 0.5rem;
             border-radius: 5rem;
-            font-size: 1.3rem;
+            font-size: 1rem;
 
             cursor: pointer;
 
@@ -765,7 +732,7 @@ const Wrapper = styled.div`
           margin-right: 0rem;
           background-color: white;
           width: 90%;
-          height: 80vh;
+          height: 100vh;
           display: flex;
           padding-left: 1rem;
           border-radius: 1em;
@@ -778,7 +745,7 @@ const Wrapper = styled.div`
             .liBcgDynamic {
               width: fit-content;
               height: fit-content;
-              font-size: 2rem;
+              font-size: 1.8rem;
               font-weight: 400;
               margin-bottom: 1rem;
               background: linear-gradient(to right, #ffc250 50%, white 50%);
@@ -793,7 +760,7 @@ const Wrapper = styled.div`
             .orange {
               width: fit-content;
               height: fit-content;
-              font-size: 2.3rem;
+              font-size: 2rem;
               font-weight: 400;
               margin-bottom: 1.5rem;
               background: #ffc250;

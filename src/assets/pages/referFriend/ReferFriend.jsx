@@ -37,22 +37,15 @@ const ReferFriend = () => {
     email: emailOnchange,
   };
   const handleEmails = () => {
-    emailjs
-      .send(
-        "service_mgplpdm",
-        "template_ow9hqbm",
-        templateParams,
-        "ePQLQL6uF5zHPkqb2"
-      )
-      .then(
-        (response) => {
-          console.log("Email enviado:", response.status, response.text);
-          setEmailOnChange("");
-        },
-        (err) => {
-          console.log("Error: ", err);
-        }
-      );
+    emailjs.send("service_mgplpdm", "template_ow9hqbm", templateParams, "ePQLQL6uF5zHPkqb2").then(
+      (response) => {
+        console.log("Email enviado:", response.status, response.text);
+        setEmailOnChange("");
+      },
+      (err) => {
+        console.log("Error: ", err);
+      }
+    );
   };
 
   return (
@@ -67,30 +60,15 @@ const ReferFriend = () => {
       <main>
         <div className="left">
           <h3>Win-Win: Share On with a friend and both get 10% off.</h3>
-          <p>
-            Like to share? Sign up below to get an exclusive 10% off link to
-            share with friends for use on their first On order.
-          </p>
-          <p>
-            Once they make that purchase, we'll send you your very own 10%
-            discount code too.
-          </p>
+          <p>Like to share? Sign up below to get an exclusive 10% off link to share with friends for use on their first On order.</p>
+          <p>Once they make that purchase, we'll send you your very own 10% discount code too.</p>
           <div className="boxRefertoAFriend">
             <p>Ready. Set. Share!</p>
 
             <form>
               <div className="emailConatiner">
-                <input
-                  type="email"
-                  placeholder="What's your email address?"
-                  id="email"
-                  maxLength={70}
-                  value={emailOnchange}
-                  onChange={handleEmailChange}
-                />
-                <div className="error">
-                  {error && <h5 className="error">{error}</h5>}
-                </div>
+                <input type="email" placeholder="What's your email address?" id="email" maxLength={70} value={emailOnchange} onChange={handleEmailChange} />
+                <div className="error">{error && <h5 className="error">{error}</h5>}</div>
               </div>
 
               <div className="inputCheckBox">
@@ -98,9 +76,8 @@ const ReferFriend = () => {
                   {check && <AiOutlineCheck />}
                 </div>
                 <label htmlFor="signup">
-                  Sign up for exclusive offers and product previews. By ticking
-                  this box you agree to On's privacy policy and will start
-                  receiving our newsletter.
+                  Sign up for exclusive offers and product previews. By ticking this box you agree to On's privacy policy and will start receiving our
+                  newsletter.
                 </label>
               </div>
             </form>
@@ -121,9 +98,10 @@ const Wrapper = styled.div`
   nav {
     padding: 0 4rem;
     .logo {
-      width: 6.5rem;
-      margin: 2rem 3rem;
+      width: 4.5rem;
+      margin: 3rem 3rem;
       mix-blend-mode: difference;
+      border-radius: 50%;
       cursor: pointer;
     }
   }
@@ -131,7 +109,7 @@ const Wrapper = styled.div`
     display: flex;
     margin-bottom: 4rem;
     .left {
-      padding: 6rem 12rem;
+      padding: 4rem 7rem;
       width: 50%;
       height: 60rem;
       display: flex;
@@ -186,7 +164,7 @@ const Wrapper = styled.div`
 
             justify-content: space-between;
             .checkBox {
-              width: 3rem;
+              width: 4rem;
               height: 1.3rem;
               border: #7b7a7a 1px solid;
               border-radius: 0.2rem;

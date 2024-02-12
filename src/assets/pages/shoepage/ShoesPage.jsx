@@ -15,17 +15,18 @@ const ShoesPageWoman = () => {
         </Link>{" "}
         <Navbar />
       </section>
+
       <section className="section2">
         <Link to={"/"}>
           <div className="homeLink">HOME</div>
         </Link>
         <h1>Shoes</h1>
         <p>
-          Discover our collection of shoes infused with our patented CloudTec®
-          cushioning technology and sustainable elements. From mountain peaks to
-          city pavements – they're Swiss-engineered to take you further.
+          Discover our collection of shoes infused with our patented CloudTec® cushioning technology and sustainable elements. From mountain peaks to city
+          pavements – they're Swiss-engineered to take you further.
         </p>
       </section>
+
       <section className="section03">
         {listProduct.map((item) => {
           return item.type ? (
@@ -60,7 +61,7 @@ const Wrapper = styled.main`
   .section1 {
     padding: 0 4rem;
     .logo {
-      width: 5.5rem;
+      width: 4rem;
       margin: 2.55rem 3.75rem;
       border-radius: 50%;
     }
@@ -68,16 +69,19 @@ const Wrapper = styled.main`
   .section2 {
     width: 80rem;
     padding: 0 4rem;
+
     .homeLink {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 400;
+      color: black;
     }
     h1 {
-      font-size: 5.8rem;
+      font-size: 3rem;
       font-weight: 500;
+      margin-bottom: 1rem;
     }
     p {
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
   }
   .section03 {
@@ -90,12 +94,13 @@ const Wrapper = styled.main`
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 35rem;
-      height: 55rem;
-      margin: 2.9rem 1.063rem;
+      width: 25rem;
+      height: 42rem;
+      margin: 1rem;
+      margin-top: 3rem;
       img {
-        width: 35rem;
-        height: 55rem;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
       }
       .message {
@@ -159,8 +164,8 @@ const Wrapper = styled.main`
         height: 18rem;
         margin-top: 0.5rem;
         img {
-          width: 9.5rem;
-          height: 18rem;
+          width: 100%;
+          height: 100%;
           object-fit: cover;
         }
         .message {
@@ -225,12 +230,12 @@ const Wrapper = styled.main`
         justify-content: center;
         align-items: center;
         width: 10rem;
-        height: 18rem;
+        height: 20rem;
         margin-top: 0.5rem;
 
         img {
-          width: 10rem;
-          height: 18rem;
+          width: 100%;
+          height: 100%;
           object-fit: cover;
         }
         .message {

@@ -49,18 +49,13 @@ const StoresLocation = () => {
           <div className="topMessage">
             <h4>Stores Addresses</h4>
             <p className="message">
-              To see the location on the map, click one of the options below
-              than <span>click on the map.</span>
+              To see the location on the map, click one of the options below than <span>click on the map.</span>
             </p>
           </div>
           <div className="mapAddresses">
             {addresses.map((store) => {
               return (
-                <div
-                  className="locationsContainer"
-                  onClick={() => setIndex(store.idx) + setClicked(true)}
-                  key={store.idx}
-                >
+                <div className="locationsContainer" onClick={() => setIndex(store.idx) + setClicked(true)} key={store.idx}>
                   {clicked && handleClickOnTheMAp()}
                   {clicked && store.idx === indx ? (
                     <div className="clickOnTheMAp">
@@ -80,11 +75,7 @@ const StoresLocation = () => {
         </div>
 
         <section className="mapSection">
-          <MapContainer
-            className="MapContainer"
-            center={markers[indx].geocode}
-            zoom={13}
-          >
+          <MapContainer className="MapContainer" center={markers[indx].geocode} zoom={13}>
             <MyComponent />
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -95,10 +86,7 @@ const StoresLocation = () => {
               {markers.map((marker) => (
                 <Marker position={marker.geocode} key={marker.id}></Marker>
               ))}
-              <link
-                rel="stylesheet"
-                href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"
-              />
+              <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
               <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
             </MarkerClusterGroup>
           </MapContainer>
@@ -122,11 +110,12 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 5rem 5rem 3rem 5rem;
+    margin: 5rem 3rem 3rem 3rem;
+
     .ptop {
       display: flex;
       align-items: center;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 300;
       margin-bottom: 1.5rem;
       a {
@@ -142,7 +131,7 @@ const Wrapper = styled.div`
       }
     }
     h1 {
-      font-size: 4.5rem;
+      font-size: 2.5rem;
       font-weight: 400;
     }
   }
@@ -177,7 +166,7 @@ const Wrapper = styled.div`
           position: relative;
           border-radius: 1rem;
           margin: 0.6rem;
-          width: 22rem;
+          width: 17rem;
           height: 11.5rem;
           margin-bottom: 1rem;
           background-color: white;
@@ -190,18 +179,18 @@ const Wrapper = styled.div`
             transform: scale(1.05);
           }
           .localName {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
           }
           .address {
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
           }
           .tel {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
           }
           .clickOnTheMAp {
             position: absolute;
@@ -213,7 +202,7 @@ const Wrapper = styled.div`
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: #b40303;
             border-radius: 1rem;
@@ -540,7 +529,7 @@ const Wrapper = styled.div`
         }
       }
       h1 {
-        font-size: 3rem;
+        font-size: 2.3rem;
         font-weight: 400;
       }
     }

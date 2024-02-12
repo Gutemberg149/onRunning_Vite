@@ -227,21 +227,31 @@ const Home = () => {
           <p className="transversal">ACTIVITIES</p>
 
           <div className="cardsList">
-            <p id="1" onMouseEnter={(id) => functionCardPosition(id)}>
-              ROAD RUNNING
-            </p>
-            <p id="2" onMouseEnter={(id) => functionCardPosition(id)}>
-              TRAIL RUNNING
-            </p>
-            <p id="3" onMouseEnter={(id) => functionCardPosition(id)}>
-              LIFE STYLE
-            </p>
-            <p id="4" onMouseEnter={(id) => functionCardPosition(id)}>
-              OUTDOORS
-            </p>
-            <p id="5" onMouseEnter={(id) => functionCardPosition(id)}>
-              TENNIS
-            </p>
+            <Link to={"/ShoesPage"}>
+              <p id="1" onMouseEnter={(id) => functionCardPosition(id)}>
+                ROAD RUNNING
+              </p>
+            </Link>
+            <Link to={"/ShoesPage"}>
+              <p id="2" onMouseEnter={(id) => functionCardPosition(id)}>
+                TRAIL RUNNING
+              </p>
+            </Link>
+            <Link to={"/ShoesPage"}>
+              <p id="3" onMouseEnter={(id) => functionCardPosition(id)}>
+                LIFE STYLE
+              </p>
+            </Link>
+            <Link to={"/ShoesPage"}>
+              <p id="4" onMouseEnter={(id) => functionCardPosition(id)}>
+                OUTDOORS
+              </p>
+            </Link>
+            <Link to={"/ShoesPage"}>
+              <p id="5" onMouseEnter={(id) => functionCardPosition(id)}>
+                TENNIS
+              </p>
+            </Link>
           </div>
 
           <div className="cardsContainer">
@@ -367,10 +377,10 @@ const Home = () => {
 
             <div className="divbtn">
               <div className="sec6BtnLeft" onClick={() => moveOverlayLeft()}>
-                <FiArrowLeft className="arowLefet" style={{ fontSize: "1.875rem" }} />
+                <FiArrowLeft className="arowLefet" />
               </div>
               <div className="sec6BtnRight" onClick={() => moveOverlayRight()}>
-                <FiArrowRight className="arowRight" style={{ fontSize: "1.875rem" }} />
+                <FiArrowRight className="arowRight" />
               </div>
             </div>
           </div>
@@ -398,7 +408,7 @@ const Wrapper = styled.main`
     }
     .logo {
       mix-blend-mode: color-dodge;
-      width: 6.25rem;
+      width: 5rem;
       margin: 1.25rem 3.75rem;
     }
     nav {
@@ -413,24 +423,26 @@ const Wrapper = styled.main`
       width: 1000px;
       color: white;
       z-index: 1;
+
       h1 {
-        font-size: 3.75rem;
+        font-size: 2.75rem;
         font-weight: 500;
-        margin-bottom: 1.563rem;
+        margin-bottom: 1rem;
       }
       h3 {
-        font-size: 2.188rem;
+        font-size: 1.4rem;
         font-weight: 500;
         margin-bottom: 1.563rem;
       }
       .btnsContainer {
         button {
-          width: 12rem;
-          height: 5rem;
+          width: 8rem;
+          height: 4rem;
           background-color: white;
           border-radius: 3rem;
           border: none;
-          font-size: 1.5rem;
+          font-size: 1.2rem;
+          font-weight: 500;
           transition: all 0.2s ease-in-out;
           cursor: pointer;
           &:hover {
@@ -440,8 +452,9 @@ const Wrapper = styled.main`
       }
     }
   }
+
   .section2 {
-    height: 60rem;
+    height: 45rem;
     width: 100vw;
     margin-top: 2.5rem;
     display: flex;
@@ -449,26 +462,29 @@ const Wrapper = styled.main`
     justify-content: center;
     align-items: center;
     position: relative;
+
     cursor: pointer;
 
     .section2Title {
-      width: 86%;
+      width: 100%;
+      padding-left: 3rem;
       h4 {
-        font-size: 3.75rem;
+        font-size: 2.5rem;
         font-weight: 500;
       }
     }
 
     .pagesLinkContainer {
-      height: 700;
+      width: 95%;
+      height: 70vh;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
 
       .linkBox {
         position: relative;
-        width: 34.375rem;
-        height: 53.125rem;
+        width: 25rem;
+        height: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -477,11 +493,11 @@ const Wrapper = styled.main`
         border-radius: 0.938rem;
         img {
           object-fit: contain;
-          width: 43.438rem;
+          width: 100%;
           transition: all 0.3s ease-in-out;
           border-radius: 0.938rem;
           &:hover {
-            width: 40rem;
+            width: 26rem;
           }
         }
         .bottomDiv {
@@ -498,7 +514,7 @@ const Wrapper = styled.main`
             color: white;
             cursor: pointer;
             &:hover {
-              color: gray;
+              color: black;
             }
           }
           button {
@@ -515,7 +531,7 @@ const Wrapper = styled.main`
             cursor: pointer;
             &:hover {
               background-color: white;
-              color: gray;
+              color: black;
             }
           }
         }
@@ -530,6 +546,7 @@ const Wrapper = styled.main`
       }
     }
   }
+
   .section3 {
     position: relative;
     display: flex;
@@ -616,20 +633,21 @@ const Wrapper = styled.main`
       }
     }
   }
+
   .section4 {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100vw;
-    height: 53.125rem;
+    height: 50rem;
     overflow: hidden;
     .containerSec4 {
       display: flex;
       .boxContainer {
         position: relative;
         overflow: hidden;
-        width: 26.25rem;
-        height: 43.75rem;
+        width: 20rem;
+        height: 38rem;
         border-radius: 1.563rem;
         margin: 0.938rem;
         cursor: pointer;
@@ -637,26 +655,25 @@ const Wrapper = styled.main`
         h4 {
           position: absolute;
           color: white;
-          bottom: 8.75rem;
-          font-size: 1.875rem;
+          bottom: 8rem;
+          font-size: 1.4rem;
           font-weight: 500;
-          left: 2.188rem;
+          left: 2rem;
           z-index: 99;
         }
         .bttnShop {
           position: absolute;
-          width: 11.25rem;
-          height: 3.75rem;
+          width: 7.8rem;
+          height: 2.6rem;
           background-color: white;
           border: none;
           border-radius: 2.5rem;
-          font-size: 1.25rem;
+          font-size: 1rem;
           font-weight: 500;
           color: #3e3d3d;
           bottom: 3.125rem;
           left: 2.188rem;
           z-index: 99;
-          border: 0.125rem solid #3e3d3d;
           cursor: pointer;
           &:hover {
             background-color: #d0cfcf;
@@ -695,18 +712,17 @@ const Wrapper = styled.main`
   }
   .section6 {
     position: relative;
-    height: 100vh;
+    height: 85vh;
     overflow: hidden;
 
     .sec6Container {
       display: grid;
       grid-template-columns: 70% 30%;
-      height: 100vh;
+      height: 85vh;
 
       .leftBcgSec6 {
-        height: 100vh;
         transition: all 0.4s ease-in;
-
+        height: 85vh;
         img {
           width: 100%;
           height: 100%;
@@ -722,48 +738,50 @@ const Wrapper = styled.main`
         }
       }
       .rightBcgSec6 {
+        height: 85vh;
         width: 62.5rem;
         transition: all 0.4s ease-in;
         img {
+          height: 100%;
           width: 90.375rem;
           object-fit: cover;
         }
       }
       .boxMission {
         position: absolute;
-        width: 46rem;
-        margin-bottom: 1.25rem;
-        bottom: 8.125rem;
+        width: 40rem;
+        margin-bottom: 1rem;
+        bottom: 4rem;
         left: 3.125;
         z-index: 97;
         transition: all ease-in 0.5s;
         padding-left: 1.7rem;
         h4 {
-          font-size: 4.688rem;
+          font-size: 3rem;
           color: white;
-          font-weight: 500;
-          margin-bottom: 1.25rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
         }
         p {
-          font-size: 2.813rem;
+          font-size: 1.8rem;
           color: white;
           font-weight: 400;
           line-height: 3.125rem;
         }
         .containerReadMore {
-          width: 17.5rem;
-          height: 6.25rem;
+          width: 12rem;
+          height: 4.5rem;
           display: flex;
           align-items: center;
           margin-top: 1.25rem;
-          border-radius: 3.125rem;
+          border-radius: 3rem;
           border: none;
           background-color: transparent;
 
           .btnReadMore {
             display: flex;
-            width: 17.5rem;
-            height: 6.25rem;
+            width: 12rem;
+            height: 4.5rem;
             background-color: #dcad03;
             display: flex;
             justify-content: space-around;
@@ -772,19 +790,19 @@ const Wrapper = styled.main`
             transition: all 0.3s ease-in-out;
             cursor: pointer;
             &:hover {
-              width: 16.25rem;
-              height: 6.563rem;
+              width: 13rem;
+              height: 5rem;
             }
             .redmoreImg {
-              width: 5.25rem;
-              height: 5.25rem;
+              width: 3.5rem;
+              height: 3.5rem;
               border-radius: 50%;
               background-image: url(${tennis});
               background-size: cover;
               background-position: 0;
             }
             p {
-              font-size: 1.563rem;
+              font-size: 1.1rem;
               margin-right: 0.938rem;
               color: black;
             }
@@ -793,18 +811,18 @@ const Wrapper = styled.main`
       }
     }
     .OverlayContainer {
-      height: 50rem;
+      height: 40rem;
       position: absolute;
       display: flex;
-      top: 12.5rem;
+      top: 2rem;
       z-index: 98;
       left: 56.25rem;
       transition: all 0.3s ease-in;
 
       .bigBox {
         position: relative;
-        width: 31.25rem;
-        height: 41.688rem;
+        width: 26rem;
+        height: 36rem;
         margin: 0 1.9rem;
         border-radius: 0.7rem;
         box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
@@ -812,7 +830,7 @@ const Wrapper = styled.main`
         h4 {
           position: absolute;
           color: white;
-          font-size: 1.875rem;
+          font-size: 1.2rem;
           bottom: 1.875rem;
           padding: 0 1.5rem;
           z-index: 98;
@@ -820,12 +838,13 @@ const Wrapper = styled.main`
         }
 
         img {
-          width: 31.25rem;
+          width: 100%;
+          height: 100%;
           border-radius: 0.7rem;
         }
         .shadowLayerBigBox {
           width: 100%;
-          height: 9.4rem;
+          height: 20%;
           position: absolute;
           bottom: 0;
           z-index: 96;
@@ -836,8 +855,8 @@ const Wrapper = styled.main`
       }
       .smallBox {
         position: relative;
-        width: 28.125rem;
-        height: 37.5rem;
+        width: 22rem;
+        height: 32rem;
         border-radius: 0.7rem;
         box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
         cursor: pointer;
@@ -853,7 +872,8 @@ const Wrapper = styled.main`
         }
 
         img {
-          width: 28.1rem;
+          width: 100%;
+          height: 100%;
           border-radius: 0.625rem;
         }
         .shadowLayerSmallBox {
@@ -875,7 +895,7 @@ const Wrapper = styled.main`
     }
 
     .sec6Btns {
-      width: 100rem;
+      width: 33rem;
       height: 110px;
       display: flex;
       align-items: center;
@@ -883,12 +903,12 @@ const Wrapper = styled.main`
       z-index: 100;
       position: absolute;
       z-index: 99;
-      bottom: 2rem;
-      left: 15rem;
-      padding: 0 6.25rem 0 0;
+      bottom: -0.5rem;
+      left: 5rem;
+      padding: 0 2rem;
       .ClickVolta {
-        width: 6.875rem;
-        height: 6.875rem;
+        width: 4.5rem;
+        height: 4.5rem;
         background-color: black;
         border-radius: 50%;
         border: none;
@@ -900,7 +920,7 @@ const Wrapper = styled.main`
 
         .iconX {
           color: white;
-          font-size: 1.563rem;
+          font-size: 1.1rem;
           font-weight: 500;
           transition: all ease-in-out 0.3s;
         }
@@ -911,12 +931,12 @@ const Wrapper = styled.main`
       }
       .divbtn {
         display: flex;
-        width: 20rem;
+        width: 12rem;
         justify-content: space-between;
         .sec6BtnLeft,
         .sec6BtnRight {
-          width: 6.875rem;
-          height: 6.875rem;
+          width: 4.5rem;
+          height: 4.5rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -924,10 +944,23 @@ const Wrapper = styled.main`
           color: white;
           border-radius: 50%;
           cursor: pointer;
-          &:hover {
-            background-color: #191818;
-            border: 0.125rem solid black;
+          &:hover > .iconArrow {
+            font-size: 2.5rem;
+            font-weight: 900;
           }
+          .arowLefet,
+          .arowRight {
+            font-size: 1.4rem;
+            transition: 0.4s;
+          }
+        }
+        .sec6BtnLeft:hover > .arowLefet {
+          font-size: 2.5rem;
+          font-weight: 900;
+        }
+        .sec6BtnRight:hover > .arowRight {
+          font-size: 2.5rem;
+          font-weight: 900;
         }
       }
     }
@@ -1257,14 +1290,13 @@ const Wrapper = styled.main`
       height: 85vh;
       width: 100vw;
       overflow: hidden;
-
       .sec6Container {
         display: grid;
         grid-template-columns: 99% 1%;
         height: 100%;
 
         .leftBcgSec6 {
-          height: 100vh;
+          height: 85vh;
           width: 40rem;
           img {
             width: 100%;
@@ -1273,7 +1305,7 @@ const Wrapper = styled.main`
           }
           .shadowLayer {
             width: 100%;
-            height: 40rem;
+            height: 20rem;
             position: absolute;
             bottom: 0;
             z-index: 95;
@@ -1283,10 +1315,17 @@ const Wrapper = styled.main`
         .rightBcgSec6 {
           width: 0rem;
           transition: all 0.4s ease-in;
-          border: 3px solid black;
           img {
-            width: 90rem;
+            width: 100rem;
             object-fit: cover;
+          }
+          .shadowLayer {
+            width: 100%;
+            height: 10%;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            background-image: linear-gradient(to top, #000000a2, #000000a2, transparent);
           }
         }
         .boxMission {
@@ -1358,7 +1397,7 @@ const Wrapper = styled.main`
         width: 110rem;
         position: absolute;
         display: flex;
-        top: 10rem;
+        top: 5rem;
         z-index: 98;
         left: 50rem;
         transition: all 0.3s ease-in;
@@ -1452,7 +1491,7 @@ const Wrapper = styled.main`
         z-index: 100;
         position: absolute;
         z-index: 99;
-        bottom: 2rem;
+        bottom: 1rem;
         left: 7rem;
         padding: 0;
         .ClickVolta {
@@ -1754,6 +1793,7 @@ const Wrapper = styled.main`
       width: 100vw;
       height: auto;
       overflow: hidden;
+
       .containerSec4 {
         display: flex;
         align-items: center;
@@ -1766,7 +1806,7 @@ const Wrapper = styled.main`
           justify-content: center;
           position: null;
           overflow: hidden;
-          width: 20vw;
+          width: 22vw;
           height: 20rem;
           border-radius: 1.5rem;
           margin: 0.4rem;
@@ -1848,7 +1888,8 @@ const Wrapper = styled.main`
 
         .leftBcgSec6 {
           height: 100vh;
-          width: 40rem;
+          width: 100%;
+
           img {
             width: 100%;
             height: 100%;
@@ -1856,7 +1897,7 @@ const Wrapper = styled.main`
           }
           .shadowLayer {
             width: 100%;
-            height: 40rem;
+            height: 20rem;
             position: absolute;
             bottom: 0;
             z-index: 95;
@@ -1864,9 +1905,9 @@ const Wrapper = styled.main`
           }
         }
         .rightBcgSec6 {
-          width: 0rem;
+          width: 100%;
           transition: all 0.4s ease-in;
-          border: 3px solid black;
+
           img {
             width: 90rem;
             object-fit: cover;
@@ -1941,7 +1982,7 @@ const Wrapper = styled.main`
         width: 110rem;
         position: absolute;
         display: flex;
-        top: 10rem;
+        top: 4rem;
         z-index: 98;
         left: 50rem;
         transition: all 0.3s ease-in;
@@ -2035,7 +2076,7 @@ const Wrapper = styled.main`
         z-index: 100;
         position: absolute;
         z-index: 99;
-        bottom: 2rem;
+        bottom: 1rem;
         left: 7rem;
         padding: 0;
         .ClickVolta {
@@ -2424,12 +2465,11 @@ const Wrapper = styled.main`
       height: 90vh;
       width: 100vw;
       overflow: hidden;
-
+      margin-bottom: 0rem;
       .sec6Container {
         display: grid;
         grid-template-columns: 99% 1%;
         height: 100%;
-
         .leftBcgSec6 {
           height: 100vh;
           width: 100%;
@@ -2440,7 +2480,7 @@ const Wrapper = styled.main`
           }
           .shadowLayer {
             width: 100%;
-            height: 100%;
+            height: 20rem;
             position: absolute;
             bottom: 0;
             z-index: 95;
@@ -2448,39 +2488,45 @@ const Wrapper = styled.main`
           }
         }
         .rightBcgSec6 {
-          width: 0rem;
-          transition: all 0.4s ease-in;
-          border: 3px solid black;
+          height: 100vh;
+          width: 100%;
           img {
-            width: 90rem;
+            width: 100rem;
             object-fit: cover;
           }
+          .shadowLayer {
+            width: 100%;
+            height: 10%;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            background-image: linear-gradient(to top, #000000a2, #000000a2, transparent);
+          }
         }
-
         .boxMission {
           position: absolute;
-          width: 30rem;
+          width: 24rem;
           margin-bottom: 1rem;
           bottom: 2rem;
-          left: 3.3;
+          left: 3.125;
           z-index: 97;
           transition: all ease-in 0.5s;
           padding-left: 1.7rem;
           h4 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: white;
             font-weight: 500;
             margin-bottom: 0rem;
           }
           p {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             color: white;
             font-weight: 400;
-            line-height: 2rem;
+            line-height: 1.8rem;
           }
           .containerReadMore {
-            width: 15rem;
-            height: 6rem;
+            width: 12rem;
+            height: 3rem;
             display: flex;
             align-items: center;
             margin-top: 1.25rem;
@@ -2490,8 +2536,8 @@ const Wrapper = styled.main`
 
             .btnReadMore {
               display: flex;
-              width: 15rem;
-              height: 5.5rem;
+              width: 12rem;
+              height: 4.3rem;
               background-color: #dcad03;
               display: flex;
               justify-content: space-around;
@@ -2501,18 +2547,18 @@ const Wrapper = styled.main`
               cursor: pointer;
               &:hover {
                 width: 12rem;
-                height: 4.5rem;
+                height: 5rem;
               }
               .redmoreImg {
-                width: 5rem;
-                height: 5rem;
+                width: 3rem;
+                height: 3rem;
                 border-radius: 50%;
                 background-image: url(${tennis});
                 background-size: cover;
                 background-position: 0;
               }
               p {
-                font-size: 1.6rem;
+                font-size: 1.1rem;
                 font-weight: 500;
                 margin-right: 0.938rem;
                 color: black;
@@ -2526,7 +2572,7 @@ const Wrapper = styled.main`
         width: 110rem;
         position: absolute;
         display: flex;
-        top: 10rem;
+        top: 5rem;
         z-index: 98;
         left: 50rem;
         transition: all 0.3s ease-in;
@@ -2534,8 +2580,8 @@ const Wrapper = styled.main`
         .bigBox {
           overflow: hidden;
           position: relative;
-          width: 17rem;
-          height: 23rem;
+          width: 16rem;
+          height: 22rem;
           margin: 0 1.9rem;
           border-radius: 0.7rem;
           box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
@@ -2543,7 +2589,7 @@ const Wrapper = styled.main`
           h4 {
             position: absolute;
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             bottom: 1.4rem;
             padding: 0 1.5rem;
             z-index: 98;
@@ -2567,8 +2613,8 @@ const Wrapper = styled.main`
         }
         .smallBox {
           position: relative;
-          width: 16rem;
-          height: 21rem;
+          width: 14rem;
+          height: 20rem;
           border-radius: 0.7rem;
           box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
           overflow: hidden;
@@ -2576,7 +2622,7 @@ const Wrapper = styled.main`
           h4 {
             position: absolute;
             color: white;
-            font-size: 1.3rem;
+            font-size: 1rem;
             bottom: 1.875rem;
             padding: 0 1.5rem;
             z-index: 98;
@@ -2612,20 +2658,20 @@ const Wrapper = styled.main`
       }
 
       .sec6Btns {
-        width: 18rem;
-        height: 75px;
+        width: 15rem;
+        height: 70px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         z-index: 100;
         position: absolute;
         z-index: 99;
-        bottom: 2rem;
+        bottom: 1rem;
         left: 7rem;
         padding: 0;
         .ClickVolta {
-          width: 4.5rem;
-          height: 4.5rem;
+          width: 3.5rem;
+          height: 3.5rem;
           background-color: black;
           border-radius: 50%;
           border: none;
@@ -2637,23 +2683,23 @@ const Wrapper = styled.main`
 
           .iconX {
             color: white;
-            font-size: 1.9rem;
+            font-size: 1.4rem;
             font-weight: 500;
             transition: all ease-in-out 0.3s;
           }
           &:hover > .iconX {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 900;
           }
         }
         .divbtn {
           display: flex;
-          width: 10rem;
+          width: 9rem;
           justify-content: space-between;
           .sec6BtnLeft,
           .sec6BtnRight {
-            width: 4.5rem;
-            height: 4.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
             display: flex;
             align-items: center;
             justify-content: center;

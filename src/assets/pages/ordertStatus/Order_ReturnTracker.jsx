@@ -1,23 +1,16 @@
 import styled from "styled-components";
-import { useState } from "react";
 import SubmitData from "../../componentes/SubmitData";
 
 const Order_ReturnTracker = () => {
   return (
     <Wrapper>
       <h1>Order & Return Tracker</h1>
-      <p>
-        Please provide us with your order number. We'll check on its status and
-        provide you details below.
-      </p>
+      <p>Please provide us with your order number. We'll check on its status and provide you details below.</p>
       {/* component to get and submit user data */}
       <SubmitData />
       <div className="info">
         <h5>Status Information</h5>
-        <p>
-          Hint: your order number can be found in your order confirmation email
-          or in the Orders section of your runner account.
-        </p>
+        <p>Hint: your order number can be found in your order confirmation email or in the Orders section of your runner account.</p>
       </div>
     </Wrapper>
   );

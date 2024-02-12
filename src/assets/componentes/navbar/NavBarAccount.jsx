@@ -34,7 +34,7 @@ const NavBarAccount = () => {
       </header>
       <main>
         <h5>Your details</h5>
-        <p className="pTag">EMAIL</p>
+
         <p className="pData">{user && user.email}</p>
       </main>
       <div className="btnsContainer">
@@ -56,18 +56,21 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  button {
+    color: black;
+  }
   header {
     display: flex;
     justify-content: space-between;
     .left {
       h3 {
-        font-size: 3rem;
+        font-size: 2.3rem;
         font-weight: 400;
         color: #3a3939;
       }
       p {
-        font-size: 2.3rem;
-        font-weight: 400;
+        font-size: 1.8rem;
+        font-weight: 300;
         color: #3a3939;
       }
       a {
@@ -81,20 +84,17 @@ const Wrapper = styled.div`
   }
   main {
     height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     h5 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 500;
-      margin-bottom: 2rem;
-    }
-    .pTag {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: #969595;
       margin-bottom: 0.5rem;
-      letter-spacing: 0.2rem;
     }
+
     .pData {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 300;
       color: #242323;
       margin-bottom: 1rem;
@@ -105,14 +105,14 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     .btnBottom {
-      width: 20rem;
-      height: 5rem;
+      width: 12rem;
+      height: 3.5rem;
       background-color: white;
       border: none;
       border: 2px solid black;
       margin: 0 2rem;
       border-radius: 3rem;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       cursor: pointer;
       &:hover {
         background-color: black;
@@ -122,7 +122,6 @@ const Wrapper = styled.div`
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     height: 100%;
-
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -159,19 +158,19 @@ const Wrapper = styled.div`
       }
     }
     main {
-      height: 55%;
+      height: 35%;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
 
-      font-size h5 {
-        font-size: 1rem;
+      h5 {
+        font-size: 1.5rem;
         font-weight: 400;
-        margin-bottom: 1rem;
+        margin-bottom: 0rem;
       }
       .pTag {
         font-size: 1.2rem;
-        font-weight: 400;
+        font-weight: 900;
         color: #969595;
         letter-spacing: 0.2rem;
       }
@@ -179,7 +178,7 @@ const Wrapper = styled.div`
         font-size: 1.2rem;
         font-weight: 300;
         color: #242323;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
       }
     }
     .btnsContainer {
@@ -238,7 +237,7 @@ const Wrapper = styled.div`
       }
     }
     main {
-      height: 55%;
+      height: 18%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -246,13 +245,7 @@ const Wrapper = styled.div`
       h5 {
         font-size: 1.6rem;
         font-weight: 400;
-        margin-bottom: 0.8rem;
-      }
-      .pTag {
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: #969595;
-        letter-spacing: 0.2rem;
+        margin-bottom: 0rem;
       }
       .pData {
         font-size: 1.2rem;
@@ -316,7 +309,7 @@ const Wrapper = styled.div`
       }
     }
     main {
-      height: 55%;
+      height: 20%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;

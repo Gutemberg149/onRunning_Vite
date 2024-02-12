@@ -60,7 +60,7 @@ const Login_SignUp = ({ handleSignUp }) => {
 
 const Wrapper = styled.div`
   main {
-    margin: 2rem 6rem 6rem 6rem;
+    margin: 0.8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,8 +70,8 @@ const Wrapper = styled.div`
       display: none;
     }
     .togglebutton {
-      margin-bottom: 1rem;
-
+      margin-bottom: 0rem;
+      height: 4.5rem;
       .login_signUp {
         position: relative;
         width: 38rem;
@@ -162,6 +162,7 @@ const Wrapper = styled.div`
         position: absolute;
         top: 0rem;
         right: 0rem;
+
         .close-icon {
           color: #af0303; /* Set the color as per your styling */
           font-size: 1.8rem; /* Set the font size as per your styling */

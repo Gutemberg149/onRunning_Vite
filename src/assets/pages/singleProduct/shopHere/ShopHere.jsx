@@ -108,7 +108,7 @@ const Wrapper = styled.div`
     justify-content: space-between;
 
     .hiddenTag {
-      width: 8rem;
+      width: 6rem;
       height: 3rem;
       display: flex;
       background-color: #770202;
@@ -120,6 +120,7 @@ const Wrapper = styled.div`
       margin-top: 0.3rem;
       transition: 4s ease;
       animation: pulse 2s infinite;
+      margin-left: 0.5rem;
       cursor: pointer;
       p {
         margin-left: 0.6rem;
@@ -142,6 +143,7 @@ const Wrapper = styled.div`
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
       }
     }
+
     .cartBody {
       height: 58rem;
       padding: 1rem 2rem;
@@ -149,6 +151,7 @@ const Wrapper = styled.div`
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       margin-bottom: 10rem;
       z-index: 99;
+
       .topCartBody {
         width: 100%;
         display: flex;

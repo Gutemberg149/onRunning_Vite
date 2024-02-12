@@ -206,10 +206,10 @@ const Featured = () => {
 
               <div className="divbtn">
                 <div className="sec6BtnLeft" onClick={() => moveOverlayLeft()}>
-                  <FiArrowLeft className="arowLefet" style={{ fontSize: "1.875rem" }} />
+                  <FiArrowLeft className="arowLeft" />
                 </div>
                 <div className="sec6BtnRight" onClick={() => moveOverlayRight()}>
-                  <FiArrowRight className="arowRight" style={{ fontSize: "1.875rem" }} />
+                  <FiArrowRight className="arowRight" />
                 </div>
               </div>
             </div>
@@ -242,23 +242,23 @@ const Wrapper = styled.div`
       padding-top: 1.5rem;
       .logo {
         mix-blend-mode: color-burn;
-        width: 6.25rem;
+        width: 5rem;
         margin: 1.25rem 3.75rem;
         cursor: pointer;
       }
     }
     .sec1 {
       width: 100%;
-      height: 40rem;
+      height: 26rem;
       background-color: #fac892;
       .text {
         padding: 4rem;
         h3 {
-          font-size: 7rem;
+          font-size: 3.8rem;
           font-weight: 500;
         }
         p {
-          font-size: 3.5rem;
+          font-size: 2.2rem;
         }
       }
     }
@@ -279,7 +279,7 @@ const Wrapper = styled.div`
     .sec3 {
       background-color: #fac892;
       h3 {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 400;
         margin-left: 5rem;
         padding: 5rem 0;
@@ -287,28 +287,28 @@ const Wrapper = styled.div`
     }
 
     .sec4 {
-      height: 60rem;
+      height: 35rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      h3 {
-        font-size: 7rem;
-        font-weight: 500;
 
-        padding: 0 5rem 1rem 5rem;
+      h3 {
+        font-size: 3.3rem;
+        font-weight: 500;
+        margin: 1rem 5rem;
       }
       p {
-        font-size: 3.5rem;
+        font-size: 2rem;
         font-weight: 300;
         padding: 0 5rem 0 5rem;
       }
       .btnSec {
-        width: 20rem;
-        height: 5rem;
+        width: 12rem;
+        height: 4rem;
         background-color: black;
         border-radius: 4rem;
         border: 2px solid black;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         font-weight: 500;
         color: white;
         font-weight: 300;
@@ -323,25 +323,23 @@ const Wrapper = styled.div`
 
     .sec5 {
       width: 100vw;
-      margin-bottom: 8rem;
+      margin-bottom: 1rem;
       img {
         width: 101%;
       }
     }
     .sec6 {
       position: relative;
-      height: 100vh;
+      height: 85vh;
       overflow: hidden;
-      background-color: #fac892;
-      margin-bottom: 8rem;
       .sec6Container {
         display: grid;
         grid-template-columns: 70% 30%;
-        height: 100vh;
+        height: 85vh;
       }
       .leftBcgSec6 {
-        height: 100vh;
         transition: all 0.4s ease-in;
+        height: 85vh;
 
         img {
           width: 100%;
@@ -354,13 +352,16 @@ const Wrapper = styled.div`
           position: absolute;
           bottom: 0;
           z-index: 95;
-          background-image: linear-gradient(to top, #000000a2, #000000a2, transparent);
+          background-image: linear-gradient(to top, #000000b0, #000000a2, transparent);
         }
       }
       .rightBcgSec6 {
+        height: 85vh;
         width: 62.5rem;
         transition: all 0.4s ease-in;
+
         img {
+          height: 100%;
           width: 90.375rem;
           object-fit: cover;
         }
@@ -375,39 +376,39 @@ const Wrapper = styled.div`
       }
       .boxMission {
         position: absolute;
-        width: 46rem;
-        margin-bottom: 1.25rem;
-        bottom: 8.125rem;
+        width: 40rem;
+        margin-bottom: 1rem;
+        bottom: 4rem;
         left: 3.125;
         z-index: 97;
         transition: all ease-in 0.5s;
         padding-left: 1.7rem;
         h4 {
-          font-size: 4.688rem;
+          font-size: 3rem;
           color: white;
-          font-weight: 500;
-          margin-bottom: 1.25rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
         }
         p {
-          font-size: 2.813rem;
+          font-size: 1.8rem;
           color: white;
           font-weight: 400;
           line-height: 3.125rem;
         }
         .containerReadMore {
-          width: 17.5rem;
-          height: 6.25rem;
+          width: 12rem;
+          height: 4.5rem;
           display: flex;
           align-items: center;
           margin-top: 1.25rem;
-          border-radius: 3.125rem;
+          border-radius: 3rem;
           border: none;
           background-color: transparent;
 
           .btnReadMore {
             display: flex;
-            width: 17.5rem;
-            height: 6.25rem;
+            width: 12rem;
+            height: 4.5rem;
             background-color: #dcad03;
             display: flex;
             justify-content: space-around;
@@ -416,19 +417,19 @@ const Wrapper = styled.div`
             transition: all 0.3s ease-in-out;
             cursor: pointer;
             &:hover {
-              width: 16.25rem;
-              height: 6.563rem;
+              width: 13rem;
+              height: 5rem;
             }
             .redmoreImg {
-              width: 5.25rem;
-              height: 5.25rem;
+              width: 3.5rem;
+              height: 3.5rem;
               border-radius: 50%;
               background-image: url(${waste});
               background-size: cover;
               background-position: 0;
             }
             p {
-              font-size: 1.563rem;
+              font-size: 1.3rem;
               margin-right: 0.938rem;
               color: black;
             }
@@ -436,18 +437,18 @@ const Wrapper = styled.div`
         }
       }
       .OverlayContainer {
-        height: 50rem;
+        height: 40rem;
         position: absolute;
         display: flex;
-        top: 12.5rem;
+        top: 2rem;
         z-index: 98;
         left: 56.25rem;
         transition: all 0.3s ease-in;
 
         .bigBox {
           position: relative;
-          width: 31.25rem;
-          height: 41.688rem;
+          width: 26rem;
+          height: 36rem;
           margin: 0 1.9rem;
           border-radius: 0.7rem;
           box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
@@ -455,7 +456,7 @@ const Wrapper = styled.div`
           h4 {
             position: absolute;
             color: white;
-            font-size: 1.875rem;
+            font-size: 1.2rem;
             bottom: 1.875rem;
             padding: 0 1.5rem;
             z-index: 98;
@@ -463,12 +464,13 @@ const Wrapper = styled.div`
           }
 
           img {
-            width: 31.25rem;
+            width: 100%;
+            height: 100%;
             border-radius: 0.7rem;
           }
           .shadowLayerBigBox {
             width: 100%;
-            height: 11rem;
+            height: 20%;
             position: absolute;
             bottom: 0;
             z-index: 96;
@@ -479,8 +481,8 @@ const Wrapper = styled.div`
         }
         .smallBox {
           position: relative;
-          width: 28.125rem;
-          height: 37.5rem;
+          width: 22rem;
+          height: 32rem;
           border-radius: 0.7rem;
           box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem, rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
           cursor: pointer;
@@ -496,7 +498,8 @@ const Wrapper = styled.div`
           }
 
           img {
-            width: 28.1rem;
+            width: 100%;
+            height: 100%;
             border-radius: 0.625rem;
           }
           .shadowLayerSmallBox {
@@ -518,7 +521,7 @@ const Wrapper = styled.div`
       }
 
       .sec6Btns {
-        width: 100rem;
+        width: 33rem;
         height: 110px;
         display: flex;
         align-items: center;
@@ -526,12 +529,12 @@ const Wrapper = styled.div`
         z-index: 100;
         position: absolute;
         z-index: 99;
-        bottom: 2rem;
-        left: 15rem;
-        padding: 0 6.25rem 0 0;
+        bottom: -0.5rem;
+        left: 5rem;
+        padding: 0 2rem;
         .ClickVolta {
-          width: 6.875rem;
-          height: 6.875rem;
+          width: 4.5rem;
+          height: 4.5rem;
           background-color: black;
           border-radius: 50%;
           border: none;
@@ -543,7 +546,7 @@ const Wrapper = styled.div`
 
           .iconX {
             color: white;
-            font-size: 1.563rem;
+            font-size: 1.1rem;
             font-weight: 500;
             transition: all ease-in-out 0.3s;
           }
@@ -554,12 +557,12 @@ const Wrapper = styled.div`
         }
         .divbtn {
           display: flex;
-          width: 20rem;
+          width: 12rem;
           justify-content: space-between;
           .sec6BtnLeft,
           .sec6BtnRight {
-            width: 6.875rem;
-            height: 6.875rem;
+            width: 4.5rem;
+            height: 4.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -567,27 +570,44 @@ const Wrapper = styled.div`
             color: white;
             border-radius: 50%;
             cursor: pointer;
-            &:hover {
-              background-color: #191818;
-              border: 0.125rem solid black;
+            &:hover > .iconArrow {
+              font-size: 2.5rem;
+              font-weight: 900;
             }
+            .arowLeft,
+            .arowRight {
+              font-size: 1.4rem;
+              transition: 0.4s;
+            }
+          }
+          .arowLeft,
+          .arowRight {
+            font-size: 1.5rem;
+          }
+          .arowLeft:hover {
+            font-size: 2.5rem;
+            font-weight: 900;
+          }
+          .arowRight:hover {
+            font-size: 2.5rem;
+            font-weight: 900;
           }
         }
       }
     }
     .sec7 {
-      height: 60rem;
+      height: 25rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      margin-bottom: 2rem;
       h3 {
-        font-size: 7rem;
+        font-size: 3.2rem;
         font-weight: 500;
-
-        padding: 0 5rem 1rem 5rem;
+        margin: 1rem 5rem;
       }
       p {
-        font-size: 3.5rem;
+        font-size: 1.8rem;
         font-weight: 300;
         padding: 0 5rem 0 5rem;
       }
@@ -706,110 +726,109 @@ const Wrapper = styled.div`
         }
       }
       .sec6 {
-        display: grid;
-        grid-template-columns: 99% 1%;
-        height: 100%;
-        background-color: #fac892;
-        margin-bottom: 0rem;
+        position: relative;
+        height: 85vh;
+        width: 100vw;
+        overflow: hidden;
+        background-color: #fac8924f;
         .sec6Container {
           display: grid;
-          grid-template-columns: 99% 1%;
+          grid-template-columns: 90% 10%;
           height: 100%;
-        }
-        .leftBcgSec6 {
-          height: 100vh;
-          width: 40rem;
 
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+          .leftBcgSec6 {
+            height: 100vh;
+            width: 40rem;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            .shadowLayer {
+              width: 100%;
+              height: 20rem;
+              position: absolute;
+              bottom: 0;
+              z-index: 95;
+              background-image: linear-gradient(to top, #000000b9, #000000a2, transparent);
+            }
           }
-          .shadowLayer {
-            width: 100%;
-            height: 40rem;
+          .rightBcgSec6 {
+            width: 0rem;
+            transition: all 0.4s ease-in;
+            img {
+              width: 90rem;
+              object-fit: cover;
+            }
+            .shadowLayer {
+              width: 100%;
+              height: 20rem;
+              position: absolute;
+              bottom: 0;
+              z-index: 95;
+              background-image: linear-gradient(to top, #000000a2, #000000a2, transparent);
+            }
+          }
+          .boxMission {
             position: absolute;
-            bottom: 0;
-            z-index: 95;
-            background-image: linear-gradient(to top, #000000b9, #000000a2, transparent);
-          }
-        }
-        .rightBcgSec6 {
-          width: 0rem;
-          transition: all 0.4s ease-in;
-          border: 3px solid black;
-          img {
-            width: 90rem;
-            object-fit: cover;
-          }
-          .shadowLayer {
-            width: 100%;
-            height: 70rem;
-            position: absolute;
-            bottom: 0;
-            z-index: 95;
-            background-image: linear-gradient(to top, #000000a2, #000000a2, transparent);
-          }
-        }
-        .boxMission {
-          position: absolute;
-          width: 18rem;
-          margin-bottom: 1rem;
-          bottom: 2rem;
-          left: 3.125;
-          z-index: 97;
-          transition: all ease-in 0.5s;
-          padding-left: 1.7rem;
-          h4 {
-            font-size: 1.8rem;
-            color: white;
-            font-weight: 500;
-            margin-bottom: 0rem;
-          }
-          p {
-            font-size: 1.2rem;
-            color: white;
-            font-weight: 400;
-            line-height: 1.5rem;
-          }
-          .containerReadMore {
-            width: 10rem;
-            height: 3rem;
-            display: flex;
-            align-items: center;
-            margin-top: 1.25rem;
-            border-radius: 3.125rem;
-            border: none;
-            background-color: transparent;
-
-            .btnReadMore {
-              display: flex;
+            width: 18rem;
+            margin-bottom: 1rem;
+            bottom: 2rem;
+            left: 3.125;
+            z-index: 97;
+            transition: all ease-in 0.5s;
+            padding-left: 1.7rem;
+            h4 {
+              font-size: 1.8rem;
+              color: white;
+              font-weight: 500;
+              margin-bottom: 0rem;
+            }
+            p {
+              font-size: 1.2rem;
+              color: white;
+              font-weight: 400;
+              line-height: 1.5rem;
+            }
+            .containerReadMore {
               width: 10rem;
-              height: 4rem;
-              background-color: #dcad03;
+              height: 3rem;
               display: flex;
-              justify-content: space-around;
               align-items: center;
+              margin-top: 1.25rem;
               border-radius: 3.125rem;
-              transition: all 0.3s ease-in-out;
-              cursor: pointer;
-              &:hover {
-                width: 12rem;
-                height: 5rem;
-              }
-              .redmoreImg {
-                width: 3rem;
-                height: 3rem;
-                border-radius: 50%;
-                background-image: url(${waste});
-                background-size: cover;
-                background-position: 0;
-              }
-              p {
-                font-size: 1rem;
-                font-weight: 500;
-                margin-right: 0.938rem;
-                color: black;
+              border: none;
+              background-color: transparent;
+
+              .btnReadMore {
+                display: flex;
+                width: 10rem;
+                height: 4rem;
+                background-color: #dcad03;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                border-radius: 3.125rem;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                  width: 12rem;
+                  height: 5rem;
+                }
+                .redmoreImg {
+                  width: 3rem;
+                  height: 3rem;
+                  border-radius: 50%;
+                  background-image: url(${waste});
+                  background-size: cover;
+                  background-position: 0;
+                }
+                p {
+                  font-size: 1rem;
+                  font-weight: 500;
+                  margin-right: 0.938rem;
+                  color: black;
+                }
               }
             }
           }
@@ -819,7 +838,7 @@ const Wrapper = styled.div`
           width: 110rem;
           position: absolute;
           display: flex;
-          top: 10rem;
+          top: 5rem;
           z-index: 98;
           left: 50rem;
           transition: all 0.3s ease-in;
@@ -913,7 +932,7 @@ const Wrapper = styled.div`
           z-index: 100;
           position: absolute;
           z-index: 99;
-          bottom: 2rem;
+          bottom: 1rem;
           left: 7rem;
           padding: 0;
           .ClickVolta {
@@ -958,6 +977,18 @@ const Wrapper = styled.div`
                 background-color: #191818;
                 border: 0.125rem solid black;
               }
+            }
+            .arowLeft,
+            .arowRight {
+              font-size: 1rem;
+            }
+            .arowLeft:hover {
+              font-size: 1.2rem;
+              font-weight: 900;
+            }
+            .arowRight:hover {
+              font-size: 1.2rem;
+              font-weight: 900;
             }
           }
         }
@@ -1094,10 +1125,10 @@ const Wrapper = styled.div`
         }
       }
       .sec6 {
-        display: grid;
-        grid-template-columns: 99% 1%;
-        height: 100%;
-        background-color: #fac892;
+        position: relative;
+        height: 90vh;
+        width: 100vw;
+        overflow: hidden;
         margin-bottom: 0rem;
         .sec6Container {
           display: grid;
@@ -1105,6 +1136,24 @@ const Wrapper = styled.div`
           height: 100%;
         }
         .leftBcgSec6 {
+          height: 100vh;
+          width: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .shadowLayer {
+            width: 100%;
+            height: 20rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            background-image: linear-gradient(to top, #000000b9, #000000a2, transparent);
+          }
+        }
+        .rightBcgSec6 {
           height: 100vh;
           width: 40rem;
 
@@ -1115,28 +1164,11 @@ const Wrapper = styled.div`
           }
           .shadowLayer {
             width: 100%;
-            height: 40rem;
+            height: 20rem;
             position: absolute;
             bottom: 0;
             z-index: 95;
             background-image: linear-gradient(to top, #000000b9, #000000a2, transparent);
-          }
-        }
-        .rightBcgSec6 {
-          width: 0rem;
-          transition: all 0.4s ease-in;
-          border: 3px solid black;
-          img {
-            width: 90rem;
-            object-fit: cover;
-          }
-          .shadowLayer {
-            width: 100%;
-            height: 70rem;
-            position: absolute;
-            bottom: 0;
-            z-index: 95;
-            background-image: linear-gradient(to top, #000000a2, #000000a2, transparent);
           }
         }
         .boxMission {
@@ -1208,7 +1240,7 @@ const Wrapper = styled.div`
           width: 110rem;
           position: absolute;
           display: flex;
-          top: 10rem;
+          top: 6rem;
           z-index: 98;
           left: 50rem;
           transition: all 0.3s ease-in;
@@ -1302,7 +1334,7 @@ const Wrapper = styled.div`
           z-index: 100;
           position: absolute;
           z-index: 99;
-          bottom: 2rem;
+          bottom: 1rem;
           left: 7rem;
           padding: 0;
           .ClickVolta {
@@ -1347,6 +1379,18 @@ const Wrapper = styled.div`
                 background-color: #191818;
                 border: 0.125rem solid black;
               }
+            }
+            .arowLeft,
+            .arowRight {
+              font-size: 1.2rem;
+            }
+            .arowLeft:hover {
+              font-size: 1.4rem;
+              font-weight: 900;
+            }
+            .arowRight:hover {
+              font-size: 1.4rem;
+              font-weight: 900;
             }
           }
         }
@@ -1531,7 +1575,7 @@ const Wrapper = styled.div`
         }
         .boxMission {
           position: absolute;
-          width: 30rem;
+          width: 25rem;
           margin-bottom: 1rem;
           bottom: 2rem;
           left: 3.3;
@@ -1540,19 +1584,19 @@ const Wrapper = styled.div`
           padding-left: 1.7rem;
 
           h4 {
-            font-size: 3rem;
+            font-size: 2rem;
             color: white;
             font-weight: 500;
             margin-bottom: 0rem;
           }
           p {
-            font-size: 1.8rem;
+            font-size: 1.2rem;
             color: white;
             font-weight: 400;
             line-height: 2.5rem;
           }
           .containerReadMore {
-            width: 15rem;
+            width: 12rem;
             height: 6rem;
             display: flex;
             align-items: center;
@@ -1563,13 +1607,13 @@ const Wrapper = styled.div`
 
             .btnReadMore {
               display: flex;
-              width: 15rem;
-              height: 5.5rem;
+              width: 11rem;
+              height: 4rem;
               background-color: #dcad03;
               display: flex;
               justify-content: space-around;
               align-items: center;
-              border-radius: 3.125rem;
+              border-radius: 3rem;
               transition: all 0.3s ease-in-out;
               cursor: pointer;
               &:hover {
@@ -1577,15 +1621,15 @@ const Wrapper = styled.div`
                 height: 4.5rem;
               }
               .redmoreImg {
-                width: 5rem;
-                height: 5rem;
+                width: 3rem;
+                height: 3rem;
                 border-radius: 50%;
                 background-image: url(${waste});
                 background-size: cover;
                 background-position: 0;
               }
               p {
-                font-size: 1.6rem;
+                font-size: 1.1rem;
                 font-weight: 500;
                 margin-right: 0.938rem;
                 color: black;
@@ -1598,7 +1642,7 @@ const Wrapper = styled.div`
           width: 110rem;
           position: absolute;
           display: flex;
-          top: 10rem;
+          top: 4rem;
           z-index: 98;
           left: 50rem;
           transition: all 0.3s ease-in;
@@ -1673,7 +1717,7 @@ const Wrapper = styled.div`
         }
 
         .sec6Btns {
-          width: 18rem;
+          width: 15rem;
           height: 75px;
           display: flex;
           align-items: center;
@@ -1685,8 +1729,8 @@ const Wrapper = styled.div`
           left: 7rem;
           padding: 0;
           .ClickVolta {
-            width: 4.5rem;
-            height: 4.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
             background-color: black;
             border-radius: 50%;
             border: none;
@@ -1698,12 +1742,12 @@ const Wrapper = styled.div`
 
             .iconX {
               color: white;
-              font-size: 1.9rem;
+              font-size: 1.4rem;
               font-weight: 500;
               transition: all ease-in-out 0.3s;
             }
             &:hover > .iconX {
-              font-size: 2rem;
+              font-size: 1.6rem;
               font-weight: 900;
             }
           }
@@ -1713,19 +1757,32 @@ const Wrapper = styled.div`
             justify-content: space-between;
             .sec6BtnLeft,
             .sec6BtnRight {
-              width: 4.5rem;
-              height: 4.5rem;
+              width: 3.5rem;
+              height: 3.5rem;
               display: flex;
               align-items: center;
               justify-content: center;
               background-color: black;
               color: white;
               border-radius: 50%;
+              font-size: 0.6rem;
               cursor: pointer;
               &:hover {
                 background-color: #191818;
                 border: 0.125rem solid black;
               }
+            }
+            .arowLeft,
+            .arowRight {
+              font-size: 1.4rem;
+            }
+            .arowLeft:hover {
+              font-size: 1.6rem;
+              font-weight: 900;
+            }
+            .arowRight:hover {
+              font-size: 1.6rem;
+              font-weight: 900;
             }
           }
         }

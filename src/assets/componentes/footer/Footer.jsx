@@ -1,13 +1,40 @@
 import styled from "styled-components";
 import { AiFillYoutube, AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
-import { BsCCircle } from "react-icons/bs";
 import { CiMail } from "react-icons/ci";
 import { BiLogoFacebook } from "react-icons/bi";
 import { FaLinkedinIn } from "react-icons/fa";
 import bandeira from "./bandeira.webp";
 import { Link } from "react-router-dom";
 
+import { useBcg } from "../../contexts/OrdeStausContext";
 const Footer = () => {
+  const { dispatch, setTrackerData } = useBcg(); //useContext was used here so it can be called in this page and also in Orderstatus's page. (full explanation in OrderstausContext's page).
+
+  function OrderAndStatus() {
+    dispatch({ type: null });
+    setTrackerData(true), setReturnData(false);
+  }
+  function dispatchLi2() {
+    dispatch({ type: "li2" });
+    setTrackerData(false), setReturnData(false);
+  }
+  function dispatchLi3() {
+    dispatch({ type: "li3" });
+    setTrackerData(false), setReturnData(false);
+  }
+  function dispatchLi9() {
+    dispatch({ type: "li9" });
+    setTrackerData(false), setReturnData(false);
+  }
+  function dispatchLi7() {
+    dispatch({ type: "li7" });
+    setTrackerData(false), setReturnData(false);
+  }
+  function dispatchLi8() {
+    dispatch({ type: "li8" });
+    setTrackerData(false), setReturnData(false);
+  }
+
   return (
     <Wrapper>
       <div className="footerBody">
@@ -40,7 +67,9 @@ const Footer = () => {
                 <li className="strongCaseLi">Join the On community</li>
               </Link>
               <Link to={"/orderstatus"}>
-                <li className="strongCaseLi">Order & return status</li>
+                <li onClick={OrderAndStatus} className="strongCaseLi">
+                  Order & return status
+                </li>
               </Link>
               <Link to={"/referfriend"}>
                 <li className="strongCaseLi">Refer a friend</li>
@@ -59,28 +88,26 @@ const Footer = () => {
               </Link>
 
               <Link to={"/orderstatus"}>
-                <li>Returns & exchanges</li>
+                <li onClick={dispatchLi2}>Returns & exchanges</li>
               </Link>
               <Link to={"/orderstatus"}>
-                <li>Shipping & delivery</li>
-              </Link>
-              <Link to={"/orderstatus"}>
-                <li>Warranty claim form</li>
+                <li onClick={dispatchLi3}>Shipping & delivery</li>
               </Link>
             </ul>
           </div>
         </div>
       </div>
+
       <div className="footerBottom">
         <div className="left">
           <Link to={"/orderstatus"}>
-            <p>Terms & conditions</p>
+            <p onClick={dispatchLi9}>Terms & conditions</p>
           </Link>
           <Link to={"/orderstatus"}>
-            <p>Privacy policy</p>
+            <p onClick={dispatchLi7}>Security & privacy</p>
           </Link>
           <Link to={"/orderstatus"}>
-            <p>Accessibility</p>
+            <p onClick={dispatchLi8}>Accessibility</p>
           </Link>
         </div>
         <div className="socialMedias">
@@ -107,77 +134,76 @@ const Footer = () => {
 const Wrapper = styled.footer`
   background-color: #131420;
 
+  padding-top: 1rem;
   a {
     color: #c9c8c8;
     cursor: pointer;
   }
   .footerBody {
     width: 100vw;
-    padding: 1rem 0.5rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: space-around;
     .signUpContainer {
       width: 25rem;
-
+      margin-top: 1rem;
       h3 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: #cfcccc;
       }
       span {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         color: #cfcccc;
-        margin-top: 2.5rem;
+        margin-top: 2rem;
       }
       .bottomContainerSignUp {
         .signuP {
-          border: 2px solid #cfcccc;
+          border: 1px solid #cfcccc;
           border-radius: 0.6rem;
           color: #cfcccc;
-          font-size: 1rem;
-          width: 10rem;
-          height: 2.5rem;
+          font-size: 0.9rem;
+          width: 8rem;
+          height: 2rem;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-top: 2rem;
+          margin-top: 1rem;
           cursor: pointer;
           &:hover {
             background-color: #cfcccc35;
           }
         }
         .divContact {
-          width: 10rem;
+          width: 8.5rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
           color: #cfcccc;
-          font-size: 1rem;
-          margin-top: 1.5rem;
+          margin-top: 1rem;
 
           .iconContainer {
-            width: 3rem;
-            height: 3rem;
+            width: 2rem;
+            height: 2rem;
             border-radius: 50%;
-            font-size: 1.4rem;
+            font-size: 1rem;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #8080803c;
           }
           p {
-            font-size: 1.1rem;
+            font-size: 1rem;
           }
         }
         .brazil {
-          max-width: 6.5rem;
+          width: 5.5rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-top: 1.5rem;
-          margin-left: 0.513rem;
+          margin-top: 1rem;
           .flag {
-            width: 1.875rem;
-            height: 1.875rem;
+            width: 1.7rem;
+            height: 1.7rem;
             border-radius: 50%;
             background-image: url(${bandeira});
             background-size: cover;
@@ -185,7 +211,7 @@ const Wrapper = styled.footer`
             background-position: center;
           }
           p {
-            font-size: 1.25rem;
+            font-size: 1rem;
             color: #cfcccc;
           }
         }
@@ -197,6 +223,7 @@ const Wrapper = styled.footer`
       width: 50%;
       display: flex;
       justify-content: space-between;
+
       .footerGeneralInfo {
         display: flex;
         justify-content: space-between;
@@ -207,13 +234,13 @@ const Wrapper = styled.footer`
         ul {
           list-style: none;
           .strongCaseLi {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            line-height: 3.75rem;
+            line-height: 3.3rem;
           }
           li {
-            font-size: 1.1rem;
-            line-height: 3.125rem;
+            font-size: 1rem;
+            line-height: 2.4rem;
             position: relative;
             width: fit-content;
             &::after {
@@ -250,7 +277,7 @@ const Wrapper = styled.footer`
           line-height: 3.75rem;
         }
         li {
-          font-size: 1.25rem;
+          font-size: 1rem;
           line-height: 3.125rem;
           position: relative;
           width: fit-content;
@@ -278,17 +305,17 @@ const Wrapper = styled.footer`
     display: flex;
     justify-content: space-between;
     align-items: top;
-    height: 6.25rem;
-    padding: 0rem 4.5rem;
+    height: 7rem;
+    padding: 2rem 4.5rem;
     color: #f0efef;
 
     .left {
       display: flex;
       justify-content: space-around;
       p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         color: #9c9a9a;
-        margin-right: 1.875rem;
+        margin-right: 1.8rem;
         cursor: pointer;
         &:hover {
           color: white;
@@ -297,6 +324,7 @@ const Wrapper = styled.footer`
     }
     .socialMedias {
       display: flex;
+
       .socialMediaIcon {
         font-size: 1.6rem;
         margin-right: 3rem;

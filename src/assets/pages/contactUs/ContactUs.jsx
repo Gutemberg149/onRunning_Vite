@@ -41,9 +41,7 @@ const ContactUs = () => {
               </div>
             </div>
             <Message />
-            <div className="glassMessage">
-              {messageSent ? <MessageSent /> : " "}
-            </div>
+            <div className="glassMessage">{messageSent ? <MessageSent /> : " "}</div>
           </div>
           <div className="rightSideContainer"></div>
         </div>
@@ -56,9 +54,10 @@ const Wrapper = styled.div`
   nav {
     padding: 0 4rem;
     .logo {
-      width: 6.5rem;
+      width: 4.5rem;
       margin: 2rem 3rem;
       mix-blend-mode: difference;
+      border-radius: 50%;
       cursor: pointer;
     }
   }
@@ -75,11 +74,11 @@ const Wrapper = styled.div`
         width: 40%;
         height: 60rem;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        padding: 4rem;
+        padding: 4rem 2rem;
         border-top-left-radius: 2rem;
         border-bottom-left-radius: 2rem;
         h4 {
-          font-size: 3rem;
+          font-size: 2.3rem;
           font-weight: 500;
           color: #363535;
           margin-bottom: 2rem;
@@ -95,7 +94,7 @@ const Wrapper = styled.div`
               color: #939393;
             }
             p {
-              font-size: 1.1rem;
+              font-size: 0.9rem;
               font-weight: 600;
               color: #7d7c7c;
             }
@@ -125,9 +124,10 @@ const Wrapper = styled.div`
     nav {
       padding: 0 0rem;
       .logo {
-        width: 3.25rem;
+        width: 2.5rem;
         margin: 0;
         margin-top: 7rem;
+        margin-left: 0.5rem;
         border-radius: 50%;
       }
     }
@@ -152,7 +152,7 @@ const Wrapper = styled.div`
             font-size: 1.2rem;
             font-weight: 500;
             color: #363535;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
           }
           .contactInfo {
             display: flex;
@@ -167,7 +167,7 @@ const Wrapper = styled.div`
                 color: #939393;
               }
               p {
-                font-size: 1.1rem;
+                font-size: 1rem;
                 font-weight: 600;
                 color: #7d7c7c;
               }
@@ -184,6 +184,147 @@ const Wrapper = styled.div`
         .rightSideContainer {
           width: 100%;
           height: 40vh;
+          background-image: url(${img2});
+          background-size: cover;
+          background-position: 75%;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          border-top-right-radius: 2rem;
+          border-bottom-right-radius: 2rem;
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    nav {
+      padding: 0 0rem;
+      .logo {
+        width: 3rem;
+        margin: 0;
+        margin-top: 7rem;
+        margin-left: 3rem;
+        border-radius: 50%;
+      }
+    }
+    main {
+      margin-bottom: 1rem;
+      padding: 1rem 3rem;
+      height: 67rem;
+      .contactContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .leftSideContainer {
+          padding: 1.5rem 2rem;
+          position: relative;
+          width: 100%;
+          height: 130vh;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          margin-bottom: 0rem;
+          h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #363535;
+            margin-bottom: 1rem;
+          }
+          .contactInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 40vh;
+            padding-left: 0.5rem;
+            .containerInfo {
+              span {
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: #939393;
+              }
+              p {
+                font-size: 1rem;
+                font-weight: 600;
+                color: #7d7c7c;
+              }
+              P:nth-child(2) {
+                margin-top: 0.3rem;
+              }
+            }
+          }
+          .glassMessage {
+            position: absolute;
+            top: 20rem;
+          }
+        }
+        .rightSideContainer {
+          width: 100%;
+          height: 40vh;
+          background-image: url(${img2});
+          background-size: cover;
+          background-position: 75%;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          border-top-right-radius: 2rem;
+          border-bottom-right-radius: 2rem;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1250px) and (-webkit-min-device-pixel-ratio: 2) {
+    nav {
+      padding: 0 4rem;
+      .logo {
+        width: 3.5rem;
+        margin: 3rem;
+        mix-blend-mode: difference;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+    main {
+      margin-bottom: 4rem;
+
+      .contactContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        .leftSideContainer {
+          padding: 1rem;
+          width: 50%;
+          h4 {
+            font-size: 1.8rem;
+            margin: 2rem 0;
+          }
+          .contactInfo {
+            display: flex;
+            justify-content: space-between;
+            height: 10rem;
+            .containerInfo {
+              span {
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: #939393;
+              }
+              p {
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: #7d7c7c;
+              }
+              P:nth-child(2) {
+                margin-top: 0.3rem;
+              }
+            }
+          }
+          .glassMessage {
+            position: absolute;
+            top: 20rem;
+          }
+        }
+        .rightSideContainer {
+          width: 40%;
+          height: 60rem;
           background-image: url(${img2});
           background-size: cover;
           background-position: 75%;

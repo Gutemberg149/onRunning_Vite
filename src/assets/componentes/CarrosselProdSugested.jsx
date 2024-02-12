@@ -13,30 +13,39 @@ const ProductesSugested = () => {
 
   const moveRight = () => {
     if (screenSize.current <= 600) {
-      if (arrayLength > 1) {
-        setArrayLength(arrayLength - 1);
-        setMoveCarrossel(moveCarrossel - 318);
-      } else {
-        return;
+      setArrayLength(arrayLength - 1);
+      setMoveCarrossel(moveCarrossel - 352);
+      if (moveCarrossel < -2816) {
+        setMoveCarrossel(0);
+        setArrayLength(10);
       }
     } else if (screenSize.current <= 900) {
-      if (arrayLength > 1) {
-        setArrayLength(arrayLength - 1);
-        setMoveCarrossel(moveCarrossel - 350);
-      } else {
-        return;
+      setArrayLength(arrayLength - 1);
+      setMoveCarrossel(moveCarrossel - 360);
+      if (moveCarrossel < -2880) {
+        setMoveCarrossel(0);
+        setArrayLength(10);
       }
     } else if (screenSize.current <= 1300) {
-      if (arrayLength > 1) {
-        setArrayLength(arrayLength - 1);
-        setMoveCarrossel(moveCarrossel - 580);
-      } else {
-        return;
+      setArrayLength(arrayLength - 1);
+      setMoveCarrossel(moveCarrossel - 550);
+      if (moveCarrossel < -2880) {
+        setMoveCarrossel(0);
+        setArrayLength(10);
+        console.log("arrayLength:" + arrayLength);
+        console.log("moveCarrossel:" + moveCarrossel);
       }
     } else {
       if (arrayLength > 1) {
         setArrayLength(arrayLength - 1);
-        setMoveCarrossel(moveCarrossel - 604);
+        setMoveCarrossel(moveCarrossel - 600);
+        if (moveCarrossel < -3000) {
+          setMoveCarrossel(0);
+          setArrayLength(10);
+          console.log("arrayLength:" + arrayLength);
+        }
+        console.log("arrayLength:" + arrayLength);
+        console.log(moveCarrossel);
       } else {
         return;
       }
@@ -47,21 +56,21 @@ const ProductesSugested = () => {
     if (screenSize.current < 600) {
       if (arrayLength < prodArrayCarrossel.length) {
         setArrayLength(arrayLength + 1);
-        setMoveCarrossel(moveCarrossel + 318);
+        setMoveCarrossel(moveCarrossel + 350);
       } else {
         return;
       }
     } else if (screenSize.current < 900) {
       if (arrayLength < prodArrayCarrossel.length) {
         setArrayLength(arrayLength + 1);
-        setMoveCarrossel(moveCarrossel + 350);
+        setMoveCarrossel(moveCarrossel + 360);
       } else {
         return;
       }
     } else if (screenSize.current < 1300) {
       if (arrayLength < prodArrayCarrossel.length) {
         setArrayLength(arrayLength + 1);
-        setMoveCarrossel(moveCarrossel + 580);
+        setMoveCarrossel(moveCarrossel + 550);
       } else {
         return;
       }
@@ -88,11 +97,7 @@ const ProductesSugested = () => {
         {prodArrayCarrossel.map((item) => {
           return (
             <Link to={`/singleproduct/${item.id}`} key={item.id}>
-              <div
-                className="boxSec5"
-                style={{ transform: `translateX(${moveCarrossel}px)` }}
-                key={item.id}
-              >
+              <div className="boxSec5" style={{ transform: `translateX(${moveCarrossel}px)` }} key={item.id}>
                 <img src={item.img01} alt="" />
                 <div className="infoBox">
                   <div className="innerInfobox">
@@ -116,32 +121,32 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 56.25rem;
+  height: 43rem;
   width: auto;
 
   h3 {
     position: absolute;
-    top: 0px;
-    left: 6.25rem;
-    font-size: 3.438rem;
+    top: 0rem;
+    left: 4rem;
+    font-size: 1.4rem;
     font-weight: 500;
     color: #2b2b2b;
   }
   .btnLeft {
     position: absolute;
-    left: 2.5rem;
-    top: 520px;
-    font-size: 32.5rem;
-    width: 5.313rem;
-    height: 5.313rem;
+    left: 30rem;
+    top: 615px;
+    font-size: 2.5rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: gray;
-    box-shadow: rgba(100, 100, 111, 0.2) 0 0.438rem 1.813rem 0;
+    color: #6d6c6c;
+    box-shadow: rgba(100, 100, 111, 0.292) 0 0.438rem 1.813rem 0;
     z-index: 99;
     cursor: pointer;
     &:hover {
@@ -151,19 +156,19 @@ const Wrapper = styled.div`
   }
   .btnRight {
     position: absolute;
-    right: 2.5rem;
-    top: 32.5rem;
-    font-size: 3.125rem;
-    width: 5.313rem;
-    height: 5.313rem;
+    right: 30rem;
+    top: 615px;
+    font-size: 2.5rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: gray;
-    box-shadow: rgba(100, 100, 111, 0.2) 0 0.438rem 1.813rem 0;
+    color: #6d6c6c;
+    box-shadow: rgba(100, 100, 111, 0.32) 0 0.438rem 1.813rem 0;
     z-index: 99;
     cursor: pointer;
     &:hover {
@@ -180,40 +185,45 @@ const Wrapper = styled.div`
     align-items: center;
     width: 94%;
     overflow: hidden;
+    height: 39rem;
+    background-color: transparent;
+
     .boxSec5 {
-      margin: 1.563rem;
-      height: 43.75rem;
+      box-shadow: rgba(100, 100, 111, 0.2) 0 0.438rem 1.813rem 0;
+      margin: 1.5rem;
+      height: 33rem;
+      width: 28rem;
       position: relative;
       background-color: #f5f3f3;
-      box-shadow: rgba(100, 100, 111, 0.2) 0 0.438rem 1.813rem 0;
       transition: all 0.5s ease-in-out;
       cursor: pointer;
+      overflow-y: hidden;
       img {
-        width: 34.37rem;
+        width: 100%;
       }
       .infoBox {
         position: absolute;
         background-color: white;
         bottom: 0;
         width: 100%;
-        height: 25%;
+        height: 30%;
         .innerInfobox {
-          margin: 1.25rem;
+          margin: 0.6rem 1.25rem;
           h4 {
-            font-size: 1.375rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 0.625rem;
+            margin-bottom: 0.5rem;
             letter-spacing: 0.063rem;
           }
           .description,
           .colors {
-            font-size: 1.125;
+            font-size: 0.9rem;
             font-weight: 400;
             letter-spacing: 0.063rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
           }
           span {
-            font-size: 1.25rem;
+            font-size: 1rem;
           }
         }
       }
@@ -225,26 +235,27 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30rem;
+    height: 20rem;
     width: 100vw;
     margin-top: 4rem;
-    margin-bottom: 7rem;
-
+    margin-bottom: 5rem;
+    background-color: transparent;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 0.438rem 1.813rem 0;
     h3 {
       position: absolute;
       top: -3rem;
       left: 1.5rem;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: 500;
       color: #2b2b2b;
     }
     .btnLeft {
       position: absolute;
       left: 2.5rem;
-      top: 31rem;
+      top: 20.5rem;
       font-size: 2rem;
-      width: 3.5rem;
-      height: 3.5rem;
+      width: 3.2rem;
+      height: 3.2rem;
       border-radius: 50%;
       background-color: white;
       display: flex;
@@ -264,10 +275,10 @@ const Wrapper = styled.div`
     .btnRight {
       position: absolute;
       right: 2.5rem;
-      top: 31rem;
+      top: 20.5rem;
       font-size: 2rem;
-      width: 3.5rem;
-      height: 3.5rem;
+      width: 3.2rem;
+      height: 3.2rem;
       border-radius: 50%;
       background-color: white;
       display: flex;
@@ -292,20 +303,19 @@ const Wrapper = styled.div`
       align-items: center;
       width: 94%;
       overflow: hidden;
-
       .boxSec5 {
         margin: 1rem;
-        height: 28rem;
+        height: 24rem;
+        width: 20rem;
         position: relative;
-        background-color: #f5f3f3;
-        box-shadow: rgba(100, 100, 111, 0.2) 0 0.438rem 1.813rem 0;
+        background-color: white;
+        box-shadow: null;
         transition: all 0.5s ease-in-out;
-
+        overflow: hidden;
         cursor: pointer;
         img {
           overflow: hidden;
-
-          width: 18rem;
+          width: 90%;
         }
         .infoBox {
           position: absolute;
@@ -313,25 +323,25 @@ const Wrapper = styled.div`
           bottom: 0;
           width: 100%;
           height: 40%;
-          padding: 0.6rem;
+          padding: 0.4rem;
 
           .innerInfobox {
-            margin: 0.25rem;
+            margin: 0.1rem;
             h4 {
-              font-size: 1rem;
+              font-size: 0.8rem;
               font-weight: 600;
-              margin-bottom: 0.2rem;
-              letter-spacing: 0.063rem;
+              margin-bottom: 0.1rem;
+              letter-spacing: 0.07rem;
             }
             .description,
             .colors {
-              font-size: 1;
-              font-weight: 400;
+              font-size: 0.75rem;
+              font-weight: 500;
               letter-spacing: 0.063rem;
               margin-bottom: 0.2rem;
             }
             span {
-              font-size: 1.25rem;
+              font-size: 1rem;
             }
           }
         }
@@ -344,23 +354,22 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30rem;
+    height: 32rem;
     width: 100vw;
     margin-top: 4rem;
-    margin-bottom: 7rem;
-
+    margin-bottom: 4rem;
+    box-shadow: null;
     h3 {
       position: absolute;
-      top: -3rem;
+      top: -1rem;
       left: 1.5rem;
-      font-size: 1.3rem;
       font-weight: 500;
       color: #2b2b2b;
-      font-size: 1.8rem;
+      font-size: 1.3rem;
     }
     .btnLeft {
       position: absolute;
-      left: 2.5rem;
+      left: 8rem;
       top: 31rem;
       font-size: 2rem;
       width: 3.5rem;
@@ -383,7 +392,7 @@ const Wrapper = styled.div`
     }
     .btnRight {
       position: absolute;
-      right: 2.5rem;
+      right: 8rem;
       top: 31rem;
       font-size: 2rem;
       width: 3.5rem;
@@ -416,6 +425,124 @@ const Wrapper = styled.div`
       .boxSec5 {
         margin: 1rem;
         height: 28rem;
+        width: 22rem;
+        position: relative;
+        background-color: #f5f3f3;
+        transition: all 0.5s ease-in-out;
+
+        cursor: pointer;
+        img {
+          overflow: hidden;
+          width: 20rem;
+        }
+        .infoBox {
+          position: absolute;
+          background-color: white;
+          bottom: 0;
+          width: 100%;
+          height: 40%;
+          padding: 0.6rem;
+
+          .innerInfobox {
+            margin: 0.25rem;
+            h4 {
+              font-size: 1.2rem;
+              font-weight: 600;
+              margin-bottom: 0.2rem;
+              letter-spacing: 0.063rem;
+            }
+            .description,
+            .colors {
+              font-size: 1rem;
+              font-weight: 400;
+              letter-spacing: 0.063rem;
+              margin-bottom: 0.2rem;
+            }
+            span {
+              font-size: 1.1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1300px) and (-webkit-min-device-pixel-ratio: 2) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 34rem;
+    width: 100vw;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+
+    h3 {
+      position: absolute;
+      top: -1rem;
+      left: 2.6rem;
+      font-weight: 500;
+      color: #2b2b2b;
+      font-size: 1.5rem;
+    }
+    .btnLeft {
+      position: absolute;
+      left: 20rem;
+      top: 32rem;
+      font-size: 2rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: gray;
+      box-shadow: rgba(100, 100, 111, 0.2) 0 0.438rem 1.813rem 0;
+      z-index: 99;
+
+      cursor: pointer;
+      &:hover {
+        background-color: #cdcbcb;
+        color: white;
+      }
+    }
+    .btnRight {
+      position: absolute;
+      right: 20rem;
+      top: 32rem;
+      font-size: 2rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: gray;
+      box-shadow: rgba(100, 100, 111, 0.2) 0 0.438rem 1.813rem 0;
+      z-index: 99;
+      cursor: pointer;
+      &:hover {
+        background-color: #cdcbcb;
+        color: white;
+      }
+    }
+    a {
+      color: #2b2b2b;
+      object-fit: contain;
+    }
+    .itensSec5 {
+      display: flex;
+      align-items: center;
+      width: 94%;
+      overflow: hidden;
+      .boxSec5 {
+        margin: 1rem;
+        height: 28rem;
+        width: 23rem;
         position: relative;
         background-color: #f5f3f3;
         box-shadow: rgba(100, 100, 111, 0.2) 0 0.438rem 1.813rem 0;
@@ -437,28 +564,26 @@ const Wrapper = styled.div`
           .innerInfobox {
             margin: 0.25rem;
             h4 {
-              font-size: 1.4rem;
+              font-size: 1.2rem;
               font-weight: 600;
               margin-bottom: 0.2rem;
               letter-spacing: 0.063rem;
             }
             .description,
             .colors {
-              font-size: 1.1rem;
+              font-size: 1rem;
               font-weight: 400;
               letter-spacing: 0.063rem;
               margin-bottom: 0.2rem;
             }
             span {
-              font-size: 1.5rem;
+              font-size: 1.1rem;
             }
           }
         }
       }
     }
   }
-  /* @media only screen and (min-device-width: 901px) and (max-device-width: 1300px) and (-webkit-min-device-pixel-ratio: 2) {
-  } */
 `;
 
 export default ProductesSugested;

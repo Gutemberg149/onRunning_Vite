@@ -52,31 +52,32 @@ const Wrapper = styled.div`
   margin-bottom: 8rem;
 
   h4 {
-    font-size: 4.5rem;
-    font-weight: 500;
-    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
   }
   .p1 {
     width: 55rem;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 300;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
   .container1 {
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    width: 60rem;
+    width: 50rem;
     display: flex;
     flex-direction: column;
     padding: 2rem;
     h5 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 500;
+      margin-bottom: 1rem;
     }
     .email {
       margin-bottom: 3rem;
       .pEmail {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 300;
         color: #383838;
         margin-bottom: 0.5rem;

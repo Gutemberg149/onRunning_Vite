@@ -102,14 +102,15 @@ const Wrapper = styled.div`
   .sec1 {
     position: relative;
     width: 100%;
-    height: 1082px;
+    height: 750px;
+    background-color: #363535;
     nav {
       position: absolute;
       padding: 0 4rem;
       z-index: 100;
       .logo {
-        width: 6rem;
-        margin: 2.55rem 3.75rem;
+        width: 4rem;
+        margin: 4.55rem 3.75rem;
         z-index: 100;
         mix-blend-mode: exclusion;
         border-radius: 50%;
@@ -128,20 +129,20 @@ const Wrapper = styled.div`
     }
     .containerText {
       position: absolute;
-      bottom: 22%;
+      bottom: 8%;
       left: 5rem;
       height: 20rem;
       z-index: 99;
       width: 50rem;
       h4 {
-        font-size: 3.5rem;
+        font-size: 2.8rem;
         color: white;
         margin-bottom: 1rem;
         font-weight: 600;
       }
 
       p {
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: white;
       }
       .btns {
@@ -150,12 +151,12 @@ const Wrapper = styled.div`
         justify-content: space-between;
         margin-top: 2rem;
         button {
-          width: 12rem;
-          height: 5rem;
+          width: 9rem;
+          height: 4rem;
           background-color: white;
           border-radius: 3rem;
           border: none;
-          font-size: 1.5rem;
+          font-size: 1.1rem;
           cursor: pointer;
           &:hover {
             background-color: #d0cece;
@@ -165,18 +166,18 @@ const Wrapper = styled.div`
     }
   }
   .sec2 {
-    margin-top: 3rem;
+    margin-top: 2rem;
     .containerinfoSec2 {
       display: flex;
       padding: 2rem 6rem 2rem 6rem;
       justify-content: space-between;
       img {
-        width: 53rem;
+        width: 40rem;
       }
       .textBox {
         padding: 0 5rem;
         h4 {
-          font-size: 3.6rem;
+          font-size: 3rem;
           font-weight: 500;
           color: #363535;
           margin-bottom: 2rem;
@@ -461,7 +462,7 @@ const Wrapper = styled.div`
     .sec1 {
       position: relative;
       width: 100%;
-      height: 60vh;
+      height: 80vh;
       overflow: hidden;
       nav {
         position: absolute;
@@ -492,21 +493,21 @@ const Wrapper = styled.div`
       }
       .containerText {
         position: absolute;
-        bottom: 1rem;
+        bottom: 4.5rem;
         left: 2rem;
         height: 38%;
-        width: 90%;
+        width: 60%;
         z-index: 99;
 
         h4 {
-          font-size: 1.9rem;
+          font-size: 1.5rem;
           color: white;
           margin-bottom: 0.1rem;
           font-weight: 600;
         }
 
         p {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
           color: white;
         }
         .btns {

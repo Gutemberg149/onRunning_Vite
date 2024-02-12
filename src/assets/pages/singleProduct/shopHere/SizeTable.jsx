@@ -9,8 +9,7 @@ import { useParams } from "react-router-dom";
 const SizeTable = () => {
   const { id } = useParams();
 
-  const { selectedIndex, setSelectedIndex, choseSizeFunction } =
-    useContext(SizeChosenContext);
+  const { selectedIndex, setSelectedIndex, choseSizeFunction } = useContext(SizeChosenContext);
   return (
     <Wrapper>
       <article>
@@ -23,10 +22,8 @@ const SizeTable = () => {
                     key={index}
                     className="divNumber"
                     style={{
-                      backgroundColor:
-                        selectedIndex === index ? "white" : "#f0eeee",
-                      transform:
-                        selectedIndex === index ? "scale(1.1)" : "scale(1)",
+                      backgroundColor: selectedIndex === index ? "white" : "#f0eeee",
+                      transform: selectedIndex === index ? "scale(1.1)" : "scale(1)",
                       zIndex: selectedIndex === index ? 99 : 87,
                     }}
                     onClick={(e) => choseSizeFunction(e, index)}
@@ -38,10 +35,8 @@ const SizeTable = () => {
                     className="divNumber"
                     key={index}
                     style={{
-                      backgroundColor:
-                        selectedIndex === index ? "white" : "#e2ccc692",
-                      transform:
-                        selectedIndex === index ? "scale(1.15)" : "scale(1)",
+                      backgroundColor: selectedIndex === index ? "white" : "#e2ccc692",
+                      transform: selectedIndex === index ? "scale(1.15)" : "scale(1)",
                       zIndex: selectedIndex === index ? 99 : 87,
                     }}
                     onClick={(e) => choseSizeFunction(e, index)}

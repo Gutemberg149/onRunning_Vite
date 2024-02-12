@@ -38,10 +38,8 @@ const CyclonWork = () => {
             }}
           >
             <p>
-              Subscribe to the Cloudneo, and we'll send you a pair. Run in the
-              shoe. Train. Workout. Chase down a PR Challenge yourself to
-              another marathon. Do whatever you like. Run 'til you can't run
-              anymore (in this shoe).
+              Subscribe to the Cloudneo, and we'll send you a pair. Run in the shoe. Train. Workout. Chase down a PR Challenge yourself to another marathon. Do
+              whatever you like. Run 'til you can't run anymore (in this shoe).
             </p>
           </div>
         </div>
@@ -71,9 +69,8 @@ const CyclonWork = () => {
             }}
           >
             <p>
-              Every 6 months you can request new running gear. When the new
-              shoes arrive (still recyclable, obviously), put the worn out,
-              recyclable ones in the bag and send it back to us. Easy!
+              Every 6 months you can request new running gear. When the new shoes arrive (still recyclable, obviously), put the worn out, recyclable ones in the
+              bag and send it back to us. Easy!
             </p>
           </div>
         </div>
@@ -104,9 +101,8 @@ const CyclonWork = () => {
             }}
           >
             <p>
-              We get the worn out Cyclon™ product and use it as raw materials
-              for new products. You keep running until you need to recycle. And
-              so it goes on, and on, and on, and on.
+              We get the worn out Cyclon™ product and use it as raw materials for new products. You keep running until you need to recycle. And so it goes on,
+              and on, and on, and on.
             </p>
           </div>
         </div>
@@ -123,11 +119,11 @@ const Wrapper = styled.div`
     width: 95%;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     .box {
       position: relative;
-      width: 35rem;
-      height: 60rem;
+      width: 32%;
+      height: 40rem;
       border-radius: 1rem;
       overflow-y: hidden;
       transition: all ease 0.6s;
@@ -142,7 +138,7 @@ const Wrapper = styled.div`
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        bottom: 4rem;
+        bottom: 2rem;
         z-index: 99;
         p {
           font-size: 2.2rem;
@@ -150,12 +146,12 @@ const Wrapper = styled.div`
           font-weight: 600;
         }
         .btn {
-          width: 4rem;
-          height: 4rem;
+          width: 3rem;
+          height: 3rem;
           display: flex;
           justify-content: center;
           align-items: center;
-          border: 1px solid white;
+          border: 2px solid white;
           border-radius: 50%;
           background-color: transparent;
           font-size: 2rem;
@@ -177,8 +173,8 @@ const Wrapper = styled.div`
         position: absolute;
         background-color: black;
         color: #eae9e9;
-        width: 35rem;
-        height: 60rem;
+        width: 100%;
+        height: 100%;
         border-radius: 1rem;
         transition: all ease 0.5s;
         bottom: -60rem;
@@ -259,11 +255,7 @@ const Wrapper = styled.div`
           border-bottom-right-radius: 1rem;
           position: absolute;
           bottom: 0;
-          background: linear-gradient(
-            0deg,
-            #0000009b 0%,
-            rgba(0, 0, 0, 0) 100%
-          );
+          background: linear-gradient(0deg, #0000009b 0%, rgba(0, 0, 0, 0) 100%);
           z-index: 97;
         }
         .balckBoXText {
@@ -353,11 +345,7 @@ const Wrapper = styled.div`
           border-bottom-right-radius: 1rem;
           position: absolute;
           bottom: 0;
-          background: linear-gradient(
-            0deg,
-            #0000009b 0%,
-            rgba(0, 0, 0, 0) 100%
-          );
+          background: linear-gradient(0deg, #0000009b 0%, rgba(0, 0, 0, 0) 100%);
           z-index: 97;
         }
         .balckBoXText {
@@ -447,11 +435,7 @@ const Wrapper = styled.div`
           border-bottom-right-radius: 1rem;
           position: absolute;
           bottom: 0;
-          background: linear-gradient(
-            0deg,
-            #0000009b 0%,
-            rgba(0, 0, 0, 0) 100%
-          );
+          background: linear-gradient(0deg, #0000009b 0%, rgba(0, 0, 0, 0) 100%);
           z-index: 97;
         }
         .balckBoXText {

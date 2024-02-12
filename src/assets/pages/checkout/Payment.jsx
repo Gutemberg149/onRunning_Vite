@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 import { CheckingCardContext } from "../../contexts/CheckCartContext";
 const Payment = () => {
   const [cardContainerOpen, setCardContainerOpen] = useState(false);
-  // const [checkCard, setCheckCard] = useState(false);
   const [cardNumber, setCardNumber] = useState("");
   const [cardNumbValido, setCardNumbValido] = useState(false);
   const [numberValueMonth, setNumberValueMonth] = useState("");
   const [numberValueYear, setNumberValueYear] = useState("");
   const [numberValueSecurityNumber, setNumberValueSecurityNumber] = useState("");
   const [nameValue, setNameValue] = useState("");
+  const [warningErrorState, setWarningErrorState] = useState(false);
 
   // This usedContext bellow was necessary bcs the "checkCard" is been used in OrderPlaced page to reload the page and clear the Cart, before that, despite the localstorage has been cleared as the Paymentent is complited, the cart would not automatically clear.
   const { checkCard, setCheckCard } = useContext(CheckingCardContext);
@@ -77,13 +77,13 @@ const Payment = () => {
       setCheckCard(false);
     }
   }, [numberValueMonth, numberValueYear, numberValueSecurityNumber, cardNumbValido, nameValue]);
-  //This function is to clea the lcal storage once the payment is finalized.
+  //This function is to clear the local storage once the payment is finalized.
   function clearLocalStorage() {
     if (checkCard) {
       localStorage.removeItem("cartItems");
     }
   }
-  // {"firstname":"SimonV","lastname":"Habibi","docnumber":"7812365872","street":"Rue Jadore ","neighbohood":"Magnific","city":"Paris","state":"FR","postCode":"32678532","country":""}
+
   let UserDatas = JSON.parse(localStorage.getItem("UserDatas")) || [];
   return (
     <Wrapper>
@@ -154,9 +154,17 @@ const Payment = () => {
               <input type="text" placeholder="Name" value={nameValue} onChange={handleInputName} />
             </div>
           </form>
+
+          {/* This code bellow checks if the warningErrorState is set true or false to display the warning.  */}
+          <div className="warningError">
+            <p className="warningError_P" style={{ display: `${warningErrorState ? "block" : "none"}` }}>
+              Um dos campos acima não está correto.
+            </p>
+          </div>
           <Link to={`${checkCard ? "/orderplaced" : ""}`}>
-            <div className="btnPlaceOrder">
-              <button className={`${checkCard ? "PlaceOrder cardInfoChecked" : "PlaceOrder "}`} onClick={clearLocalStorage}>
+            {/* This code bellow checks if the checkCard is set true or false when clicked so it will change the setWarningErrorStat*/}
+            <div className="btnPlaceOrder" onClick={() => `${checkCard ? setWarningErrorState(false) : setWarningErrorState(true)}`}>
+              <button className={`${checkCard ? "PlaceOrder cardInfoChecked" : "PlaceOrder"}`} onClick={clearLocalStorage}>
                 Place your order
               </button>
             </div>
@@ -191,7 +199,7 @@ const Wrapper = styled.div`
   }
   .payment {
     margin-top: 3rem;
-
+    height: 37rem;
     h5 {
       font-size: 1.8rem;
       font-weight: 400;
@@ -201,9 +209,10 @@ const Wrapper = styled.div`
       display: flex;
       flex-direction: column;
       border: #c3c1c1 1px solid;
-      height: 6rem;
+      height: 100%;
       margin-top: 3rem;
       overflow: hidden;
+
       .credCarttop {
         display: flex;
         align-items: center;
@@ -249,10 +258,11 @@ const Wrapper = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-bottom: 0;
         .cardInfoContainer {
           width: 30rem;
           height: 5rem;
-          margin: 0.5rem 0;
+          margin: 0.5rem 0rem;
 
           input::-webkit-outer-spin-button,
           input::-webkit-inner-spin-button {
@@ -279,6 +289,7 @@ const Wrapper = styled.div`
           align-items: center;
           justify-content: space-between;
           width: 95%;
+
           .infoCardExpireDate {
             .inputDate {
               border: 1px solid #b9b9b9;
@@ -338,17 +349,16 @@ const Wrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 2rem;
+        margin-top: 0rem;
 
         .PlaceOrder {
-          width: 12rem;
-          height: 3.5rem;
+          width: 10rem;
+          height: 3rem;
           color: white;
           font-size: 1rem;
           background-color: #616060;
           border: none;
           border-radius: 3rem;
-          cursor: pointer;
           cursor: pointer;
         }
         .cardInfoChecked {
@@ -359,6 +369,14 @@ const Wrapper = styled.div`
 
     .credcardContainerOpen {
       height: 33rem;
+    }
+    .warningError {
+      height: 3rem;
+      margin-top: 0.5rem;
+      padding-left: 1.1rem;
+      .warningError_P {
+        color: red;
+      }
     }
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -539,7 +557,7 @@ const Wrapper = styled.div`
   }
   @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
   }
-  @media only screen and (min-device-width: 901px) and (max-device-width: 1500px) and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1300px) and (-webkit-min-device-pixel-ratio: 2) {
     width: 100%;
     .shipping {
       display: flex;
@@ -727,7 +745,7 @@ const Wrapper = styled.div`
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-top: 2rem;
+          margin-top: 0rem;
 
           .PlaceOrder {
             width: 10rem;

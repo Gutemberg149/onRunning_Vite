@@ -45,12 +45,12 @@ const Wrapper = styled.div`
     .sec1 {
       p {
         color: white;
-        font-size: 2rem;
+        font-size: 1.6rem;
         margin-left: 4rem;
       }
       h3 {
         color: white;
-        font-size: 6rem;
+        font-size: 4rem;
         font-weight: 500;
         margin-left: 4rem;
         margin-bottom: 5rem;

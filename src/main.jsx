@@ -9,23 +9,26 @@ import ShippingProvider from "./assets/contexts/ShippingContext.jsx";
 import ContactUsProvider from "./assets/contexts/ContactUsContext.jsx";
 import OpensignUpProvider from "./assets/contexts/OpenSigUpContext";
 import CheckingCardProvider from "./assets/contexts/CheckCartContext.jsx";
+import BcgProvider from "./assets/contexts/OrdeStausContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <OpensignUpProvider>
-    <React.StrictMode>
-      <ContactUsProvider>
-        <ShippingProvider>
-          <CartToggleProvider>
-            <SizeChosenProvider>
-              <ProdDetailProvider>
-                <CheckingCardProvider>
-                  <App />
-                </CheckingCardProvider>
-              </ProdDetailProvider>
-            </SizeChosenProvider>
-          </CartToggleProvider>
-        </ShippingProvider>
-      </ContactUsProvider>
-    </React.StrictMode>
-  </OpensignUpProvider>
+  <BcgProvider>
+    <OpensignUpProvider>
+      <React.StrictMode>
+        <ContactUsProvider>
+          <ShippingProvider>
+            <CartToggleProvider>
+              <SizeChosenProvider>
+                <ProdDetailProvider>
+                  <CheckingCardProvider>
+                    <App />
+                  </CheckingCardProvider>
+                </ProdDetailProvider>
+              </SizeChosenProvider>
+            </CartToggleProvider>
+          </ShippingProvider>
+        </ContactUsProvider>
+      </React.StrictMode>
+    </OpensignUpProvider>
+  </BcgProvider>
 );

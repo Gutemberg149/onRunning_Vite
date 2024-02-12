@@ -25,10 +25,10 @@ const SingleProduct = () => {
 
   const moveRight = () => {
     if (screenSize.current <= 600) {
-      if (moveCarroseel < -60) {
+      if (moveCarroseel < -75) {
         setMoveCarrosel(0);
       } else {
-        setMoveCarrosel(moveCarroseel - 20);
+        setMoveCarrosel(moveCarroseel - 21);
         console.log(moveCarroseel);
       }
     } else if (screenSize.current <= 900) {
@@ -38,11 +38,18 @@ const SingleProduct = () => {
         setMoveCarrosel(moveCarroseel - 25);
         console.log(moveCarroseel);
       }
-    } else {
-      if (moveCarroseel < -120) {
+    } else if (screenSize.current <= 1350) {
+      if (moveCarroseel < -70) {
         setMoveCarrosel(0);
       } else {
-        setMoveCarrosel(moveCarroseel - 60);
+        setMoveCarrosel(moveCarroseel - 40);
+        console.log(moveCarroseel);
+      }
+    } else {
+      if (moveCarroseel < -60) {
+        setMoveCarrosel(0);
+      } else {
+        setMoveCarrosel(moveCarroseel - 35);
         console.log(moveCarroseel);
       }
     }
@@ -53,7 +60,7 @@ const SingleProduct = () => {
       if (moveCarroseel >= 0) {
         return;
       } else {
-        setMoveCarrosel(moveCarroseel + 20);
+        setMoveCarrosel(moveCarroseel + 21);
       }
     } else if (screenSize.current <= 900) {
       if (moveCarroseel >= 0) {
@@ -61,8 +68,19 @@ const SingleProduct = () => {
       } else {
         setMoveCarrosel(moveCarroseel + 25);
       }
+    } else if (screenSize.current <= 1350) {
+      if (moveCarroseel >= 0) {
+        return;
+      } else {
+        setMoveCarrosel(moveCarroseel + 40);
+      }
+    } else {
+      if (moveCarroseel >= 0) {
+        return;
+      } else {
+        setMoveCarrosel(moveCarroseel + 35);
+      }
     }
-
     console.log(moveCarroseel);
   };
 
@@ -106,36 +124,11 @@ const SingleProduct = () => {
               <div className="btnCarrossel" onClick={() => moveLeft()}>
                 <BsChevronLeft className=" btnLeft" />
               </div>
+
               <div className="btnCarrossel" onClick={() => moveRight()}>
                 <BsChevronRight className=" btnRight" style={{ fontWeight: "700" }} />
               </div>
             </>
-            <div className="dots">
-              <div
-                className="dot"
-                style={{
-                  backgroundColor: `${moveCarroseel === 0 ? "gray" : "white"}`,
-                }}
-              ></div>
-              <div
-                className="dot"
-                style={{
-                  backgroundColor: `${moveCarroseel === -60 ? "gray" : "white"}`,
-                }}
-              ></div>
-              <div
-                className="dot"
-                style={{
-                  backgroundColor: `${moveCarroseel === -120 ? "gray" : "white"}`,
-                }}
-              ></div>
-              <div
-                className="dot"
-                style={{
-                  backgroundColor: `${moveCarroseel === -180 ? "gray" : "white"}`,
-                }}
-              ></div>
-            </div>
           </div>
         </div>
       </section>
@@ -183,7 +176,7 @@ const SingleProduct = () => {
           <hr />
           <section className="materials">
             <div className="dropContainer">
-              <h4>Shipping & Returns</h4>
+              <h4>Materials & Supplier</h4>
               <TfiClose
                 className="xToggle"
                 onClick={() => setToggleMaterials(!toggleMaterials)}
@@ -216,19 +209,20 @@ const SingleProduct = () => {
       <div className="cartshop" style={{ right: `${showCart}px` }}>
         <CartShop />
       </div>
-
-      <Footer />
+      <footer>
+        {" "}
+        <Footer />
+      </footer>
     </Wrapper>
   );
 };
 const Wrapper = styled.div`
   overflow-x: hidden;
   position: relative;
-
   .navbar {
     .logo {
-      width: 6.25rem;
-      margin: 1.25rem 3.75rem;
+      width: 4rem;
+      margin: 3rem 3.75rem;
       border-radius: 50%;
       cursor: pointer;
     }
@@ -241,11 +235,12 @@ const Wrapper = styled.div`
         transition: all 0.6s ease;
         .prodContainer {
           width: 60rem;
-          height: 60rem;
+          height: 35rem;
           background-color: #f6f4f3;
           margin: 0.4rem;
+
           img {
-            width: 60rem;
+            width: 30rem;
           }
         }
       }
@@ -253,7 +248,7 @@ const Wrapper = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 18rem;
+        width: 12rem;
         height: 5rem;
         position: absolute;
         bottom: 2rem;
@@ -275,27 +270,14 @@ const Wrapper = styled.div`
             font-size: 1.9rem;
           }
         }
-        .dots {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 7rem;
-          height: 3rem;
-
-          .dot {
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            border: 1px solid gray;
-          }
-        }
       }
     }
   }
   .section2 {
-    width: 60rem;
+    width: 50rem;
     margin-left: 4rem;
     margin-top: 6rem;
+
     hr {
       margin: 2rem 0;
     }
@@ -357,7 +339,7 @@ const Wrapper = styled.div`
   }
 
   .section3 {
-    margin: 8rem 0 10rem 0;
+    margin: 6rem 0 2rem 0;
   }
   .cartshop {
     position: absolute;
@@ -395,11 +377,11 @@ const Wrapper = styled.div`
           display: flex;
           justify-content: space-between;
           align-items: center;
-          width: 15rem;
+          width: 8rem;
           height: 5rem;
           position: absolute;
           bottom: -5rem;
-          left: 3rem;
+          left: 0.5rem;
 
           .btnCarrossel {
             background-color: white;
@@ -415,20 +397,6 @@ const Wrapper = styled.div`
             &:hover {
               background-color: #fafafa;
               font-size: 1.9rem;
-            }
-          }
-          .dots {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 6rem;
-            height: 3rem;
-
-            .dot {
-              width: 1rem;
-              height: 1rem;
-              border-radius: 50%;
-              border: 1px solid gray;
             }
           }
         }
@@ -477,11 +445,11 @@ const Wrapper = styled.div`
           display: flex;
           justify-content: space-between;
           align-items: center;
-          width: 17rem;
+          width: 9rem;
           height: 5rem;
           position: absolute;
           bottom: -5rem;
-          left: 3rem;
+          left: 0.5rem;
 
           .btnCarrossel {
             background-color: white;
@@ -497,20 +465,6 @@ const Wrapper = styled.div`
             &:hover {
               background-color: #fafafa;
               font-size: 2.1rem;
-            }
-          }
-          .dots {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 6rem;
-            height: 3rem;
-
-            .dot {
-              width: 1rem;
-              height: 1rem;
-              border-radius: 50%;
-              border: 1px solid gray;
             }
           }
         }
@@ -559,11 +513,11 @@ const Wrapper = styled.div`
           display: flex;
           justify-content: space-between;
           align-items: center;
-          width: 17rem;
+          width: 9rem;
           height: 5rem;
           position: absolute;
           bottom: -5rem;
-          left: 3rem;
+          left: 0.5rem;
 
           .btnCarrossel {
             background-color: white;
@@ -579,20 +533,6 @@ const Wrapper = styled.div`
             &:hover {
               background-color: #fafafa;
               font-size: 2.1rem;
-            }
-          }
-          .dots {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 6rem;
-            height: 3rem;
-
-            .dot {
-              width: 1rem;
-              height: 1rem;
-              border-radius: 50%;
-              border: 1px solid gray;
             }
           }
         }

@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   nav {
     padding: 0 4rem;
     .logo {
-      width: 5.25rem;
+      width: 4rem;
       margin: 2.55rem 3.75rem;
       border-radius: 50%;
     }
@@ -47,14 +47,15 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     height: 70vh;
-    padding-top: 3rem;
+    padding: 3rem;
+
     h1 {
-      font-size: 4rem;
+      font-size: 3rem;
       color: #262525;
       margin-bottom: 5rem;
     }
     p {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: #262525;
       margin-bottom: 6rem;
     }

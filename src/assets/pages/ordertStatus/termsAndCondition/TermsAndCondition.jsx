@@ -28,40 +28,16 @@ const Accessibility = () => {
         {theme_Questions_TermsAndConsition.map((questionTheme) => {
           return questionTheme.map((quest) => {
             return quest.title ? (
-              <div
-                className={"title"}
-                key={quest.id}
-                onClick={() => toggleTitles(quest.id)}
-              >
+              <div className={"title"} key={quest.id} onClick={() => toggleTitles(quest.id)}>
                 <h3>{quest.title}</h3>
-                {selectedTitle === quest.id ? (
-                  <AiOutlineMinus className="plusIcon" />
-                ) : (
-                  <HiPlus className="plusIcon" />
-                )}
+                {selectedTitle === quest.id ? <AiOutlineMinus className="plusIcon" /> : <HiPlus className="plusIcon" />}
               </div>
             ) : (
-              <div
-                className={
-                  selectedTitle === quest.idTitle
-                    ? "showSetOfquestion"
-                    : "hiddenSetOfquestion"
-                }
-                key={quest.id}
-              >
-                <div
-                  className="question"
-                  onClick={() => toggleQuestions(quest.id)}
-                  style={{ transition: "ease .3s" }}
-                >
+              <div className={selectedTitle === quest.idTitle ? "showSetOfquestion" : "hiddenSetOfquestion"} key={quest.id}>
+                <div className="question" onClick={() => toggleQuestions(quest.id)} style={{ transition: "ease .3s" }}>
                   <p>{quest.question}</p>
                 </div>
-                <div
-                  className={
-                    selectedQuestion === quest.id ? "answer show" : "answer"
-                  }
-                  style={{ transition: "ease .3s" }}
-                >
+                <div className={selectedQuestion === quest.id ? "answer show" : "answer"} style={{ transition: "ease .3s" }}>
                   <p>{quest.answer}</p>
                 </div>
               </div>
@@ -82,7 +58,7 @@ const Wrapper = styled.div`
   padding: 0 2rem;
   border-radius: 1rem;
   .titleSession {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     font-weight: 500;
   }
@@ -148,7 +124,7 @@ const Wrapper = styled.div`
     border-radius: 1rem;
 
     .titleSession {
-      font-size: 2.5rem;
+      font-size: 1.3rem;
       margin-bottom: 0.5rem;
       font-weight: 500;
     }
@@ -216,7 +192,7 @@ const Wrapper = styled.div`
     border-radius: 1rem;
 
     .titleSession {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       margin-bottom: 0.5rem;
       font-weight: 500;
     }
@@ -284,7 +260,7 @@ const Wrapper = styled.div`
     border-radius: 1rem;
 
     .titleSession {
-      font-size: 3rem;
+      font-size: 2rem;
       margin-bottom: 0.5rem;
       font-weight: 500;
     }

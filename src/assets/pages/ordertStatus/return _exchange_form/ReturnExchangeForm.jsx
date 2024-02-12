@@ -30,40 +30,16 @@ const ReturnExchangeForm = () => {
         {theme_Questions.map((questionTheme) => {
           return questionTheme.map((quest) => {
             return quest.title ? (
-              <div
-                className={"title"}
-                key={quest.id}
-                onClick={() => toggleTitles(quest.id)}
-              >
+              <div className={"title"} key={quest.id} onClick={() => toggleTitles(quest.id)}>
                 <h3>{quest.title}</h3>
-                {selectedTitle === quest.id ? (
-                  <AiOutlineMinus className="plusIcon" />
-                ) : (
-                  <HiPlus className="plusIcon" />
-                )}
+                {selectedTitle === quest.id ? <AiOutlineMinus className="plusIcon" /> : <HiPlus className="plusIcon" />}
               </div>
             ) : (
-              <div
-                className={
-                  selectedTitle === quest.idTitle
-                    ? "showSetOfquestion"
-                    : "hiddenSetOfquestion"
-                }
-                key={quest.id}
-              >
-                <div
-                  className="question"
-                  onClick={() => toggleQuestions(quest.id)}
-                  style={{ transition: "ease .2s" }}
-                >
+              <div className={selectedTitle === quest.idTitle ? "showSetOfquestion" : "hiddenSetOfquestion"} key={quest.id}>
+                <div className="question" onClick={() => toggleQuestions(quest.id)} style={{ transition: "ease .2s" }}>
                   <p>{quest.question}</p>
                 </div>
-                <div
-                  className={
-                    selectedQuestion === quest.id ? "answer show" : "answer"
-                  }
-                  style={{ transition: "ease .2s" }}
-                >
+                <div className={selectedQuestion === quest.id ? "answer show" : "answer"} style={{ transition: "ease .2s" }}>
                   <div style={{ marginBottom: "3rem" }}>{quest.answer}</div>
                 </div>
               </div>
@@ -79,7 +55,7 @@ const Wrapper = styled.div`
   width: 60%;
 
   h1 {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     font-weight: 500;
     color: #201f1f;

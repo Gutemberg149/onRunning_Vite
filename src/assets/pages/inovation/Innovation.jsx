@@ -17,13 +17,9 @@ const Innovation = () => {
 
       <section className="sectionText">
         <div className="containerSecText">
-          <h4 className="containerText_h4">
-            Tech innovation is our super power
-          </h4>
+          <h4 className="containerText_h4">Tech innovation is our super power</h4>
           <p className="pSecText">
-            On started with a simple goal – to revolutionize running, bringing
-            innovative ideas to life through the power of cutting-edge
-            technology.
+            On started with a simple goal – to revolutionize running, bringing innovative ideas to life through the power of cutting-edge technology.
           </p>
         </div>
       </section>
@@ -35,11 +31,9 @@ const Innovation = () => {
       <section className="sectionText">
         <div className="containerSecText">
           <p className="pSecText2">
-            The heart of On lies in our lab. Our scientists are always
-            experimenting to achieve new and better, from improved energy return
-            and impact protection to increasing product sustainability. And like
-            every athlete out there, we revise, refine and re-engineer at every
-            opportunity – to continue to help others achieve amazing things.
+            The heart of On lies in our lab. Our scientists are always experimenting to achieve new and better, from improved energy return and impact
+            protection to increasing product sustainability. And like every athlete out there, we revise, refine and re-engineer at every opportunity – to
+            continue to help others achieve amazing things.
           </p>
         </div>
       </section>
@@ -48,65 +42,44 @@ const Innovation = () => {
         <div className="innerCoudeTech">
           <h5>CloudTec®</h5>
           <p>
-            The secret power in every On shoe, CloudTec® is the technology that
-            launched everything. Swiss-engineered to deliver soft landings and
-            supreme take-offs, it adapts to you.
+            The secret power in every On shoe, CloudTec® is the technology that launched everything. Swiss-engineered to deliver soft landings and supreme
+            take-offs, it adapts to you.
           </p>
         </div>
       </section>
 
       <section className="IframeSection">
-        <iframe
-          src={`https://www.youtube.com/embed/_h-Mty7aGZ8`}
-          frameBorder={0}
-          allowFullScreen
-          allow="autoplay"
-        />
+        <iframe src={`https://www.youtube.com/embed/_h-Mty7aGZ8`} frameBorder={0} allowFullScreen allow="autoplay" />
       </section>
 
-      <section
-        className="sectionText"
-        style={{ backgroundColor: "white", color: "black" }}
-      >
+      <section className="sectionText" style={{ backgroundColor: "white", color: "black" }}>
         <div className="containerSecText">
           <h4 className="containerText_h4" style={{ color: "black" }}>
             Speedboard®
           </h4>
           <p className="pSecText" style={{ color: "black" }}>
-            Speedboard® is your On shoe’s secret weapon. Working in harmony with
-            CloudTec®, it converts the kinetic energy of each landing into a
-            powerful take-off – more speed, for the same effort.
+            Speedboard® is your On shoe’s secret weapon. Working in harmony with CloudTec®, it converts the kinetic energy of each landing into a powerful
+            take-off – more speed, for the same effort.
           </p>
         </div>
       </section>
 
       <section className="IframeSection">
-        <iframe
-          src={`https://www.youtube.com/embed/VtosSdRZcsA`}
-          frameBorder={0}
-          allowFullScreen
-          allow="autoplay"
-        />
+        <iframe src={`https://www.youtube.com/embed/VtosSdRZcsA`} frameBorder={0} allowFullScreen allow="autoplay" />
       </section>
 
       <section className="sectionTech">
         <div className="innerCoudeTech">
           <h5>Helion™</h5>
           <p>
-            A superfoam for superior performance. We crafted Helion™ in the On
-            Lab to work with CloudTec® so you enjoy smoother, effortless runs in
-            the city and beyond.
+            A superfoam for superior performance. We crafted Helion™ in the On Lab to work with CloudTec® so you enjoy smoother, effortless runs in the city and
+            beyond.
           </p>
         </div>
       </section>
 
       <section className="IframeSection">
-        <iframe
-          src={`https://www.youtube.com/embed/zGi3f6Wyxj8`}
-          frameBorder={0}
-          allowFullScreen
-          allow="autoplay"
-        />
+        <iframe src={`https://www.youtube.com/embed/zGi3f6Wyxj8`} frameBorder={0} allowFullScreen allow="autoplay" />
       </section>
       <Footer />
     </Wrapper>
@@ -136,27 +109,27 @@ const Wrapper = styled.div`
       padding: 0 4rem;
       .containerText_h4 {
         color: #e6e6e6;
-        font-size: 6rem;
+        font-size: 3.2rem;
         margin-top: 5rem;
         margin-bottom: 2rem;
       }
       .pSecText {
         color: #e6e6e6;
-        font-size: 4rem;
+        font-size: 1.6rem;
         margin-bottom: 3rem;
       }
       .pSecText2 {
         color: #e6e6e6;
-        font-size: 5rem;
+        font-size: 2.5rem;
         margin: 5rem 2rem;
-        font-weight: 600;
-        line-height: 6rem;
+        font-weight: 500;
+        line-height: 5rem;
       }
     }
   }
   .sectionTech {
     background-color: white;
-    height: 35rem;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,10 +137,11 @@ const Wrapper = styled.div`
     .innerCoudeTech {
       width: 90%;
       h5 {
-        font-size: 7rem;
+        font-size: 3rem;
+        margin-bottom: 2rem;
       }
       p {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
       }
     }
   }
@@ -204,6 +178,7 @@ const Wrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 1rem;
       .containerSecText {
         width: 100%;
         padding: 0 1rem;
@@ -277,6 +252,7 @@ const Wrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 1rem;
       .containerSecText {
         width: 100%;
         padding: 0 1rem;
@@ -334,11 +310,10 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (min-device-width: 901px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 2) {
-    /* padding: 1rem; */
     nav {
-      padding: 0 1rem;
+      padding: 0 2rem;
       .logo {
-        width: 5rem;
+        width: 4rem;
         margin: 0;
         margin-top: 7rem;
       }
@@ -353,32 +328,34 @@ const Wrapper = styled.div`
       align-items: center;
       justify-content: center;
       width: 100vw;
+      margin-bottom: 1.2rem;
       .containerSecText {
         width: 100%;
         padding: 0 1rem;
         .containerText_h4 {
           color: #e6e6e6;
-          font-size: 2.7rem;
+          font-size: 2rem;
           margin-top: 1.5rem;
           margin-bottom: 0rem;
         }
         .pSecText {
           color: #e6e6e6;
-          font-size: 1.9rem;
+          font-size: 1.6rem;
           margin-bottom: 1rem;
         }
         .pSecText2 {
           color: #e6e6e6;
-          font-size: 1.9rem;
+          font-size: 1.7rem;
           margin: 0rem 0rem;
           font-weight: 600;
           line-height: 2.5rem;
+          padding: 0.5rem 0;
         }
       }
     }
     .sectionTech {
       background-color: white;
-      height: 50vh;
+      height: 45vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -386,10 +363,11 @@ const Wrapper = styled.div`
       .innerCoudeTech {
         width: 90%;
         h5 {
-          font-size: 3rem;
+          font-size: 2.4rem;
+          margin-bottom: 0;
         }
         p {
-          font-size: 2rem;
+          font-size: 1.6rem;
         }
       }
     }

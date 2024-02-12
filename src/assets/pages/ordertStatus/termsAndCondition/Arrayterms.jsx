@@ -31,7 +31,7 @@ const theme_Questions_TermsAndConsition = [
     {
       id: 6,
       idTitle: 5,
-      question: "1.",
+      question: "1.Delivery methods",
       answer:
         "4.1 Delivery methods and expected delivery time of Products may differ per country and are indicated on the Site in the Shipping, tracking and delivery section of the FAQs (https://customer-service.on-running.com/shipping_and_returns).",
     },
@@ -39,23 +39,22 @@ const theme_Questions_TermsAndConsition = [
     {
       id: 7,
       idTitle: 5,
-      question: "2.",
+      question: "2.Delivery stipulated",
       answer:
-        "4.2 Unless explicitly stipulated in writing by On, the delivery dates indicated by On shall only be non-binding estimates, made to the best of On's knowledge. Should a delivery be delayed beyond the dates explicitly confirmed by On in writing, Customer shall set a grace period of at least fifteen (15) business days. After expiry of such grace period, Customer may withdraw from the respective Order. Any further claims are excluded.",
+        "4.2 Unless explicitly stipulated in writing by On, the delivery dates indicated by On shall only be non-binding estimates, made to the best of On's knowledge. Should a delivery be delayed beyond the dates explicitly confirmed by On in writing.",
     },
 
     {
       id: 8,
       idTitle: 5,
-      question: "3.",
-      answer:
-        "4.3 On shall be entitled to partial deliveries, and the Customer hereby accepts partial deliveries.",
+      question: "3.Partial deliveries",
+      answer: "4.3 On shall be entitled to partial deliveries, and the Customer hereby accepts partial deliveries.",
     },
 
     {
       id: 9,
       idTitle: 5,
-      question: "4.",
+      question: "4.No warranty",
       answer:
         "4.4 No warranty is being given for all technical data and information regarding the delivery. On shall not be liable for any damage which might arise because of deviations thereof.",
     },

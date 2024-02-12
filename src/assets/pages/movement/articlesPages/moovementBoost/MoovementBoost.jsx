@@ -134,15 +134,15 @@ const Wrapper = styled.div`
     margin-bottom: 5rem;
     .h1Sec1 {
       color: white;
-      font-size: 6rem;
+      font-size: 3.5rem;
       width: 80%;
       font-weight: 500;
-      line-height: 7rem;
+      line-height: 5rem;
       margin-bottom: 2rem;
     }
     .pSec1 {
       color: white;
-      font-size: 3rem;
+      font-size: 1.9rem;
       width: 90%;
       font-weight: 300;
       line-height: 4rem;

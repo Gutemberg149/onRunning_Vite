@@ -31,10 +31,7 @@ const QuickFacts = () => {
           </>
           {toggleFact1 && (
             <div className="blackBox">
-              <div
-                className="iconConatiner"
-                onClick={() => setToggelFact1(!toggleFact1)}
-              >
+              <div className="iconConatiner" onClick={() => setToggelFact1(!toggleFact1)}>
                 <TfiClose className="iconBlackBox" />
               </div>
 
@@ -60,19 +57,14 @@ const QuickFacts = () => {
           </>
           {toggleFact2 && (
             <div className="blackBox">
-              <div
-                className="iconConatiner"
-                onClick={() => setToggelFact2(!toggleFact2)}
-              >
+              <div className="iconConatiner" onClick={() => setToggelFact2(!toggleFact2)}>
                 <TfiClose className="iconBlackBox" />
               </div>
 
               <div className="container">
                 <p>
-                  The level of cushioning in a shoe will determine how it feels
-                  when your foot lands. More cushioning means less impact and
-                  extra comfort. Less cushioning means a faster and more
-                  responsive running experience.
+                  The level of cushioning in a shoe will determine how it feels when your foot lands. More cushioning means less impact and extra comfort. Less
+                  cushioning means a faster and more responsive running experience.
                 </p>
               </div>
             </div>
@@ -93,18 +85,14 @@ const QuickFacts = () => {
           </>
           {toggleFact3 && (
             <div className="blackBox">
-              <div
-                className="iconConatiner"
-                onClick={() => setToggelFact3(!toggleFact3)}
-              >
+              <div className="iconConatiner" onClick={() => setToggelFact3(!toggleFact3)}>
                 <TfiClose className="iconBlackBox" />
               </div>
 
               <div className="container">
                 <p>
-                  Heel to toe drop is the difference in height between the heel
-                  and the forefoot. In a shoe with a drop of 7mm, your heel will
-                  sit 7mm higher than your forefoot.
+                  Heel to toe drop is the difference in height between the heel and the forefoot. In a shoe with a drop of 7mm, your heel will sit 7mm higher
+                  than your forefoot.
                 </p>
               </div>
             </div>
@@ -126,22 +114,16 @@ const QuickFacts = () => {
           </>
           {toggleFact4 && (
             <div className="blackBox">
-              <div
-                className="iconConatiner"
-                onClick={() => setToggelFact4(!toggleFact4)}
-              >
+              <div className="iconConatiner" onClick={() => setToggelFact4(!toggleFact4)}>
                 <TfiClose className="iconBlackBox" />
               </div>
 
               <div className="container">
                 <p>
-                  Every shoe offers a unique running sensation or 'ride'
-                  depending on its design. Stable: A supportive feel for added
-                  stability.
+                  Every shoe offers a unique running sensation or 'ride' depending on its design. Stable: A supportive feel for added stability.
                   <br />
                   <br />
-                  Suitable for runners of any level.How heavy an individual shoe
-                  or product is.
+                  Suitable for runners of any level.How heavy an individual shoe or product is.
                 </p>
               </div>
             </div>
@@ -154,15 +136,15 @@ const QuickFacts = () => {
 
 const Wrapper = styled.div`
   h1 {
-    font-size: 5rem;
+    font-size: 2.8rem;
     font-weight: 400;
     color: #272727;
-    margin-left: 4rem;
+    margin-left: 5rem;
     margin-bottom: 2rem;
   }
-  height: 45rem;
+
   .factsContainer {
-    height: 35rem;
+    height: 25rem;
     padding: 0 5rem;
     display: flex;
     justify-content: space-between;
@@ -179,7 +161,7 @@ const Wrapper = styled.div`
         align-items: center;
         padding: 0 1rem;
         p {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
         }
         .i {
           width: 2.3rem;
@@ -198,13 +180,13 @@ const Wrapper = styled.div`
         }
       }
       .middle {
-        height: 30rem;
+        height: 20rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         p {
-          font-size: 3.6rem;
+          font-size: 2.3rem;
           font-weight: 300;
         }
 
@@ -463,15 +445,16 @@ const Wrapper = styled.div`
   }
   @media only screen and (min-device-width: 901px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 2) {
     h1 {
-      font-size: 2.2rem;
+      margin-top: 8rem;
+      font-size: 2rem;
       font-weight: 400;
       color: #272727;
       margin-left: 1rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       height: 3rem;
     }
     .factsContainer {
-      height: 22rem;
+      height: 18rem;
       padding: 0rem;
       display: flex;
       justify-content: space-between;
@@ -492,11 +475,11 @@ const Wrapper = styled.div`
           padding: 0;
 
           p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
           }
           .i {
-            width: 1.9rem;
-            height: 1.9rem;
+            width: 1.6rem;
+            height: 1.6rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -517,12 +500,12 @@ const Wrapper = styled.div`
           justify-content: center;
           align-items: center;
           p {
-            font-size: 2.4rem;
+            font-size: 1.8rem;
             font-weight: 300;
           }
 
           .iconSec3 {
-            font-size: 3.9rem;
+            font-size: 3rem;
             font-weight: 300;
             margin-top: 2rem;
           }

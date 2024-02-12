@@ -31,30 +31,31 @@ const UserAccount = () => {
 };
 const Wrapper = styled.div`
   margin: 0 0.5rem;
+  padding: 0 3rem;
   .topText {
-    margin-bottom: 5rem;
-    width: 100vw;
+    margin-bottom: 2rem;
+    width: 50vw;
     h1 {
       font-size: 2.5rem;
-      font-weight: 500;
+      font-weight: 600;
       margin-bottom: 2rem;
     }
     p {
-      font-size: 1rem;
-      font-weight: 300;
+      font-size: 1.3rem;
+      font-weight: 400;
       width: 100%;
       line-height: 3rem;
     }
   }
   .container {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     h4 {
-      font-size: 2.2rem;
-      font-weight: 500;
+      font-size: 2.5rem;
+      font-weight: 600;
       margin-bottom: 1.5rem;
     }
     p {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: 300;
       color: #313030;
       margin-bottom: 2.5rem;

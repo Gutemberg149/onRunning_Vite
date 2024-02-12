@@ -179,7 +179,54 @@ const Wrapper = styled.div`
         font-size: 0.9rem;
         color: white;
         border-radius: 0.3rem;
+        margin-top: 0.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    form {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      padding: 0 0.5rem;
+
+      input {
+        height: 3rem;
+        border: none;
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        &::placeholder {
+          font-size: 1.1rem;
+          color: #7d7c7c;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      textarea {
+        border: none;
+        border-bottom: 1px solid lightgray;
         margin-top: 2rem;
+        font-size: 1.2rem;
+        &::placeholder {
+          font-size: 1.1rem;
+          color: #7d7c7c;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        width: 6rem;
+        height: 2.5rem;
+        background-color: #047695;
+        border: none;
+        font-size: 0.7rem;
+        color: white;
+        border-radius: 0.3rem;
+        margin-top: 1rem;
         cursor: pointer;
       }
     }

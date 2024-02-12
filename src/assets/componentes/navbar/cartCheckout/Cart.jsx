@@ -134,13 +134,13 @@ const Wrapper = styled.div`
 
         .leftSide {
           h1 {
-            font-size: 3rem;
+            font-size: 2.2rem;
             font-weight: 500;
           }
           .numberOfItens {
             margin-top: 1rem;
             margin-left: 0.5rem;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             display: flex;
             p {
               margin-left: 1rem;
@@ -186,12 +186,12 @@ const Wrapper = styled.div`
             align-items: left;
             justify-content: center;
             h3 {
-              font-size: 1.8rem;
+              font-size: 1.6rem;
               font-weight: 600;
             }
             p {
               margin-top: 0.4rem;
-              font-size: 1.2rem;
+              font-size: 1.1rem;
               font-weight: 400;
               color: #343434;
             }
@@ -201,14 +201,14 @@ const Wrapper = styled.div`
               align-items: center;
               margin-top: 1rem;
               .btn {
-                width: 3.5rem;
-                height: 3.5rem;
+                width: 3rem;
+                height: 3rem;
                 border-radius: 50%;
                 border: 1px solid gray;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 1.9rem;
+                font-size: 1.7rem;
                 font-weight: 200;
                 cursor: pointer;
                 &:hover {
@@ -217,7 +217,7 @@ const Wrapper = styled.div`
                 }
               }
               .qtd {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 font-weight: 300;
               }
             }

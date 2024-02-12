@@ -20,12 +20,7 @@ const About_On = () => {
 
       <section className="sec1">
         <div className="IframeSection">
-          <iframe
-            src={`https://www.youtube.com/embed/ILN99_PZzko`}
-            frameBorder={0}
-            allowFullScreen
-            allow="autoplay"
-          />
+          <iframe src={`https://www.youtube.com/embed/ILN99_PZzko`} frameBorder={0} allowFullScreen allow="autoplay" />
         </div>
 
         <div className="boxText">
@@ -38,12 +33,9 @@ const About_On = () => {
         <div className="containerSecText">
           <div className="containerText_h4">Welcome to the On Lab</div>
           <p className="pSecText2">
-            Technological innovation lies at the heart of On. ‘Better’ is
-            achieved through continual experimentation. Never being afraid to
-            start again different or break the mold. Dreaming up ground-breaking
-            new ideas isn’t enough – we want to make them a physical reality.
-            Today, our world-class team of scientists and technicians continue
-            to cook up trailblazing innovations within our Zurich-based On Lab.
+            Technological innovation lies at the heart of On. ‘Better’ is achieved through continual experimentation. Never being afraid to start again
+            different or break the mold. Dreaming up ground-breaking new ideas isn’t enough – we want to make them a physical reality. Today, our world-class
+            team of scientists and technicians continue to cook up trailblazing innovations within our Zurich-based On Lab.
           </p>
         </div>
       </section>
@@ -60,14 +52,10 @@ const About_On = () => {
           }}
         >
           <p className="pSecText2" style={{ color: "white" }}>
-            The Athlete Spirit guides everyone at On. And like our athletes, we
-            are always recalibrating and reengineering toward better. Our goal
-            is to make high-performance products with the lowest possible
-            footprint – engineered for circularity, designed with preferred
-            materials, using enhanced manufacturing methods and distribution
-            models. By working from our own On Lab, alongside our most close and
-            trusted partners, we can control our manufacturing processes down to
-            the details. After all – saving the planet is a team sport.
+            The Athlete Spirit guides everyone at On. And like our athletes, we are always recalibrating and reengineering toward better. Our goal is to make
+            high-performance products with the lowest possible footprint – engineered for circularity, designed with preferred materials, using enhanced
+            manufacturing methods and distribution models. By working from our own On Lab, alongside our most close and trusted partners, we can control our
+            manufacturing processes down to the details. After all – saving the planet is a team sport.
           </p>
         </div>
       </section>
@@ -78,15 +66,11 @@ const About_On = () => {
 
       <section className="sectionText">
         <div className="containerSecText">
-          <div className="containerText_h4">
-            Created by athletes, for athletes
-          </div>
+          <div className="containerText_h4">Created by athletes, for athletes</div>
           <p className="pSecText2">
-            From elite athletes to those just starting out, movement is the
-            thread that unites us. Driven by performance. In the On Lab, gold
-            medallists work with our engineers to develop the next generation of
-            shoe tech. Then the wider On community shows us what we’re working
-            for – out in the streets and on the track, all across the world.
+            From elite athletes to those just starting out, movement is the thread that unites us. Driven by performance. In the On Lab, gold medallists work
+            with our engineers to develop the next generation of shoe tech. Then the wider On community shows us what we’re working for – out in the streets and
+            on the track, all across the world.
           </p>
         </div>
       </section>
@@ -104,8 +88,8 @@ const Wrapper = styled.div`
   nav {
     padding: 0 4rem;
     .logo {
-      width: 5.25rem;
-      margin: 2.55rem 3.75rem;
+      width: 4rem;
+      margin: 2.8rem 3.75rem;
       border-radius: 50%;
     }
   }
@@ -129,11 +113,11 @@ const Wrapper = styled.div`
       left: 5rem;
       width: 50rem;
       h4 {
-        font-size: 5rem;
+        font-size: 3rem;
         color: white;
       }
       p {
-        font-size: 3rem;
+        font-size: 1.7rem;
         color: white;
       }
     }
@@ -151,18 +135,18 @@ const Wrapper = styled.div`
       padding: 0 4rem;
       .containerText_h4 {
         color: black;
-        font-size: 5rem;
-        margin-top: 5rem;
-        margin-bottom: 2rem;
+        font-size: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 0rem;
         font-weight: 500;
       }
 
       .pSecText2 {
         color: #222121;
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         margin: 3rem 1rem;
-        font-weight: 400;
-        line-height: 5rem;
+        font-weight: 500;
+        line-height: 4rem;
       }
     }
   }
@@ -325,7 +309,7 @@ const Wrapper = styled.div`
       padding: 0;
       width: 100vw;
       .logo {
-        width: 5rem;
+        width: 4rem;
         margin: 7rem 0 1rem 2rem;
       }
     }

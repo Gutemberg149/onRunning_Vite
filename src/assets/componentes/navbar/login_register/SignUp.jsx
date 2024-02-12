@@ -39,7 +39,7 @@ const SignUp = () => {
             <input className="inputRegister" type="password" id="password" required onChange={(e) => setPassword(e.target.value)} value={password} />
             <label htmlFor="password">Password *</label>
           </div>
-          <div className="fildeHolder">
+          <div className="fildeHolder noMargimBottom">
             <input className="inputRegister" type="text" id="name" required onChange={(e) => setName(e.target.value)} value={name} />
             <label htmlFor="text">Primeiro Nome *</label>
           </div>
@@ -61,30 +61,31 @@ const SignUp = () => {
 };
 const Wrapper = styled.div`
   .innerUserContainer {
-    margin: 0 3rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-
+    padding: 0 2rem;
     h4 {
-      font-size: 2.7rem;
+      font-size: 1.5rem;
       font-weight: 500;
       color: #302f2f;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
     }
     p {
-      font-size: 1.75rem;
-      font-weight: 400;
+      font-size: 1.1rem;
+      font-weight: 500;
       color: #302f2f;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
     form {
       .fildeHolder {
         position: relative;
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
         border-bottom: 1px solid gray;
-        width: 50rem;
+        width: 100%;
+
         .inputRegister {
           position: relative;
           width: 100%;
@@ -104,21 +105,25 @@ const Wrapper = styled.div`
           bottom: 0;
         }
       }
+      .noMargimBottom {
+        margin-bottom: 1rem;
+      }
       .subscribeContainer {
         display: flex;
         justify-content: space-between;
-        margin-top: 3rem;
-        height: 5.5rem;
+        margin-top: 0rem;
+        height: 4rem;
         .subscribeCheckbox {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 2.9rem;
-          height: 1.8rem;
+          width: 2rem;
+          height: 1.4rem;
           border: 2px solid gray;
           border-radius: 0.3rem;
           margin-right: 1rem;
           margin-top: 0.3rem;
+
           cursor: pointer;
           .blackBox {
             width: 1.1rem;
@@ -128,7 +133,7 @@ const Wrapper = styled.div`
           }
         }
         p {
-          font-size: 1.4rem;
+          font-size: 1rem;
           color: #393737;
           font-weight: 400;
         }
@@ -147,9 +152,10 @@ const Wrapper = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 0.5rem;
         button {
-          width: 35rem;
-          height: 4rem;
+          width: 15rem;
+          height: 3.5rem;
           border: none;
           background-color: black;
           color: white;

@@ -160,24 +160,24 @@ const Wrapper = styled.div`
   main {
     width: 100vw;
     display: flex;
-
     .leftCart {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 5rem 12rem;
-      width: 60rem;
-      border-right: 2px solid gray;
+      width: 44rem;
+      margin-bottom: 1.5rem;
+      margin-right: 3rem;
 
       .UserEmailContainer {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+        width: 120%;
         margin-top: 4rem;
         padding-bottom: 0.5rem;
         border-bottom: 0.5px solid #a2a0a0;
+
         .UserEmailTitle {
           font-weight: 500;
           font-size: 1.3rem;
@@ -341,14 +341,13 @@ const Wrapper = styled.div`
         justify-content: center;
         padding: 1rem;
         width: 100%;
-        border-right: 2px solid gray;
 
         .UserEmailContainer {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 100%;
-          margin-top: 4rem;
+          width: 120%;
+          margin-top: 6rem;
           padding-bottom: 0.5rem;
           border-bottom: 0.5px solid #a2a0a0;
           .UserEmailTitle {
@@ -521,14 +520,13 @@ const Wrapper = styled.div`
         align-items: center;
         justify-content: center;
         padding: 1rem;
-        width: 100%;
-        border-right: 2px solid gray;
+        width: 95%;
 
         .UserEmailContainer {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 100%;
+          width: 120%;
           margin-top: 4rem;
           padding-bottom: 0.5rem;
           border-bottom: 0.5px solid #a2a0a0;
@@ -648,15 +646,14 @@ const Wrapper = styled.div`
         justify-content: center;
         padding: 0 1.5rem;
         width: 40vw;
-        border-right: 2px solid gray;
 
         .UserEmailContainer {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 100%;
+          width: 110%;
           margin-top: 0rem;
-          padding: 0.5rem;
+          padding-bottom: 0.5rem;
           border-bottom: 0.5px solid #a2a0a0;
           .UserEmailTitle {
             font-weight: 500;
