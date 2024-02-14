@@ -25,6 +25,7 @@ import woman from "../images/homeImg/section6/woman.avif";
 import shoe from "../images/homeImg/section6/shoe.avif";
 import hiking from "../images/homeImg/section6/hiking.avif";
 import Footer from "../componentes/footer/Footer";
+
 import CarrosselProdSugested from "../componentes/CarrosselProdSugested";
 import { Link } from "react-router-dom";
 import { useUserAuth } from "../contexts/UserAuthContext";
@@ -965,6 +966,7 @@ const Wrapper = styled.main`
       }
     }
   }
+
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .section1 {
       .overlay {

@@ -287,7 +287,7 @@ const Wrapper = styled.div`
     }
 
     .sec4 {
-      height: 35rem;
+      height: 30rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -676,9 +676,9 @@ const Wrapper = styled.div`
       .sec3 {
         background-color: #fac892;
         h3 {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
           font-weight: 400;
-          margin-left: 0.5rem;
+          margin-left: 1rem;
           padding: 0.5rem 0;
         }
       }
@@ -688,11 +688,12 @@ const Wrapper = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: start;
         padding: 2rem 1rem;
         h3 {
-          font-size: 1.8rem;
+          font-size: 1.5rem;
           font-weight: 500;
-          padding: 0;
+          margin: 0.5rem 0rem;
         }
         p {
           font-size: 1.1rem;
@@ -700,12 +701,12 @@ const Wrapper = styled.div`
           padding: 0 0rem 0 0rem;
         }
         .btnSec {
-          width: 9rem;
-          height: 3rem;
+          width: 7rem;
+          height: 2.7rem;
           background-color: black;
           border-radius: 4rem;
           border: 2px solid black;
-          font-size: 1rem;
+          font-size: 0.8rem;
           font-weight: 500;
           color: white;
           font-weight: 300;
@@ -998,11 +999,11 @@ const Wrapper = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 2rem 1rem;
+        padding: 1rem;
         h3 {
           font-size: 1.5rem;
           font-weight: 500;
-          padding: 0;
+          margin: 0.5rem 0;
         }
         p {
           font-size: 1.1rem;
@@ -1091,7 +1092,7 @@ const Wrapper = styled.div`
         h3 {
           font-size: 2rem;
           font-weight: 500;
-          padding: 0;
+          margin: 0.5rem 0;
         }
         p {
           font-size: 1.3rem;
@@ -1400,11 +1401,11 @@ const Wrapper = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 2rem 1rem;
+        padding: 1rem;
         h3 {
           font-size: 1.5rem;
           font-weight: 500;
-          padding: 0;
+          margin: 0.5rem 0;
         }
         p {
           font-size: 1.1rem;
@@ -1494,7 +1495,7 @@ const Wrapper = styled.div`
         h3 {
           font-size: 2.6rem;
           font-weight: 500;
-          padding: 0;
+          margin: 0.5rem 0;
         }
         p {
           font-size: 1.6rem;
@@ -1502,12 +1503,12 @@ const Wrapper = styled.div`
           padding: 0rem;
         }
         .btnSec {
-          width: 12rem;
-          height: 5rem;
+          width: 9rem;
+          height: 3.5rem;
           background-color: black;
           border-radius: 4rem;
           border: 2px solid black;
-          font-size: 1.4rem;
+          font-size: 1rem;
           font-weight: 500;
           color: white;
           font-weight: 300;
@@ -1796,7 +1797,7 @@ const Wrapper = styled.div`
         h3 {
           font-size: 2.2rem;
           font-weight: 500;
-          padding: 0;
+          margin: 0.5rem 0;
         }
         p {
           font-size: 1.4rem;

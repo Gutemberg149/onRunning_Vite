@@ -527,11 +527,10 @@ const Wrapper = styled.footer`
     }
     .footerBody {
       width: 100vw;
-      padding: 0.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 1rem 1.5rem;
+      padding: 0.5rem 1rem;
       .signUpContainer {
         margin: 0;
         height: 8rem;
@@ -541,13 +540,13 @@ const Wrapper = styled.footer`
         justify-content: space-between;
 
         h3 {
-          font-size: 1.8rem;
+          font-size: 1.4rem;
           color: #dddddd;
           margin: 0rem;
         }
         span {
           margin: 0rem;
-          font-size: 1.1rem;
+          font-size: 1rem;
           color: #dddddd;
           margin-top: 0.5rem;
           margin-bottom: 0.5rem;
@@ -563,8 +562,8 @@ const Wrapper = styled.footer`
             border: 1px solid #dddddd;
             border-radius: 0.6rem;
             color: #cfcccc;
-            font-size: 1rem;
-            width: 8rem;
+            font-size: 0.8rem;
+            width: 6rem;
             height: 2rem;
             display: flex;
             align-items: center;
@@ -577,7 +576,7 @@ const Wrapper = styled.footer`
             }
           }
           .divContact {
-            width: 10rem;
+            width: 8rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -586,8 +585,8 @@ const Wrapper = styled.footer`
             margin-top: 0;
 
             .iconContainer {
-              width: 3rem;
-              height: 3rem;
+              width: 2.5rem;
+              height: 2.5rem;
               border-radius: 50%;
               font-size: 1.8rem;
               display: flex;
@@ -597,7 +596,7 @@ const Wrapper = styled.footer`
               margin-right: 0rem;
             }
             p {
-              font-size: 1.1rem;
+              font-size: 0.9rem;
             }
           }
           .brazil {
@@ -608,8 +607,8 @@ const Wrapper = styled.footer`
             align-items: center;
             margin-left: 0.2rem;
             .flag {
-              width: 1.7rem;
-              height: 1.7rem;
+              width: 1.4rem;
+              height: 1.4rem;
               border-radius: 50%;
               margin-right: 0.2rem;
               background-image: url(${bandeira});
@@ -618,7 +617,7 @@ const Wrapper = styled.footer`
               background-position: center;
             }
             p {
-              font-size: 1.2rem;
+              font-size: 1rem;
               color: #cfcccc;
             }
           }
@@ -633,7 +632,7 @@ const Wrapper = styled.footer`
         margin-top: 1rem;
         width: 100%;
         .footerGeneralInfo {
-          margin-top: 2rem;
+          margin-top: 0rem;
           display: flex;
           justify-content: space-between;
           align-items: start;
@@ -645,12 +644,12 @@ const Wrapper = styled.footer`
             list-style: none;
 
             .strongCaseLi {
-              font-size: 1.2rem;
+              font-size: 1rem;
               font-weight: 700;
               line-height: 2.4rem;
             }
             li {
-              font-size: 1rem;
+              font-size: 0.9rem;
               line-height: 2rem;
               position: relative;
               width: fit-content;
@@ -677,19 +676,19 @@ const Wrapper = styled.footer`
     }
     .footerBottom {
       display: flex;
-      flex-direction: column;
+
       justify-content: center;
       align-items: center;
-      height: 5rem;
       padding: 0.5rem;
       color: #f0efef;
       width: 100%;
-
+      height: 2.3rem;
+      margin-top: 0;
       .left {
         display: flex;
         justify-content: space-around;
         p {
-          font-size: 1rem;
+          font-size: 0.8rem;
           color: #9c9a9a;
           margin-right: 0.5rem;
           cursor: pointer;
@@ -700,9 +699,9 @@ const Wrapper = styled.footer`
       }
       .socialMedias {
         display: flex;
-        margin-top: 1rem;
+        margin-top: 0rem;
         .socialMediaIcon {
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           margin-right: 1rem;
           color: #9c9a9a;
           cursor: pointer;
@@ -721,19 +720,20 @@ const Wrapper = styled.footer`
     }
     .footerBody {
       width: 100vw;
-      padding: 1rem 2rem;
+      padding: 0rem 1rem;
       display: flex;
       justify-content: space-around;
+
       .signUpContainer {
         width: 40%;
         margin-left: 0rem;
         padding-right: 2rem;
         h3 {
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           color: #cfcccc;
         }
         span {
-          font-size: 1.1rem;
+          font-size: 1rem;
           color: #cfcccc;
           margin-top: 1.7rem;
         }
@@ -742,8 +742,8 @@ const Wrapper = styled.footer`
             border: 2px solid #cfcccc;
             border-radius: 0.6rem;
             color: #cfcccc;
-            font-size: 1rem;
-            width: 9rem;
+            font-size: 0.8rem;
+            width: 8rem;
             height: 2rem;
             display: flex;
             align-items: center;
@@ -759,14 +759,14 @@ const Wrapper = styled.footer`
             justify-content: space-between;
             align-items: center;
             color: #cfcccc;
-            font-size: 1.25rem;
-            margin-top: 2rem;
+            font-size: 1rem;
+            margin-top: 1rem;
             width: fit-content;
             .iconContainer {
-              width: 2.5rem;
-              height: 2.5rem;
+              width: 2rem;
+              height: 2rem;
               border-radius: 50%;
-              font-size: 1.2rem;
+              font-size: 1rem;
               display: flex;
               justify-content: center;
               align-items: center;
@@ -774,7 +774,7 @@ const Wrapper = styled.footer`
               margin-right: 0.5rem;
             }
             p {
-              font-size: 1.1rem;
+              font-size: 1rem;
             }
           }
           .brazil {
@@ -782,7 +782,7 @@ const Wrapper = styled.footer`
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 2rem;
+            margin-top: 0.5rem;
             margin-left: 0;
             width: fit-content;
             .flag {
@@ -820,13 +820,13 @@ const Wrapper = styled.footer`
             list-style: none;
 
             .strongCaseLi {
-              font-size: 1.4rem;
+              font-size: 1.2rem;
               font-weight: 700;
-              line-height: 3.75rem;
+              line-height: 3rem;
             }
             li {
-              font-size: 1.25rem;
-              line-height: 3.125rem;
+              font-size: 1rem;
+              line-height: 3rem;
               position: relative;
               width: fit-content;
               &::after {
@@ -892,16 +892,17 @@ const Wrapper = styled.footer`
       justify-content: space-between;
       align-items: top;
       height: 6.25rem;
-      padding: 0rem 4.5rem;
+      padding: 0rem 0.5rem;
       color: #f0efef;
-
+      height: 2.2rem;
       .left {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        width: 50%;
         p {
-          font-size: 1.2rem;
+          font-size: 0.9rem;
           color: #9c9a9a;
-          margin-right: 1.875rem;
+          margin-right: 1rem;
           cursor: pointer;
           &:hover {
             color: white;

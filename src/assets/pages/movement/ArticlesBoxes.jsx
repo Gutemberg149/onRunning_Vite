@@ -10,10 +10,7 @@ const ArticlesBoxes = () => {
         {ArrayLinkBox.map((item) => {
           return (
             <Link to={item.link} key={item.id}>
-              <div
-                className="linkBox linkBox1"
-                style={{ backgroundImage: `url(${item.img})` }}
-              >
+              <div className="linkBox linkBox1" style={{ backgroundImage: `url(${item.img})` }}>
                 <div className="textBox">
                   <p>{item.text}</p>
 
@@ -93,11 +90,7 @@ const Wrapper = styled.div`
         left: 0;
         height: 100%;
         width: 100%;
-        background: linear-gradient(
-          360deg,
-          rgba(0, 0, 0, 0.797) 0%,
-          rgba(0, 0, 0, 0.05) 40%
-        );
+        background: linear-gradient(360deg, rgba(0, 0, 0, 0.797) 0%, rgba(0, 0, 0, 0.05) 40%);
         z-index: 92;
       }
     }
@@ -135,8 +128,8 @@ const Wrapper = styled.div`
           z-index: 93;
           cursor: pointer;
           button {
-            width: 3rem;
-            height: 3rem;
+            width: 2.8rem;
+            height: 2.8rem;
             border: 1px solid white;
             border-radius: 50%;
             background-color: transparent;
@@ -145,7 +138,7 @@ const Wrapper = styled.div`
             justify-content: center;
             .iconArrowLeft {
               color: white;
-              font-size: 1.5rem;
+              font-size: 1.4rem;
               font-weight: 900;
             }
             cursor: pointer;
@@ -154,7 +147,7 @@ const Wrapper = styled.div`
             }
           }
           p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: white;
             font-weight: 300;
             width: 80%;
@@ -166,11 +159,7 @@ const Wrapper = styled.div`
           left: 0;
           height: 100%;
           width: 100%;
-          background: linear-gradient(
-            360deg,
-            rgba(0, 0, 0, 0.797) 0%,
-            rgba(0, 0, 0, 0.05) 40%
-          );
+          background: linear-gradient(360deg, rgba(0, 0, 0, 0.797) 0%, rgba(0, 0, 0, 0.05) 40%);
           z-index: 92;
         }
       }
@@ -209,8 +198,8 @@ const Wrapper = styled.div`
           z-index: 93;
           cursor: pointer;
           button {
-            width: 3rem;
-            height: 3rem;
+            width: 2.6rem;
+            height: 2.6rem;
             border: 1px solid white;
             border-radius: 50%;
             background-color: transparent;
@@ -219,7 +208,7 @@ const Wrapper = styled.div`
             justify-content: center;
             .iconArrowLeft {
               color: white;
-              font-size: 1.5rem;
+              font-size: 1.2rem;
               font-weight: 900;
             }
             cursor: pointer;
@@ -228,7 +217,7 @@ const Wrapper = styled.div`
             }
           }
           p {
-            font-size: 1.3rem;
+            font-size: 0.9rem;
             color: white;
             font-weight: 300;
             width: 80%;
@@ -240,11 +229,7 @@ const Wrapper = styled.div`
           left: 0;
           height: 100%;
           width: 100%;
-          background: linear-gradient(
-            360deg,
-            rgba(0, 0, 0, 0.797) 0%,
-            rgba(0, 0, 0, 0.05) 40%
-          );
+          background: linear-gradient(360deg, rgba(0, 0, 0, 0.797) 0%, rgba(0, 0, 0, 0.05) 40%);
           z-index: 92;
         }
       }
@@ -285,8 +270,8 @@ const Wrapper = styled.div`
           z-index: 93;
           cursor: pointer;
           button {
-            width: 3.5rem;
-            height: 3.5rem;
+            width: 2.8rem;
+            height: 2.8rem;
             border: 1px solid white;
             border-radius: 50%;
             background-color: transparent;
@@ -295,7 +280,7 @@ const Wrapper = styled.div`
             justify-content: center;
             .iconArrowLeft {
               color: white;
-              font-size: 1.8rem;
+              font-size: 1.3rem;
               font-weight: 900;
             }
             cursor: pointer;
@@ -304,7 +289,7 @@ const Wrapper = styled.div`
             }
           }
           p {
-            font-size: 1.6rem;
+            font-size: 1rem;
             color: white;
             font-weight: 300;
             width: 80%;
@@ -316,11 +301,7 @@ const Wrapper = styled.div`
           left: 0;
           height: 100%;
           width: 100%;
-          background: linear-gradient(
-            360deg,
-            rgba(0, 0, 0, 0.797) 0%,
-            rgba(0, 0, 0, 0.05) 40%
-          );
+          background: linear-gradient(360deg, rgba(0, 0, 0, 0.797) 0%, rgba(0, 0, 0, 0.05) 40%);
           z-index: 92;
         }
       }

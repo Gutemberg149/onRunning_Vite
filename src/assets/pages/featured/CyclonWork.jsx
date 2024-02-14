@@ -212,7 +212,7 @@ const Wrapper = styled.div`
       .box {
         position: relative;
         width: 34%;
-        height: 35vh;
+        height: 45vh;
         border-radius: 1rem;
         overflow-y: hidden;
         transition: all ease 0.6s;
@@ -227,16 +227,16 @@ const Wrapper = styled.div`
           justify-content: space-around;
           align-items: center;
           width: 100%;
-          bottom: 1rem;
+          bottom: 0.3rem;
           z-index: 99;
           p {
-            font-size: 1rem;
+            font-size: 0.8rem;
             color: #eae9e9;
             font-weight: 600;
           }
           .btn {
-            width: 2rem;
-            height: 2rem;
+            width: 1.3rem;
+            height: 1.3rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -269,7 +269,7 @@ const Wrapper = styled.div`
           bottom: -30rem;
           z-index: 98;
           p {
-            font-size: 0.72rem;
+            font-size: 0.65rem;
             padding: 0.4rem;
           }
         }
@@ -302,7 +302,7 @@ const Wrapper = styled.div`
       .box {
         position: relative;
         width: 34%;
-        height: 70vh;
+        height: 60vh;
         border-radius: 1rem;
         overflow-y: hidden;
         transition: all ease 0.6s;
@@ -320,7 +320,7 @@ const Wrapper = styled.div`
           bottom: 1rem;
           z-index: 99;
           p {
-            font-size: 1rem;
+            font-size: 1.3rem;
             color: #eae9e9;
             font-weight: 600;
           }
@@ -359,8 +359,9 @@ const Wrapper = styled.div`
           bottom: -30rem;
           z-index: 98;
           p {
-            font-size: 0.72rem;
+            font-size: 0.9rem;
             padding: 0.4rem;
+            margin-top: 1rem;
           }
         }
       }
@@ -392,7 +393,7 @@ const Wrapper = styled.div`
       .box {
         position: relative;
         width: 34%;
-        height: 70vh;
+        height: 60vh;
         border-radius: 1rem;
         overflow-y: hidden;
         transition: all ease 0.6s;
@@ -448,8 +449,9 @@ const Wrapper = styled.div`
           transition: all ease 0.5s;
           bottom: -30rem;
           z-index: 98;
+          padding: 0.7rem;
           p {
-            font-size: 0.72rem;
+            font-size: 1.1rem;
             padding: 0.4rem;
           }
         }
