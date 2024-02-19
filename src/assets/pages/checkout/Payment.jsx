@@ -379,6 +379,206 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    margin-top: 2rem;
+    .shipping {
+      display: flex;
+      width: 100vw;
+      padding: 0.3rem;
+      justify-content: space-between;
+      margin-top: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.5px solid #a2a0a0;
+
+      .pShipping {
+        font-weight: 500;
+        font-size: 0.8rem;
+      }
+      .userInfo {
+        p {
+          font-weight: 300;
+          font-size: 0.9rem;
+          display: flex;
+          justify-content: flex-start;
+          margin-bottom: 0.3rem;
+          margin-left: 0.9rem;
+        }
+      }
+    }
+    .payment {
+      padding: 0 1rem;
+      margin-top: 0.5rem;
+      width: 100vw;
+
+      h5 {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+      .credcardContainer {
+        display: flex;
+        flex-direction: column;
+        border: transparent 1px solid;
+        margin-top: 1rem;
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        overflow: visible;
+
+        .credCarttop {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1rem;
+          .checkCircle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.2rem;
+            height: 1.2rem;
+            border: #323131 1px solid;
+            border-radius: 50%;
+            margin: 0rem;
+            margin-right: 0.6rem;
+            cursor: pointer;
+            .smallCircle {
+              width: 0.6rem;
+              height: 0.6rem;
+              border-radius: 50%;
+              background-color: white;
+            }
+          }
+          .credCardBox {
+            border: #323131 1px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem;
+            height: 2.2rem;
+            border-radius: 0.3rem;
+            margin-right: 0.5rem;
+            .creditCard {
+              font-size: 1.5rem;
+            }
+          }
+          p {
+            font-size: 0.7rem;
+            font-weight: 500;
+          }
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .cardInfoContainer {
+            width: 100%;
+            height: 3rem;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 1rem;
+            input {
+              border: #b9b9b9 1px solid;
+              width: 100%;
+              height: 3rem;
+              outline: none;
+              padding-left: 1rem;
+              margin-left: 0.1rem;
+              font-size: 0.8rem;
+              &:focus {
+                border: #575656 1px solid;
+              }
+            }
+            label {
+              font-size: 0.8rem;
+            }
+          }
+          .cardInfoContainerDouble {
+            flex-direction: column;
+            align-items: start;
+
+            .infoCardExpireDate {
+              margin-bottom: 1rem;
+              .inputDate {
+                height: 2rem;
+                width: 10rem;
+                margin-right: 0rem;
+                margin-bottom: 0.6rem;
+                border: 1px solid gray;
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                }
+                .expireDate {
+                  height: 2rem;
+                  border-bottom: 1px solid gray;
+                  font-size: 0.8rem;
+                }
+                .expireDate1 {
+                  height: 2rem;
+                }
+              }
+            }
+            .infoCard {
+              width: 80%;
+              height: 3rem;
+              margin: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: start;
+              padding-left: 0rem;
+              margin-bottom: 1rem;
+              input {
+                border: #b9b9b9 1px solid;
+                width: 99%;
+                height: 3rem;
+                outline: none;
+                padding-left: 1rem;
+                font-size: 0.8rem;
+                &:focus {
+                  border: #575656 1px solid;
+                }
+              }
+            }
+
+            label {
+              font-size: 0.9rem;
+            }
+          }
+        }
+        .btnPlaceOrder {
+          margin-top: 0rem;
+
+          .PlaceOrder {
+            margin: 0.5rem 0;
+            width: 8rem;
+            height: 2.5rem;
+            font-size: 0.7rem;
+          }
+          .cardInfoChecked {
+            background-color: black;
+          }
+        }
+      }
+      height: 33rem;
+    }
+    .warningError {
+      height: 2rem;
+      margin-top: 0.2rem;
+      padding-left: 0.6rem;
+
+      .warningError_P {
+        color: red;
+        font-size: 0.7rem;
+      }
+
+      .credcardContainerOpen {
+        height: 65vh;
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .shipping {
       display: flex;

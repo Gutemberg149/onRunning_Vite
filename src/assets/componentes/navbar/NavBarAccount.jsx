@@ -120,6 +120,83 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    header {
+      .left {
+        width: 100vw;
+        h3 {
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: #3a3939;
+          margin-top: 2rem;
+        }
+        p {
+          font-size: 0.8rem;
+          font-weight: 400;
+          color: #3a3939;
+        }
+        a {
+          text-decoration: underline;
+        }
+      }
+      #closeBtnNav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        width: 3rem;
+        margin-left: 1rem;
+        .close-icon {
+          color: #af0303;
+          font-size: 1.8rem;
+        }
+      }
+    }
+    main {
+      height: 35%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h5 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 0rem;
+      }
+      .pData {
+        font-size: 1rem;
+        font-weight: 300;
+        color: #242323;
+        margin-bottom: 1rem;
+      }
+    }
+    .btnsContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .btnBottom {
+        width: 5rem;
+        height: 2.5rem;
+        background-color: white;
+        border: 1px solid black;
+        margin: 0rem;
+        border-radius: 2rem;
+        font-size: 0.7rem;
+        cursor: pointer;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     height: 100%;
     padding: 1rem;

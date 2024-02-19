@@ -47,6 +47,37 @@ const Wrapper = styled.div`
       background-color: #272626;
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) {
+    margin: 0.5rem;
+
+    h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .p1 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .p2 {
+      font-size: 0.9rem;
+      width: 100%;
+    }
+    button {
+      width: 5rem;
+      height: 2.5rem;
+      background-color: black;
+      border: none;
+      border-radius: 3rem;
+      color: white;
+      font-size: 0.6rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      &:hover {
+        background-color: #272626;
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) {
     margin: 0.5rem;
 

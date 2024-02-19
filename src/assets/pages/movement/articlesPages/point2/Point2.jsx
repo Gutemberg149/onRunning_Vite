@@ -235,14 +235,14 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 0.5rem;
     margin-top: 1rem;
-    height: 15rem;
+    height: auto;
     .containerSecText {
       .pSecText {
         color: #e6e6e6;
-        font-size: 1.7rem;
-        margin-bottom: 3rem;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
       }
     }
   }
@@ -258,6 +258,133 @@ const Wrapper = styled.div`
       left: 0;
       height: 100%;
       width: 100%;
+    }
+  }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-color: black;
+    nav {
+      padding: 0 0rem;
+      .logo {
+        width: 2.8rem;
+        margin: 0;
+        margin-top: 4rem;
+      }
+    }
+    .sec1 {
+      padding: 0rem 0.4rem;
+      margin-bottom: 1rem;
+      width: 100vw;
+
+      .h1Sec1 {
+        color: white;
+        font-size: 1rem;
+        width: 100%;
+        font-weight: 500;
+        line-height: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+      .pSec1 {
+        color: white;
+        font-size: 0.8rem;
+        width: 100%;
+        font-weight: 300;
+        line-height: 1.6rem;
+      }
+    }
+    .secImg {
+      img {
+        width: 100%;
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.4rem;
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+      height: auto;
+
+      .containerSecText {
+        width: 100vw;
+        height: auto;
+        .containerText_h4 {
+          color: #e6e6e6;
+          font-size: 1rem;
+          margin-top: 1rem;
+          margin-bottom: 0.2rem;
+        }
+        .pSecText {
+          color: #e6e6e6;
+          font-size: 0.8rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    .sectionTextSmallPadding {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      height: auto;
+      .containerSecText {
+        width: 100vw;
+        height: auto;
+        .containerText_h4 {
+          color: #e6e6e6;
+          font-size: 1rem;
+          margin-bottom: 0rem;
+        }
+        .pSecText {
+          color: #e6e6e6;
+          font-size: 0.8rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    .secDoubleImg {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 0.2rem;
+      margin-bottom: 1.5rem;
+      img {
+        width: 50%;
+        margin: 0.3rem;
+      }
+    }
+    .secTripleImg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      margin-bottom: 1rem;
+      .containerSecTriple {
+        margin: 0.2rem 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        img {
+          width: 24%;
+          margin: 0 0.2rem;
+        }
+      }
+    }
+    .IframeSection {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 25%;
+      background-color: #fac892;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
     }
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -301,6 +428,7 @@ const Wrapper = styled.div`
       justify-content: center;
       padding: 0rem 1rem;
       margin-top: 2rem;
+      height: auto;
       .containerSecText {
         width: 100vw;
         .containerText_h4 {
@@ -311,7 +439,7 @@ const Wrapper = styled.div`
         }
         .pSecText {
           color: #e6e6e6;
-          font-size: 1rem;
+          font-size: 1.5rem;
           margin-bottom: 1.4rem;
         }
       }

@@ -304,6 +304,166 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    .topMessage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #22826aeb;
+      height: 3rem;
+      color: #f2f2f2;
+      padding: 0.2rem;
+      p {
+        font-size: 0.5rem;
+      }
+    }
+
+    .sec1 {
+      position: relative;
+      background-image: url(${mountain2});
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 55vh;
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        margin-bottom: 0rem;
+        .logo {
+          mix-blend-mode: darken;
+          width: 2.5rem;
+          margin: 0.8rem 0rem 0rem 0rem;
+          z-index: 96;
+          cursor: pointer;
+        }
+        .homeBtn {
+          width: 4rem;
+          height: 2rem;
+          border: white 1px solid;
+          color: white;
+          background-color: transparent;
+          border-radius: 3rem;
+          font-size: 0.4rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #ffffff35;
+          }
+        }
+      }
+      .contaText {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding-left: 1rem;
+        z-index: 96;
+        margin-top: 0rem;
+
+        .topText {
+          width: 50vh;
+          font-size: 0.6rem;
+          font-weight: 300;
+          letter-spacing: 4px;
+          color: white;
+          z-index: 96;
+
+          a {
+            color: white;
+            font-weight: 500;
+          }
+        }
+        h3 {
+          font-size: 1.2rem;
+          color: white;
+          z-index: 96;
+          margin-bottom: 0.5rem;
+        }
+        .btns {
+          display: flex;
+          flex-direction: column;
+
+          .btn {
+            width: 10rem;
+            height: 2.5rem;
+            background-color: #000000e1;
+            border: none;
+            color: white;
+            margin-bottom: 0.6rem;
+            border-radius: 5rem;
+            font-size: 0.7rem;
+
+            cursor: pointer;
+
+            &:hover {
+              background-color: #000000b5;
+            }
+          }
+        }
+      }
+    }
+    main {
+      .sec2 {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: #f8f6f6;
+        .leftList {
+          margin-right: 0rem;
+          background-color: white;
+          width: 99%;
+          height: 62vh;
+          display: flex;
+          padding: 0 0.4rem;
+          border-radius: 1em;
+          box-shadow: rgba(149, 157, 165, 0.064) 0px 8px 24px;
+          ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .liBcgDynamic {
+              width: fit-content;
+              height: fit-content;
+              font-size: 0.8rem;
+              font-weight: 400;
+              margin-bottom: 0.8rem;
+              background: linear-gradient(to right, #ffc250 50%, white 50%);
+              background-size: 200% 100%;
+              background-position: right bottom;
+              transition: all 0.5s ease-out;
+              cursor: pointer;
+              &:hover {
+                background-position: left bottom;
+              }
+            }
+            .orange {
+              width: fit-content;
+              height: fit-content;
+              font-size: 0.8rem;
+              font-weight: 400;
+              margin-bottom: 1.5rem;
+              background: #ffc250;
+              background-size: 200% 100%;
+              background-position: right bottom;
+              transition: all 0.5s ease-out;
+              cursor: pointer;
+            }
+          }
+        }
+        .RightInfo {
+          background-color: #f8f6f6;
+          border-radius: 1em;
+          width: 100%;
+          padding: 0 0.5rem;
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .topMessage {
       display: flex;

@@ -75,6 +75,32 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    article {
+      width: 100%;
+      max-height: 40rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      .divNumber {
+        width: 12.5vw;
+        height: 6vh;
+        margin: 0.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666666;
+        border-radius: 0.2rem;
+        box-shadow: rgba(149, 157, 165, 0.204) 0px 8px 24px;
+        font-size: 0.6rem;
+        cursor: pointer;
+        &:hover {
+          border: 1px solid #f78e8e;
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     article {
       width: 100%;

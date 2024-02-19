@@ -115,6 +115,74 @@ const Wrapper = styled.div`
       overflow: hidden;
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+
+    .titleSession {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .accordion {
+      .title {
+        padding: 0 0.5rem;
+        font-size: 0.6rem;
+        font-weight: 300;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 1rem;
+        height: 3rem;
+        width: 90%;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        .plusIcon {
+          color: white;
+          font-size: 1rem;
+        }
+      }
+
+      .showSetOfquestion {
+        height: auto;
+        max-height: 45rem;
+        margin-bottom: 0.5rem;
+        .question {
+          display: flex;
+          align-items: center;
+          height: 5rem;
+          padding: 0 1rem;
+          font-size: 0.6rem;
+          font-weight: 500;
+          background-color: white;
+          cursor: pointer;
+        }
+        .answer {
+          overflow: hidden;
+          max-height: 0;
+        }
+        .answer.show {
+          height: auto;
+          max-height: 25rem;
+          padding: 0.5rem 0.5rem;
+          margin: 0.5rem 0rem;
+          font-size: 0.6rem;
+          color: #424141;
+        }
+      }
+      .hiddenSetOfquestion {
+        max-height: 0;
+        overflow: hidden;
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     display: flex;
     flex-direction: column;
@@ -158,8 +226,10 @@ const Wrapper = styled.div`
           display: flex;
           align-items: center;
           height: 5rem;
-          padding: 0 2rem;
-          font-size: 1.2rem;
+          width: 90%;
+          border-radius: 1rem;
+          padding: 0 1rem;
+          font-size: 1rem;
           font-weight: 500;
           background-color: white;
           cursor: pointer;
@@ -171,6 +241,7 @@ const Wrapper = styled.div`
         .answer.show {
           height: auto;
           max-height: 25rem;
+          width: 90%;
           padding: 0.7rem 1rem;
           margin: 0.5rem 0rem;
           font-size: 1.3rem;
@@ -226,8 +297,10 @@ const Wrapper = styled.div`
           display: flex;
           align-items: center;
           height: 5rem;
+          width: 90%;
+          border-radius: 1rem;
           padding: 0 2rem;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           font-weight: 500;
           background-color: white;
           cursor: pointer;
@@ -239,6 +312,7 @@ const Wrapper = styled.div`
         .answer.show {
           height: auto;
           max-height: 25rem;
+          width: 90%;
           padding: 0.7rem 1rem;
           margin: 0.5rem 0rem;
           font-size: 1.3rem;
@@ -294,6 +368,8 @@ const Wrapper = styled.div`
           display: flex;
           align-items: center;
           height: 5rem;
+          width: 90%;
+          border-radius: 1rem;
           padding: 0 2rem;
           font-size: 1.2rem;
           font-weight: 500;
@@ -307,6 +383,7 @@ const Wrapper = styled.div`
         .answer.show {
           height: auto;
           max-height: 25rem;
+          width: 90%;
           padding: 0.7rem 1rem;
           margin: 0.5rem 0rem;
           font-size: 1.3rem;

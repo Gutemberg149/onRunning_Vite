@@ -115,6 +115,29 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) {
+    margin: 0rem;
+    nav {
+      padding: 0rem;
+      .logo {
+        width: 3rem;
+        margin: 0;
+        margin-top: 4.5rem;
+        border-radius: 50%;
+      }
+    }
+    .menuList {
+      margin: 0.4rem;
+      width: 90vw;
+
+      ul {
+        width: 100%;
+        li {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 601px) and (max-device-width: 900px) {
     nav {
       width: 95%;

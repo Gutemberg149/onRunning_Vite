@@ -65,6 +65,46 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    .cartBody {
+      padding: 0.2rem;
+
+      .topContainer {
+        height: 2.5rem;
+        h3 {
+          font-size: 0.8rem;
+          color: #3a3939;
+          margin-left: 0.5rem;
+          margin-bottom: 0rem;
+          font-weight: 500;
+        }
+        #closeBtnNav {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 2rem;
+          width: 2rem;
+          margin-left: 0rem;
+          .close-icon {
+            color: #af0303;
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .paymentMethods {
+        margin-top: 0rem;
+        p {
+          margin-bottom: 0.1rem;
+          font-size: 0.8rem;
+        }
+        img {
+          margin-left: 0.5rem;
+          width: 9rem;
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .cartBody {
       padding: 0.5rem;

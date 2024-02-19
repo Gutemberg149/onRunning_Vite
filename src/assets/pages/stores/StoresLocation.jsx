@@ -229,6 +229,141 @@ const Wrapper = styled.div`
     }
   }
 
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    nav {
+      padding: 0 0rem;
+      .logo {
+        width: 3rem;
+        margin: 4rem 0 0 0;
+        mix-blend-mode: multiply;
+      }
+    }
+    .sec1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0.3rem 0;
+      .ptop {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        font-weight: 300;
+        margin-bottom: 0rem;
+        a {
+          margin-left: 0.4rem;
+          cursor: pointer;
+          color: black;
+          &:hover {
+            color: #b40303;
+          }
+        }
+        .dot {
+          font-size: 1.5rem;
+        }
+      }
+      h1 {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-left: 0.4rem;
+      }
+    }
+    width: 100vw;
+    main {
+      display: block;
+      width: 100vw;
+
+      .addressesContainer {
+        width: 100%;
+        height: 100vw;
+        background-color: #e7e7e7;
+        overflow: scroll;
+        .topMessage {
+          padding: 1rem;
+          h4 {
+            font-size: 1.1rem;
+          }
+          .message {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+          }
+          span {
+            color: #cf0303;
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+        .mapAddresses {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          .locationsContainer {
+            position: relative;
+            border-radius: 1rem;
+            margin: 0.4rem;
+            width: 100%;
+            height: 10rem;
+            margin-bottom: 1rem;
+            background-color: white;
+            font-size: 1rem;
+            padding: 0.8rem;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            transition: ease 0.3s;
+            cursor: pointer;
+            &:hover {
+              transform: scale(1.05);
+            }
+            .localName {
+              font-size: 0.9rem;
+              font-weight: 600;
+              margin-bottom: 0.3rem;
+            }
+            .address {
+              font-size: 0.8rem;
+              margin-bottom: 0.3rem;
+            }
+            .tel {
+              font-size: 0.8rem;
+              font-weight: 500;
+              margin-bottom: 0.3rem;
+            }
+            .clickOnTheMAp {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              background-color: #f5c103a9;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1rem;
+              font-weight: 600;
+              color: #b40303;
+              border-radius: 1rem;
+            }
+          }
+        }
+      }
+      .mapSection {
+        position: relative;
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        padding: 0.5rem;
+        z-index: 90;
+        margin-bottom: 1rem;
+        border: 1px solid gray;
+        //in leaflet it is important to set this class below a 100% even though there is no visible class in the code. It is invisible.
+
+        .MapContainer {
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     nav {
       padding: 0 0rem;

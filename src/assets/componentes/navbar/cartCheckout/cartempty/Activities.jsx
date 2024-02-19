@@ -79,6 +79,37 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    margin-top: 0rem;
+
+    span {
+      margin-left: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+    article {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      justify-content: null;
+      align-items: null;
+      display: grid;
+      grid-template-columns: repeat(2, 2fr);
+      gap: 3px;
+
+      .container {
+        margin: 0rem;
+        width: 6rem;
+        margin-bottom: 0.5rem;
+        img {
+          width: 100%;
+          margin-bottom: 0.2rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     margin-top: 0rem;
     span {

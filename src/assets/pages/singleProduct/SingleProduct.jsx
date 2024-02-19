@@ -24,7 +24,14 @@ const SingleProduct = () => {
   const screenSize = useRef(window.innerWidth);
 
   const moveRight = () => {
-    if (screenSize.current <= 600) {
+    if (screenSize.current <= 374) {
+      if (moveCarroseel < -35) {
+        setMoveCarrosel(0);
+      } else {
+        setMoveCarrosel(moveCarroseel - 10.7);
+        console.log(moveCarroseel);
+      }
+    } else if (screenSize.current <= 600) {
       if (moveCarroseel < -75) {
         setMoveCarrosel(0);
       } else {
@@ -56,7 +63,13 @@ const SingleProduct = () => {
   };
 
   const moveLeft = () => {
-    if (screenSize.current <= 600) {
+    if (screenSize.current <= 374) {
+      if (moveCarroseel >= 0) {
+        return;
+      } else {
+        setMoveCarrosel(moveCarroseel + 10.7);
+      }
+    } else if (screenSize.current <= 600) {
       if (moveCarroseel >= 0) {
         return;
       } else {
@@ -347,6 +360,73 @@ const Wrapper = styled.div`
     transition: all ease-in 0.4s;
   }
 
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar {
+      .logo {
+        width: 2rem;
+        margin: 4rem 1rem 1rem 1rem;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+    .section1 {
+      top: 0;
+      .carrossel {
+        position: relative;
+        .innerCarrossel {
+          display: flex;
+          transition: all 0.6s ease;
+          .prodContainer {
+            width: 10rem;
+            height: 10rem;
+            background-color: #f6f4f3;
+            margin: 0.4rem;
+            img {
+              width: 10rem;
+            }
+          }
+        }
+        .btnsCarroessel {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 9rem;
+          height: 3rem;
+          position: absolute;
+          bottom: -3rem;
+          left: 2rem;
+          .btnCarrossel {
+            background-color: white;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            border-radius: 50%;
+            box-shadow: rgba(100, 100, 111, 0.328) 0px 7px 29px 0px;
+            cursor: pointer;
+            &:hover {
+              background-color: #fafafa;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+    .section2 {
+      display: none;
+    }
+    .section3 {
+      margin: 4rem 0 0 0;
+      height: 12rem;
+    }
+    .cartshop {
+      position: absolute;
+      top: 4rem;
+      transition: all ease-in 0.4s;
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .navbar {
       .logo {

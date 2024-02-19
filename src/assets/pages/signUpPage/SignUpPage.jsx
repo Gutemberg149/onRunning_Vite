@@ -205,6 +205,133 @@ const Wrapper = styled.div`
     }
   }
 
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    .sec1 {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+      nav {
+        position: absolute;
+        padding: 0rem;
+        z-index: 100;
+        top: -2rem;
+        .logo {
+          width: 2.5rem;
+          margin: 0;
+          margin-top: 7rem;
+          margin-left: 1rem;
+          z-index: 100;
+          mix-blend-mode: exclusion;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+      .IframeSection {
+        overflow: hidden;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .containerText {
+        position: absolute;
+        bottom: 3rem;
+        left: 0.5rem;
+        height: 30%;
+        width: 90%;
+        z-index: 99;
+
+        h4 {
+          font-size: 0.8rem;
+          color: white;
+          margin-bottom: 0.1rem;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 0.7rem;
+          color: white;
+        }
+        .btns {
+          width: 4.5rem;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 0.5rem;
+          button {
+            width: 100%;
+            height: 1.8rem;
+            background-color: white;
+            border-radius: 3rem;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            &:hover {
+              background-color: #d0cece;
+            }
+          }
+        }
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(360deg, rgba(0, 0, 0, 0.797) 0%, rgba(0, 0, 0, 0.05) 50%);
+        z-index: 94;
+      }
+    }
+    .sec2 {
+      margin: 0.5rem 0 0.4rem 0.6rem;
+      .containerinfoSec2 {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem;
+        justify-content: space-between;
+        img {
+          max-width: 180px;
+          max-height: 160px;
+          width: auto;
+          height: auto;
+        }
+        .textBox {
+          padding: 0 0.2rem;
+
+          h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #363535;
+            margin-bottom: 0.4rem;
+          }
+          p {
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: #363535;
+            margin-bottom: 1rem;
+          }
+          .p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #363535;
+            margin-bottom: 2rem;
+            span {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #363535;
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .sec1 {
       position: relative;

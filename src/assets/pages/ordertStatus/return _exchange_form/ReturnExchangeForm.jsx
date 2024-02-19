@@ -98,6 +98,7 @@ const Wrapper = styled.div`
         font-size: 1.6rem;
         font-weight: 500;
         background-color: white;
+        border-radius: 1rem;
         cursor: pointer;
         p {
           margin-top: 1rem;
@@ -123,9 +124,82 @@ const Wrapper = styled.div`
       overflow: hidden;
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+    h1 {
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .pTop {
+      font-size: 0.8rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: #201f1f;
+    }
+    .accordion {
+      .title {
+        padding: 0 0.5rem;
+        font-size: 0.5rem;
+        font-weight: 300;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 1rem;
+        height: 3rem;
+        width: 90%;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        .plusIcon {
+          color: white;
+          font-size: 1rem;
+        }
+      }
+
+      .showSetOfquestion {
+        height: auto;
+        max-height: 45rem;
+        margin-bottom: 0.5rem;
+        .question {
+          display: flex;
+          align-items: center;
+          height: 2rem;
+          width: 90%;
+          padding: 0 2rem 1rem 1rem;
+          border-radius: 0.5rem;
+          font-size: 0.6rem;
+          font-weight: 500;
+          background-color: white;
+          cursor: pointer;
+        }
+        .answer {
+          overflow: hidden;
+          max-height: 0;
+        }
+        .answer.show {
+          height: auto;
+          max-height: 60rem;
+          width: 90%;
+          padding: 0.7rem 1rem;
+          margin: 0.5rem 0rem;
+          font-size: 0.8rem;
+          color: #424141;
+        }
+      }
+      .hiddenSetOfquestion {
+        max-height: 0;
+        overflow: hidden;
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     margin-top: 2rem;
     width: 100%;
+    max-height: 68rem;
     h1 {
       font-size: 1.6rem;
       margin-bottom: 0.5rem;
@@ -159,14 +233,15 @@ const Wrapper = styled.div`
       }
 
       .showSetOfquestion {
-        height: auto;
-        max-height: 45rem;
+        height: 68rem;
         margin-bottom: 0.5rem;
         .question {
           display: flex;
           align-items: center;
-          height: 5rem;
-          padding: 0 2rem;
+          height: 2.5rem;
+          width: 90%;
+          padding: 0 2rem 1rem 1rem;
+          border-radius: 0.5rem;
           font-size: 1.2rem;
           font-weight: 500;
           background-color: white;
@@ -178,10 +253,11 @@ const Wrapper = styled.div`
         }
         .answer.show {
           height: auto;
-          max-height: 25rem;
+          max-height: 68rem;
           padding: 0.7rem 1rem;
           margin: 0.5rem 0rem;
           font-size: 1.3rem;
+          width: 90%;
           color: #424141;
         }
       }
@@ -195,6 +271,7 @@ const Wrapper = styled.div`
   @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
     margin-top: 2rem;
     width: 100%;
+    max-height: 55rem;
     h1 {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
@@ -229,16 +306,18 @@ const Wrapper = styled.div`
 
       .showSetOfquestion {
         height: auto;
-        max-height: 45rem;
+        max-height: 50rem;
         margin-bottom: 0.5rem;
         .question {
           display: flex;
           align-items: center;
-          height: 5rem;
-          padding: 0 2rem;
+          height: 3rem;
+          width: 90%;
+          padding: 0 2rem 1rem 1rem;
           font-size: 1.2rem;
           font-weight: 500;
           background-color: white;
+          border-radius: 1rem;
           cursor: pointer;
         }
         .answer {
@@ -247,10 +326,11 @@ const Wrapper = styled.div`
         }
         .answer.show {
           height: auto;
-          max-height: 25rem;
+          max-height: 35rem;
           padding: 0.7rem 1rem;
           margin: 0.5rem 0rem;
           font-size: 1.3rem;
+          width: 90%;
           color: #424141;
         }
       }
@@ -303,8 +383,10 @@ const Wrapper = styled.div`
         .question {
           display: flex;
           align-items: center;
-          height: 5rem;
-          padding: 0 2rem;
+          height: 4rem;
+          width: 90%;
+          padding: 0 2rem 1rem 1rem;
+          border-radius: 1rem;
           font-size: 1.2rem;
           font-weight: 500;
           background-color: white;
@@ -317,6 +399,7 @@ const Wrapper = styled.div`
         .answer.show {
           height: auto;
           max-height: 25rem;
+          width: 90%;
           padding: 0.7rem 1rem;
           margin: 0.5rem 0rem;
           font-size: 1.3rem;

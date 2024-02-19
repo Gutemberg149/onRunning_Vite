@@ -71,11 +71,11 @@ const Wrapper = styled.div`
     }
     .togglebutton {
       margin-bottom: 0rem;
-      height: 4.5rem;
+      height: 4rem;
       .login_signUp {
         position: relative;
-        width: 38rem;
-        height: 4.5rem;
+        width: 22rem;
+        height: 4rem;
         background-color: #edecec;
         border-radius: 10rem;
         margin-bottom: 2rem;
@@ -105,7 +105,7 @@ const Wrapper = styled.div`
           justify-content: center;
           align-items: center;
           background-color: white;
-          width: 20rem;
+          width: 55%;
           height: 100%;
           border-radius: 10rem;
           font-size: 1.3rem;
@@ -122,7 +122,7 @@ const Wrapper = styled.div`
           justify-content: center;
           align-items: center;
           background-color: white;
-          width: 20rem;
+          width: 55%;
           height: 100%;
           border-radius: 10rem;
           font-size: 1.2rem;
@@ -134,14 +134,123 @@ const Wrapper = styled.div`
         }
         .backContainer {
           position: absolute;
-          width: 38rem;
+          width: 22rem;
           z-index: 95;
           display: flex;
           justify-content: space-around;
           align-items: center;
-          height: 5rem;
+          height: 4rem;
           border-radius: 10rem;
           font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    main {
+      position: relative;
+      margin: 0;
+      margin: 0rem 0rem 0rem 0rem;
+      width: 100%;
+
+      #closeBtnNav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1.5rem;
+        width: 1.5rem;
+        position: absolute;
+        top: 0rem;
+        right: 0rem;
+        z-index: 100;
+        .close-icon {
+          color: #af0303; /* Set the color as per your styling */
+          font-size: 1.8rem; /* Set the font size as per your styling */
+        }
+      }
+      .togglebutton {
+        height: 2.1rem;
+        width: 12rem;
+        margin-top: 1.5rem;
+        .login_signUp {
+          position: relative;
+          width: 12rem;
+          height: 2.5rem;
+          border-radius: 10rem;
+          margin-bottom: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: black;
+          .backContainer {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 97;
+            width: 90%;
+            cursor: pointer;
+
+            p {
+              font-size: 1.1rem;
+              width: 19rem;
+              height: 4rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 10rem;
+            }
+          }
+
+          .buttonLeft {
+            position: absolute;
+            left: 0;
+            border: 2px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            width: 55%;
+            height: 90%;
+            border-radius: 10rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: black;
+            z-index: 98;
+            cursor: pointer;
+          }
+          .buttonRight {
+            position: absolute;
+            right: 0;
+            border: 2px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            width: 55%;
+            height: 90%;
+            border-radius: 10rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: black;
+            z-index: 98;
+
+            cursor: pointer;
+          }
+          .backContainer {
+            position: absolute;
+            width: 12rem;
+            z-index: 95;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 5rem;
+            border-radius: 10rem;
+
+            p {
+              font-size: 1rem;
+            }
+          }
         }
       }
     }
@@ -169,11 +278,11 @@ const Wrapper = styled.div`
         }
       }
       .togglebutton {
-        height: 2.1rem;
-        width: 15rem;
+        height: 3rem;
+        width: 13rem;
         .login_signUp {
           position: relative;
-          width: 15rem;
+          width: 13rem;
           height: 3rem;
           border-radius: 10rem;
           margin-bottom: 2rem;
@@ -209,7 +318,7 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             background-color: white;
-            width: 9rem;
+            width: 55%;
             height: 90%;
             border-radius: 10rem;
             font-size: 1.1rem;
@@ -226,8 +335,8 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             background-color: white;
-            width: 9rem;
-            height: 90%;
+            width: 55%;
+            height: 99%;
             border-radius: 10rem;
             font-size: 1.1rem;
             font-weight: 500;
@@ -238,7 +347,7 @@ const Wrapper = styled.div`
           }
           .backContainer {
             position: absolute;
-            width: 20rem;
+            width: 13rem;
             z-index: 95;
             display: flex;
             justify-content: start;
@@ -274,10 +383,11 @@ const Wrapper = styled.div`
 
       .togglebutton {
         height: 1.8rem;
-
+        width: 13rem;
+        margin-bottom: 2rem;
         .login_signUp {
           position: relative;
-          width: 18rem;
+          width: 13rem;
           height: 3rem;
           border-radius: 10rem;
           margin-bottom: 2rem;
@@ -291,7 +401,7 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             z-index: 97;
-            width: 90%;
+            width: 13rem;
             cursor: pointer;
             p {
               font-size: 1.1rem;
@@ -312,7 +422,7 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             background-color: white;
-            width: 9rem;
+            width: 55%;
             height: 90%;
             border-radius: 10rem;
             font-size: 1.1rem;
@@ -329,7 +439,7 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             background-color: white;
-            width: 9rem;
+            width: 55%;
             height: 90%;
             border-radius: 10rem;
             font-size: 1.1rem;
@@ -341,7 +451,7 @@ const Wrapper = styled.div`
           }
           .backContainer {
             position: absolute;
-            width: 20rem;
+            width: 13rem;
             z-index: 95;
             display: flex;
             justify-content: start;
@@ -388,8 +498,8 @@ const Wrapper = styled.div`
 
         .login_signUp {
           position: relative;
-          width: 18rem;
-          height: 4rem;
+          width: 15rem;
+          height: 3rem;
           border-radius: 10rem;
           margin-bottom: 0rem;
           display: flex;
@@ -423,10 +533,10 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             background-color: white;
-            width: 9rem;
+            width: 55%;
             height: 90%;
             border-radius: 10rem;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 500;
             color: black;
             z-index: 98;
@@ -440,10 +550,10 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             background-color: white;
-            width: 9rem;
+            width: 55%;
             height: 90%;
             border-radius: 10rem;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 500;
             color: black;
             z-index: 98;
@@ -452,14 +562,16 @@ const Wrapper = styled.div`
           }
           .backContainer {
             position: absolute;
-            width: 20rem;
+            width: 15rem;
             z-index: 95;
             display: flex;
             justify-content: start;
             align-items: center;
             height: 5rem;
             border-radius: 10rem;
-            font-size: 1.3rem;
+            p {
+              font-size: 1rem;
+            }
           }
         }
       }

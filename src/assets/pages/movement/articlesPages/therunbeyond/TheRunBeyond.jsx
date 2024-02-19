@@ -28,7 +28,7 @@ const TheRunBeyond = () => {
 
       <section className="sectionText">
         <div className="containerSec3">
-          <p className="pSec3_botton" style={{ fontSize: "1.7rem" }}>
+          <p className="pSec3_botton">
             For every place named “Lost” and “Anguish”, there’s a town called “Hope”. Just like there’s always a way to turn darkness into light. <br /> <br />
             In a series of short documentaries, we meet the runners who did just that. Who followed the light that running provided for them during darker
             times. And how they seized their opportunity to Run Beyond.
@@ -148,6 +148,79 @@ const Wrapper = styled.div`
       left: 0;
       height: 100%;
       width: 100%;
+    }
+  }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-color: black;
+    nav {
+      padding: 0 0rem;
+      .logo {
+        width: 2.8rem;
+        margin: 0;
+        margin-top: 4rem;
+      }
+    }
+    .sec1 {
+      padding: 0rem 0.4rem;
+      margin-bottom: 1rem;
+      width: 100vw;
+      .h1Sec1 {
+        color: white;
+        font-size: 1rem;
+        width: 100%;
+        font-weight: 500;
+        line-height: 1.6rem;
+        margin-bottom: 0.5rem;
+      }
+      .pSec1 {
+        color: white;
+        font-size: 0.8rem;
+        width: 100%;
+        font-weight: 300;
+        line-height: 1.8rem;
+      }
+    }
+    .secvideo {
+      width: 100vw;
+      video {
+        width: 100vw;
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.6rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+      .containerSec3 {
+        width: 100vw;
+        .containerSec3_h4 {
+          color: #e6e6e6;
+          font-size: 1rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+        .pSec3_botton {
+          color: #e6e6e6;
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .IframeSection {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 25%;
+      background-color: #fac892;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
     }
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {

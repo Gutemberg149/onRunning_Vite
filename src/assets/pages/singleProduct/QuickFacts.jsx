@@ -235,6 +235,111 @@ const Wrapper = styled.div`
     }
   }
 
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    h1 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #272727;
+      margin-left: 1rem;
+      margin-bottom: 0rem;
+      height: 3rem;
+    }
+    .factsContainer {
+      height: 8rem;
+      padding: 0rem;
+      display: flex;
+      justify-content: space-between;
+      .fact {
+        position: relative;
+        width: 25%;
+        margin-left: 0rem;
+        border-left: 1px solid gray;
+
+        .top {
+          width: 100%;
+          height: 3rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          padding: 0;
+
+          p {
+            font-size: 0.5rem;
+          }
+          .i {
+            width: 1rem;
+            height: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #f5c1033a;
+            transition: all ease 0.3s;
+            cursor: pointer;
+            &:hover {
+              width: 2.6rem;
+              height: 2.6rem;
+            }
+          }
+        }
+        .middle {
+          height: 60%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          p {
+            font-size: 0.5rem;
+            font-weight: 300;
+          }
+
+          .iconSec3 {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-top: 0.5rem;
+          }
+        }
+      }
+      .fact:last-child {
+        border-right: 1px solid gray;
+      }
+      .blackBox {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        top: 0;
+        .iconConatiner {
+          width: 88%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          height: 0.5rem;
+          margin-top: 0.1rem;
+          .iconBlackBox {
+            color: white;
+            font-size: 0.6rem;
+            cursor: pointer;
+          }
+        }
+
+        .container {
+          height: 95%;
+          width: 80%;
+          margin-top: 0.1rem;
+          p {
+            color: white;
+            font-size: 0.3rem;
+          }
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     h1 {
       font-size: 2rem;
@@ -437,7 +542,7 @@ const Wrapper = styled.div`
           margin-top: 0.5rem;
           p {
             color: white;
-            font-size: 0.5rem;
+            font-size: 0.7rem;
           }
         }
       }
@@ -543,7 +648,7 @@ const Wrapper = styled.div`
           margin-top: 0.5rem;
           p {
             color: white;
-            font-size: 0.5rem;
+            font-size: 0.85rem;
           }
         }
       }

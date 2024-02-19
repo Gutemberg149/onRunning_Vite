@@ -90,6 +90,85 @@ const Wrapper = styled.div`
       color: #201f1f;
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 98%;
+    margin-top: 3rem;
+    h1 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      color: #201f1f;
+    }
+    p {
+      font-size: 0.8rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: #201f1f;
+    }
+    form {
+      margin-bottom: 3rem;
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+        .inputDiv {
+          position: relative;
+          width: 90%;
+          height: 2rem;
+          font-size: 1.1rem;
+          border-bottom: 1px solid gray;
+          margin-right: 0.5rem;
+          margin-bottom: 1.5rem;
+          height: 4.5rem;
+          .error {
+            position: absolute;
+            bottom: -2rem;
+            color: red;
+            font-weight: 400;
+          }
+          input {
+            position: absolute;
+            border: none;
+            background-color: transparent;
+            font-size: 1rem;
+            bottom: 0.3rem;
+            width: 100%;
+            &:focus {
+              outline: none;
+            }
+          }
+
+          label {
+            position: absolute;
+            bottom: 1.5rem;
+            font-size: 1rem;
+          }
+        }
+      }
+      .btn {
+        width: 40%;
+        height: 2.5rem;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 2.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+    .info {
+      h5 {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+        color: #201f1f;
+      }
+      p {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #201f1f;
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     width: 98%;
     margin-top: 3rem;

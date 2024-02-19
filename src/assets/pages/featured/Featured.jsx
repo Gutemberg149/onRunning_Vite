@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../images/logoImg/logowhite.png";
+import logo from "../../images/logoImg/logo.jpeg";
 import beans from "../../images/feautres/section6/beans.avif";
 import Recycling_Shoe from "../../images/feautres/section6/Recycling_Shoe.avif";
 import inovative from "../../images/feautres/section6/inovative.avif";
@@ -241,9 +241,9 @@ const Wrapper = styled.div`
       align-items: center;
       padding-top: 1.5rem;
       .logo {
-        mix-blend-mode: color-burn;
         width: 5rem;
         margin: 1.25rem 3.75rem;
+        border-radius: 50%;
         cursor: pointer;
       }
     }
@@ -626,6 +626,124 @@ const Wrapper = styled.div`
         cursor: pointer;
         &:hover {
           transform: scale(1.1);
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    main {
+      .navbar {
+        display: flex;
+        align-items: center;
+        padding-top: 3.5rem;
+        .logo {
+          mix-blend-mode: null;
+          width: 2.5rem;
+          margin: 0rem 0rem 0rem 1rem;
+          cursor: pointer;
+        }
+      }
+      .sec1 {
+        width: 100%;
+        height: auto;
+        background-color: #fac892;
+        .text {
+          padding: 0.5rem;
+          h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+          }
+          p {
+            font-size: 0.9rem;
+          }
+        }
+      }
+      .IframeSection {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        padding: 25%;
+        background-color: #fac892;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .sec3 {
+        background-color: #fac892;
+        h3 {
+          font-size: 0.7rem;
+          font-weight: 400;
+          margin-left: 1rem;
+          padding: 0.5rem 0;
+        }
+      }
+
+      .sec4 {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 0.5rem 0.5rem;
+        h3 {
+          font-size: 1rem;
+          font-weight: 500;
+          margin: 0.5rem 0rem;
+        }
+        p {
+          font-size: 0.8rem;
+          font-weight: 300;
+          padding: 0 0rem 0 0rem;
+        }
+        .btnSec {
+          width: 5rem;
+          height: 2.3rem;
+          background-color: black;
+          border-radius: 4rem;
+          border: 2px solid black;
+          font-size: 0.5rem;
+          font-weight: 500;
+          color: white;
+          font-weight: 300;
+          margin: 1rem 0rem 0 0rem;
+          transition: all ease 0.36s;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .sec5 {
+        width: 100vw;
+        margin-bottom: 0rem;
+        img {
+          width: 100%;
+        }
+      }
+      .sec6 {
+        display: none;
+      }
+      .sec7 {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.5rem;
+        h3 {
+          font-size: 0.9rem;
+          font-weight: 500;
+          margin: 0.5rem 0;
+        }
+        p {
+          font-size: 0.7rem;
+          font-weight: 300;
+          padding: 0 0rem 0 0rem;
         }
       }
     }

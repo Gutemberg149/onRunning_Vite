@@ -157,6 +157,80 @@ const Wrapper = styled.div`
       width: 100%;
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    nav {
+      padding: 0;
+      width: 100vw;
+      .logo {
+        width: 2.6rem;
+        margin: 0;
+        margin-top: 4.5rem;
+        margin-left: 0.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+    .sec1 {
+      position: relative;
+      height: 50vh;
+      .IframeSection {
+        overflow: hidden;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .boxText {
+        position: absolute;
+        top: 64%;
+        left: 1rem;
+        width: 60%;
+        h4 {
+          font-size: 1rem;
+          color: white;
+        }
+        p {
+          font-size: 0.8rem;
+          color: white;
+        }
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      .containerSecText {
+        width: 100%;
+        padding: 0 0.3rem;
+        .containerText_h4 {
+          color: black;
+          font-size: 1rem;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+        }
+
+        .pSecText2 {
+          color: black;
+          font-size: 0.8rem;
+          margin: 0rem 0.4rem;
+          font-weight: 400;
+          line-height: 1.5rem;
+          text-align: justify;
+        }
+      }
+    }
+
+    .secImage {
+      img {
+        width: 100%;
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     nav {
       padding: 0;

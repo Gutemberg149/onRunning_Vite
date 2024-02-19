@@ -282,7 +282,7 @@ const Wrapper = styled.nav`
           list-style: none;
           font-size: 2rem;
           transition: all ease-in-out 0.3s;
-          margin-bottom: 0.938rem;
+          margin-bottom: 0.9rem;
           &:hover {
             transform: translateX(1.875rem);
           }
@@ -373,6 +373,163 @@ const Wrapper = styled.nav`
         font-size: 1.3rem;
         font-weight: 400;
         margin-left: 0.5rem;
+      }
+    }
+  }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    a {
+      color: #3c3b3b;
+    }
+    .navContainer {
+      width: 100vw;
+      height: 3rem;
+      position: fixed;
+      background-color: #f5c003;
+      left: 0;
+      border-radius: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      transition: all 0.4s ease-out;
+      .navLeftContainer {
+        margin-left: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 35%;
+        height: 100%;
+
+        .navBtnDropDown {
+          font-size: 0.6rem;
+          display: flex;
+          font-weight: 500;
+          justify-content: center;
+          align-items: center;
+          margin-right: 0.2rem;
+          color: #232222;
+          height: 100%;
+          cursor: pointer;
+        }
+        .dropDowcontainer {
+          display: flex;
+          position: absolute;
+          top: 2.8rem;
+          left: 0rem;
+          background-color: white;
+          width: 100%;
+          height: 45vh;
+          border-bottom-left-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+          box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
+          transition: all ease-in-out 0.2s;
+          #closeBtnNav {
+            position: absolute;
+            display: block;
+            top: 0.5rem;
+            right: 1rem;
+            .close-icon {
+              color: #af0303;
+              font-size: 1.3rem;
+            }
+          }
+          li {
+            margin-left: 1rem;
+            list-style: none;
+            font-size: 1.1rem;
+            transition: all ease-in-out 0.3s;
+            margin-bottom: 0rem;
+            &:hover {
+              transform: translateX(1.875rem);
+            }
+          }
+          .liBtnContainer {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            .liBttm {
+              font-size: 1rem;
+              margin-bottom: 0.625rem;
+              font-weight: 400;
+            }
+          }
+        }
+        .dropDowUlNoShow {
+          display: none;
+          position: absolute;
+        }
+      }
+
+      .navRightContainer {
+        margin-right: 0rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 65%;
+        height: 100%;
+
+        .navBtnDropDown {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+
+          .iconBtn {
+            font-size: 0.8rem;
+            color: #3c3b3b;
+            cursor: pointer;
+          }
+          .containerForCountIcon {
+            width: 1rem;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+
+            .numberOfItens {
+              position: absolute;
+              width: 0.8rem;
+              height: 0.8rem;
+              border-radius: 50%;
+              background-color: #171717;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #f5c003;
+              top: 0.4rem;
+              left: 0.5rem;
+              font-size: 0.6rem;
+            }
+          }
+        }
+
+        .dropDowcontainer {
+          display: flex;
+          position: absolute;
+          top: 2.8rem;
+          left: 0rem;
+          background-color: white;
+          width: 100%;
+          height: 80vh;
+          flex-direction: column;
+          border-bottom-left-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+          box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
+          transition: all ease-in-out 0.2s;
+          z-index: 100;
+        }
+        .dropDowNoShow {
+          visibility: hidden;
+          position: absolute;
+        }
+        .userName {
+          font-size: 0.6rem;
+          margin-left: 0rem;
+          margin-right: 0.5rem;
+        }
       }
     }
   }

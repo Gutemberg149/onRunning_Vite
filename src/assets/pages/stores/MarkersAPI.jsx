@@ -11,7 +11,7 @@ export const markers = [
 
 export const addresses = [
   {
-    localName: "Track Fild",
+    localName: "Track Field",
     address: "Av. Higienópolis, 618, São Paulo",
     tel: "+ 55 (11) 3823-2703",
     idx: 0,

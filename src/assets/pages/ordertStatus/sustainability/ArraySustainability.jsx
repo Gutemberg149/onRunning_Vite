@@ -19,8 +19,7 @@ const theme_Questions_Sustainability = [
       id: 4,
       idTitle: 1,
       question: "What if I have a especific question with my Onward oder?",
-      answer:
-        "No problem! Onward has their own FAQ Help Center where you can find a lot of information on returns, shipping, and more.",
+      answer: "No problem! Onward has their own FAQ Help Center where you can find a lot of information on returns, shipping, and more.",
     },
   ],
   [
@@ -33,7 +32,7 @@ const theme_Questions_Sustainability = [
       idTitle: 5,
       question: "What does On do on terms of sustainability?",
       answer:
-        "No planet. No running. It's that easy. We're continuously working on improving our product range, not just in regards to functionality and quality, but also in terms of sustainability. As a company, we're working on reducing our CO2 footprint through different initiatives on a product level as well as an operational level. <br/>We also have a preferred materials strategy in place, where we've set targets for recycled polyester, organic cotton and wool amongst others. We aim to use 100% certified organic cotton as well as 100% mulesing free wool.<br/>We've also launched our Cyclon™ program, the first of its kind with the goal of circularity, materials used are reused. In addition, in North America, we have Onward, an easy way to get more out of slightly used shoes. ",
+        "No planet. No running. It's that easy. We're continuously working on improving our product range, not just in regards to functionality and quality, but also in terms of sustainability. As a company, we're working on reducing our CO2 footprint through different initiatives on a product level as well as an operational level. <br/>We also have a preferred materials strategy in place, where we've set targets for recycled polyester, organic cotton and wool amongst others. ",
     },
 
     {

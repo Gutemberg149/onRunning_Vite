@@ -141,7 +141,76 @@ const Wrapper = styled.div`
     margin-bottom: 1rem;
     .errorMessageSignIn {
       color: #ce0303;
-      font-size: 1.2rem;
+      font-size: 0.7rem;
+    }
+  }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+
+    .innerUserContainer {
+      width: 100vw;
+      padding: 0 0.2rem;
+      h4 {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #302f2f;
+        margin-bottom: 0.5rem;
+      }
+      .pInnercontainer {
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #302f2f;
+        margin-bottom: 2rem;
+      }
+      .fildeHolder {
+        position: relative;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid gray;
+        width: 100%;
+        .inputRegister {
+          position: relative;
+          width: 100%;
+          outline: none !important;
+          border: 0;
+          font-size: 1rem;
+          &:focus ~ label,
+          &:valid ~ label {
+            position: absolute;
+            left: 0;
+            bottom: 2rem;
+          }
+        }
+        label {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          font-size: 0.9rem;
+        }
+      }
+
+      .btnContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+
+        button {
+          width: 60%;
+          height: 2.5rem;
+          margin-bottom: 0.6rem;
+          border: none;
+          background-color: black;
+          color: white;
+          font-size: 1.1rem;
+          border-radius: 3rem;
+          cursor: pointer;
+        }
+      }
     }
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {

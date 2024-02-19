@@ -82,7 +82,7 @@ const Shipping = () => {
     <Wrapper>
       <div className="shippingContainer">
         <form>
-          <div className="inputContainer">
+          <div className="inputContainer inputContainerSmallScreen">
             <div className="inputBox margimRight">
               <input type="text" name="firstname" onChange={handleUserData} onKeyDown={handleKeyDownLetter} maxLength="15" required />
               <span>First name</span>
@@ -308,6 +308,131 @@ const Wrapper = styled.div`
       font-size: 0.8rem;
       padding: 0.3rem 0.4rem;
       border-radius: 1rem;
+    }
+  }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    .shippingContainer {
+      width: 100%;
+      form {
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        .inputContainer {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+          .inputBox {
+            position: relative;
+            width: 100%;
+            height: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input {
+              width: 100%;
+              height: 3rem;
+              outline: none;
+              background-color: transparent;
+              border: none;
+              border: 1px solid lightgray;
+              font-size: 0.7rem;
+              color: #504f4f;
+              font-weight: 300;
+              padding-left: 0.2rem;
+            }
+            .documentNumber {
+              width: 100%;
+            }
+            span {
+              position: absolute;
+              left: 0;
+              padding: 10px;
+              pointer-events: none;
+              font-size: 0.7rem;
+              color: gray;
+              font-weight: 300;
+              transition: all 0.3s;
+            }
+            .selectSpan {
+              transform: translateX(10px) translateY(-25px);
+              font-size: 0.7rem;
+              padding: 0 10px;
+              background-color: white;
+            }
+            select {
+              width: 100%;
+              height: 3.5rem;
+              outline: none;
+              background-color: transparent;
+              appearance: none;
+              border: none;
+              border: 1px solid lightgray;
+              font-size: 1.1rem;
+              color: #504f4f;
+              font-weight: 300;
+              padding-left: 1rem;
+            }
+          }
+          .margimRight {
+            margin-right: 1rem;
+          }
+          .inputBox input:valid ~ span,
+          .inputBox input:focus ~ span {
+            transform: translateX(10px) translateY(-25px);
+            font-size: 0.7rem;
+            padding: 0 10px;
+            background-color: white;
+          }
+          .inputBox input:valid,
+          .inputBox input:focus {
+            border: 0.5px solid #3e3e3e;
+          }
+        }
+        .inputContainerSmallScreen {
+          flex-direction: column;
+        }
+        .btnContainer {
+          position: relative;
+          margin-top: 1.2rem;
+          border-radius: 0.5rem;
+          height: 2.5rem;
+          width: 8rem;
+          .layOverBlock {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            z-index: 100;
+          }
+          .goPayment {
+            width: 90%;
+            height: 2.5rem;
+            color: #d8d6d6;
+            font-size: 0.8rem;
+            background-color: #2b2a2a;
+            border: none;
+            border-radius: 0.5rem;
+            z-index: 99;
+            cursor: pointer;
+            &:hover {
+              background-color: black;
+            }
+          }
+        }
+      }
+
+      .warningSignal {
+        font-size: 0.5rem;
+        padding: 0.3rem 0.2rem;
+      }
     }
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {

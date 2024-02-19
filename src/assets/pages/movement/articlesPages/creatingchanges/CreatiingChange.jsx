@@ -236,6 +236,97 @@ const Wrapper = styled.div`
       width: 100%;
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-color: black;
+    nav {
+      padding: 0 0rem;
+      .logo {
+        width: 2.8rem;
+        margin: 0;
+        margin-top: 4rem;
+      }
+    }
+    .sec1 {
+      padding: 0rem 0.4rem;
+      margin-bottom: 1rem;
+      width: 100vw;
+
+      .h1Sec1 {
+        color: white;
+        font-size: 1rem;
+        width: 100%;
+        font-weight: 500;
+        line-height: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+      .pSec1 {
+        color: white;
+        font-size: 0.8rem;
+        width: 100%;
+        font-weight: 300;
+        line-height: 1.6rem;
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0rem 0.5rem;
+      margin-top: 1rem;
+      .containerSecText {
+        width: 100vw;
+        .containerText_h4 {
+          color: #e6e6e6;
+          font-size: 1rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+        .containerText_h5 {
+          color: #e6e6e6;
+          font-size: 1.2rem;
+          margin-top: 0.5rem;
+          margin-bottom: 1rem;
+          font-weight: 300;
+        }
+        .pSecText {
+          color: #e6e6e6;
+          font-size: 0.8rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .secImg {
+      img {
+        width: 100%;
+      }
+    }
+    .secDoubleImg {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 0.5rem;
+      margin-bottom: 1rem;
+      img {
+        width: 50%;
+        margin: 0.3rem;
+      }
+    }
+    .IframeSection {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 25%;
+      background-color: #fac892;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     background-color: black;
     nav {
@@ -279,6 +370,13 @@ const Wrapper = styled.div`
           font-size: 1.5rem;
           margin-top: 1rem;
           margin-bottom: 1rem;
+        }
+        .containerText_h5 {
+          color: #e6e6e6;
+          font-size: 1.7rem;
+          margin-top: 0.5rem;
+          margin-bottom: 1rem;
+          font-weight: 600;
         }
         .pSecText {
           color: #e6e6e6;

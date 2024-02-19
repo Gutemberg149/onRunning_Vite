@@ -60,6 +60,37 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-color: black;
+    nav {
+      padding: 0rem;
+      padding-top: 3.3rem;
+      height: 7rem;
+      .logo {
+        width: 3rem;
+        margin: 0rem;
+      }
+    }
+    main {
+      .sec1 {
+        p {
+          color: white;
+          font-size: 0.9rem;
+          margin-left: 1rem;
+        }
+        h3 {
+          color: white;
+          font-size: 1.4rem;
+          font-weight: 500;
+          margin-left: 1rem;
+          margin-bottom: 1rem;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     background-color: black;
     nav {

@@ -300,6 +300,163 @@ const Wrapper = styled.div`
     }
   }
 
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    .bodyContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      height: 35rem;
+      margin-bottom: 1rem;
+
+      .search {
+        width: 100vw;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0rem;
+        input {
+          margin-top: 0.5rem;
+          width: 100%;
+          height: 2.5rem;
+          padding-left: 2.5rem;
+          font-size: 0.9rem;
+          &::placeholder {
+            font-size: 0.8rem;
+          }
+        }
+        .searchIcon {
+          display: none;
+        }
+        .closeBtnNav {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 3rem;
+          width: 3rem;
+          right: 0rem;
+          top: -2rem;
+          .close-icon {
+            color: #af0303;
+            font-size: 1.3rem;
+          }
+        }
+      }
+
+      .suggestedSearch {
+        margin-top: 0rem;
+        width: 100%;
+        height: 20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .pSugested {
+          font-size: 0.9rem;
+          margin-bottom: 0;
+          margin-left: 0;
+        }
+        .innerSugested {
+          width: 100%;
+          height: 10rem;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 0;
+          margin-left: 0;
+
+          .sugested {
+            margin: 0.2rem;
+            width: 5.7rem;
+            height: 5.8;
+            font-size: 0.7rem;
+            padding: 0.5rem 0.6rem;
+            margin-bottom: 0;
+
+            cursor: pointer;
+            &:hover {
+            }
+          }
+        }
+      }
+
+      .products {
+        width: 99%;
+        margin-top: 1.5rem;
+        .topOftheProducts {
+          padding-left: 1rem;
+          .pProd {
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+          }
+          .showAllItensIcon {
+            font-size: 0.8rem;
+            font-weight: 600;
+
+            cursor: pointer;
+          }
+        }
+        .prodsContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+
+          cursor: pointer;
+          .prodContainer {
+            width: 11rem;
+            height: 20rem;
+            margin: 0.9rem 0.3rem;
+            display: flex;
+            flex-direction: column;
+
+            .upperPart {
+              height: 50%;
+              background-color: #e9e8e8;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 11rem;
+              }
+            }
+            .bottomPart {
+              display: flex;
+              flex-direction: column;
+              align-items: start;
+              justify-content: center;
+
+              height: 50%;
+              padding: 0.2rem 0.4rem;
+              .name {
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: #535252;
+                margin-bottom: 0.5rem;
+              }
+              .introduction,
+              .price,
+              .colors {
+                text-align: start;
+                font-size: 0.8rem;
+                color: #4d4d4d;
+                margin-bottom: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     padding: 0;
     margin: 0;

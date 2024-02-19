@@ -159,6 +159,82 @@ const Wrapper = styled.div`
       width: 100%;
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-color: #2d256f;
+    nav {
+      padding: 0 1rem;
+      .logo {
+        width: 3rem;
+        margin: 0;
+        margin-top: 4.5rem;
+      }
+    }
+    .secImage {
+      img {
+        width: 100%;
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      .containerSecText {
+        width: 100%;
+        padding: 0 1rem;
+        .containerText_h4 {
+          color: #e6e6e6;
+          font-size: 1.1rem;
+          margin-top: 1.5rem;
+          margin-bottom: 0rem;
+        }
+        .pSecText {
+          color: #e6e6e6;
+          font-size: 0.9rem;
+          margin-bottom: 1rem;
+        }
+        .pSecText2 {
+          color: #e6e6e6;
+          font-size: 0.9rem;
+          margin: 0rem 0rem;
+          font-weight: 600;
+          line-height: 1.6rem;
+        }
+      }
+    }
+    .sectionTech {
+      background-color: white;
+      height: 35vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .innerCoudeTech {
+        width: 90%;
+        h5 {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+    .IframeSection {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 25%;
+      background-color: #fac892;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     background-color: #2d256f;
     nav {

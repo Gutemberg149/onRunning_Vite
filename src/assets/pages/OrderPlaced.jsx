@@ -65,6 +65,44 @@ const Wrapper = styled.div`
       color: #ff5100;
     }
   }
+  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    nav {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+      padding: 0rem;
+      .logo {
+        width: 3.25rem;
+        margin: 2rem 1.75rem;
+      }
+    }
+    main {
+      padding: 0.5rem;
+      height: 50vh;
+      h1 {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      p {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+      }
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     nav {
       width: 100%;

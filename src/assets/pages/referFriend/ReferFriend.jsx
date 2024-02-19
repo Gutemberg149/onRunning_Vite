@@ -210,6 +210,126 @@ const Wrapper = styled.div`
     }
   }
 
+  @media only screen and (min-device-width: 200px) and (max-device-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+    nav {
+      margin-top: 3rem;
+      margin-left: 1rem;
+      width: 2%;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .logo {
+        border-radius: 50%;
+        width: 2rem;
+        margin: 0rem;
+        mix-blend-mode: difference;
+        margin-left: 1.5rem;
+        margin-top: 2rem;
+        cursor: pointer;
+      }
+    }
+    main {
+      display: flex;
+      margin-bottom: 1rem;
+      padding: 0rem;
+      margin-top: 0.5rem;
+      .left {
+        padding: 0.5rem;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        h3 {
+          font-size: 1rem;
+          font-weight: 500;
+          color: #2d2c2c;
+          margin-bottom: 1rem;
+        }
+        p {
+          font-size: 0.9rem;
+          color: #2d2c2c;
+          margin-bottom: 1rem;
+          font-weight: 300;
+        }
+        .boxRefertoAFriend {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          p {
+            font-size: 0.9rem;
+            color: #2d2c2c;
+            margin-bottom: 0.2rem;
+          }
+          form {
+            .emailConatiner {
+              height: 6rem;
+              #email {
+                width: 100%;
+                height: 3rem;
+                border: none;
+                border: 1px solid #7b7a7a;
+                margin-bottom: 0.5rem;
+                font-size: 1rem;
+                padding-left: 0.5rem;
+                &::placeholder {
+                  font-size: 0.8rem;
+                }
+                &:focus {
+                  outline: none;
+                }
+              }
+              .error {
+                color: red;
+              }
+            }
+
+            .inputCheckBox {
+              display: flex;
+              justify-content: space-between;
+              margin-left: 0.2rem;
+
+              .checkBox {
+                width: 4rem;
+                height: 0.8rem;
+                border: #7b7a7a 1px solid;
+                border-radius: 0.2rem;
+                margin-right: 0.2rem;
+                margin-top: 0.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+              }
+              label {
+                line-height: 1.4rem;
+                font-size: 1rem;
+                padding: 0.1rem;
+                color: #514f4f;
+              }
+            }
+          }
+          button {
+            width: 100%;
+            height: 3rem;
+            border: none;
+            border-radius: 0.2rem;
+            background-color: #262525;
+            color: #e8e7e7;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            &:hover {
+              background-color: black;
+            }
+          }
+        }
+      }
+      .right {
+        display: none;
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     nav {
       margin-top: 6rem;

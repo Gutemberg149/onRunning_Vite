@@ -6,14 +6,14 @@ const theme_Questions_TermsAndConsition = [
       idTitle: 1,
       question: "1.Scope",
       answer:
-        "1.1 These general terms and conditions  govern the contracts of sales entered into between On AG, Zurich, Switzerland , or any of its affiliates, as outlined below (hereinafter On AG, or its respective affiliate, referred to as On) and its customers (the Customer or you) purchasing products (the Products) sold via web shop www.on-running.com (the Site) operated by On AG or any other distribution channel of On.Further information about On AG can be found on the Site in the Company information section of the FAQs (https://customer-service.on-running.com/company_information).",
+        "1.1 These general terms and conditions  govern the contracts of sales entered into between On AG, Zurich, Switzerland , or any of its affiliates, as outlined below (hereinafter On AG, or its respective affiliate, referred to as On) and its customers (the Customer or you) purchasing products (the Products) sold via web shop www.on-running.",
     },
     {
       id: 3,
       idTitle: 1,
       question: "Conclusion of contract",
       answer:
-        "2.1 The presentation of the Products and the indications of prices on the Site do not constitute legally binding offers but are non-binding invitations to place an order. <br>2.2 The Costumer's order is an offer to purchase the Products listed in his/her order (the 'Order'). All Orders are subject to acceptance by On.<br>2.3 On issues a written acceptance confirmation of Orders (the “Purchase Confirmation”). ",
+        "2.1 The presentation of the Products and the indications of prices on the Site do not constitute legally binding offers but are non-binding invitations to place an order. <br>2.2 The Costumer's order is an offer to purchase the Products listed in his/her order (the 'Order'). All Orders are subject to acceptance by On. ",
     },
     {
       id: 4,
