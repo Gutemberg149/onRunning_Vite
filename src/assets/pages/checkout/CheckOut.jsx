@@ -291,15 +291,15 @@ const Wrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100vw;
+      width: 98vw;
       position: relative;
       .trailBall {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 1.5rem;
-
+        width: 1.1rem;
+        margin-right: 0.2rem;
         .span {
           width: 1.5rem;
           height: 1.5rem;

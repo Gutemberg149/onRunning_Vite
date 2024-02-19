@@ -262,6 +262,7 @@ const Wrapper = styled.div`
           display: flex;
           justify-content: space-between;
           margin-top: 0.5rem;
+          margin-left: 4rem;
           button {
             width: 100%;
             height: 1.8rem;
@@ -385,17 +386,18 @@ const Wrapper = styled.div`
           color: white;
         }
         .btns {
-          width: 6rem;
+          width: 4rem;
           display: flex;
           justify-content: space-between;
           margin-top: 0.5rem;
+          margin-left: 7rem;
           button {
             width: 100%;
             height: 2.5rem;
             background-color: white;
             border-radius: 3rem;
             border: none;
-            font-size: 1rem;
+            font-size: 0.7rem;
             cursor: pointer;
             &:hover {
               background-color: #d0cece;

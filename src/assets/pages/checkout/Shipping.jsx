@@ -275,6 +275,7 @@ const Wrapper = styled.div`
         height: 3.5rem;
         margin-top: 1.2rem;
         border-radius: 0.5rem;
+
         .layOverBlock {
           position: absolute;
           top: 0;
@@ -403,11 +404,12 @@ const Wrapper = styled.div`
           border-radius: 0.5rem;
           height: 2.5rem;
           width: 8rem;
+          background-color: transparent;
           .layOverBlock {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 90%;
             height: 2.5rem;
             border-radius: 0.5rem;
             z-index: 100;

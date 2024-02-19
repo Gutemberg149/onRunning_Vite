@@ -204,7 +204,7 @@ const Wrapper = styled.div`
     }
     .sectionTech {
       background-color: white;
-      height: 35vh;
+      height: 40vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -213,7 +213,7 @@ const Wrapper = styled.div`
         width: 90%;
         h5 {
           font-size: 1.1rem;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0rem;
         }
         p {
           font-size: 0.9rem;

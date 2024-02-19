@@ -266,12 +266,12 @@ const Wrapper = styled.div`
               height: 6rem;
               #email {
                 width: 100%;
-                height: 3rem;
+                height: 2rem;
                 border: none;
                 border: 1px solid #7b7a7a;
                 margin-bottom: 0.5rem;
-                font-size: 1rem;
-                padding-left: 0.5rem;
+                font-size: 0.7rem;
+                padding-left: 0.2rem;
                 &::placeholder {
                   font-size: 0.8rem;
                 }

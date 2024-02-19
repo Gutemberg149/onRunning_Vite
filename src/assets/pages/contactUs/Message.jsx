@@ -87,7 +87,6 @@ const Message = () => {
         <input type="email" name="email" onChange={handleUserData} placeholder="Email" />
         <input type="text" name="subject" onChange={handleUserData} placeholder="Subject" />
         <textarea type="text" name="textmessage" onChange={handleUserData} rows="6" maxLength="150" placeholder="Your message here" />
-
         <button disabled={disabledButton} onClick={() => setMessageSent(true)}>
           Send menssage
         </button>

@@ -212,7 +212,6 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5rem 0;
     margin-top: 2rem;
     padding: 0 3rem;
     .containerSecText {
@@ -269,6 +268,7 @@ const Wrapper = styled.div`
       margin-top: 1rem;
       .containerSecText {
         width: 100vw;
+        padding: 0 0.3rem;
         .containerText_h4 {
           color: #e6e6e6;
           font-size: 1rem;
@@ -279,6 +279,7 @@ const Wrapper = styled.div`
           color: #e6e6e6;
           font-size: 0.8rem;
           margin-bottom: 1rem;
+          padding-left: 0;
         }
       }
     }
