@@ -324,7 +324,7 @@ const Wrapper = styled.div`
       }
     }
   }
-  @media only screen and (min-device-width: 200px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 200px) and (max-device-width: 300px) and (-webkit-min-device-pixel-ratio: 2) {
     .cartBody {
       display: flex;
       flex-direction: column;
@@ -332,7 +332,6 @@ const Wrapper = styled.div`
       align-items: center;
       height: auto;
       width: 100vw;
-
       .innerCartBody {
         padding: 0.3rem;
         height: 100%;
@@ -343,36 +342,37 @@ const Wrapper = styled.div`
           justify-content: space-between;
           align-items: center;
           padding: 0 0.2rem;
-
+          height: 4rem;
           .leftSide {
             h1 {
-              font-size: 1.1rem;
+              font-size: 1rem;
             }
             .numberOfItens {
               margin-top: 0rem;
               margin-left: 0rem;
-              font-size: 1rem;
+              font-size: 0.8rem;
               display: flex;
               align-items: center;
 
               p {
-                font-size: 0.9rem;
+                font-size: 0.8rem;
               }
             }
           }
           .rightSide {
-            height: 8rem;
+            height: 100%;
             position: relative;
+            width: 6rem;
             .warningNoUser {
               background-color: #a70303e2;
               height: fit-content;
-              width: 5rem;
-              padding: 0.3rem 0.3rem;
-              border-radius: 1rem;
+              width: 6rem;
+              padding: 0.2rem 0.2rem 0.2rem 0.3rem;
+              border-radius: 0.9rem;
               margin-top: 2rem;
               p {
                 color: white;
-                font-size: 0.4rem;
+                font-size: 0.45rem;
               }
             }
             #closeBtnNav {
@@ -380,13 +380,13 @@ const Wrapper = styled.div`
               display: flex;
               align-items: center;
               justify-content: center;
-              height: 3rem;
-              width: 3rem;
+              height: 2.6rem;
+              width: 2.6rem;
               top: -0.5rem;
               right: -0.5rem;
               .close-icon {
                 color: #af0303;
-                font-size: 1.7rem;
+                font-size: 1.5rem;
               }
             }
           }
@@ -565,6 +565,250 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 301px) and (max-device-width: 374px) and (-webkit-min-device-pixel-ratio: 2) {
+    .cartBody {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: auto;
+      width: 100vw;
+      .innerCartBody {
+        padding: 0.3rem;
+        height: 100%;
+        width: 100%;
+
+        .topCart {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 0.2rem;
+          height: 3.5rem;
+
+          .leftSide {
+            h1 {
+              font-size: 1.1rem;
+            }
+            .numberOfItens {
+              margin-top: 0rem;
+              margin-left: 0rem;
+              font-size: 1rem;
+              display: flex;
+              align-items: center;
+
+              p {
+                font-size: 0.9rem;
+              }
+            }
+          }
+          .rightSide {
+            height: 3.5rem;
+            position: relative;
+            margin-top: 0;
+            width: 9.5rem;
+            .warningNoUser {
+              background-color: #a70303e2;
+              height: fit-content;
+              width: 100%;
+              padding: 0.3rem 0.1rem 0.3rem 0.5rem;
+              border-radius: 1rem;
+              margin-top: 2rem;
+              p {
+                color: white;
+                font-size: 0.4rem;
+              }
+            }
+            #closeBtnNav {
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 3rem;
+              width: 3rem;
+              top: -0.5rem;
+              right: -0.5rem;
+              .close-icon {
+                color: #af0303;
+                font-size: 1.7rem;
+              }
+            }
+          }
+        }
+
+        .prodInCart {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          height: 13rem;
+          width: 100%;
+          margin-bottom: 1rem;
+
+          .left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-right: 0;
+            padding: 0.5rem;
+            height: 80%;
+            img {
+              width: 50%;
+            }
+            .info {
+              min-width: 50%;
+              display: flex;
+              flex-direction: column;
+              align-items: end;
+              justify-content: center;
+              padding-right: 0.3rem;
+              h3 {
+                font-size: 0.8rem;
+                font-weight: 600;
+              }
+              p {
+                margin-top: 0.4rem;
+                font-size: 0.7rem;
+                font-weight: 400;
+                color: #343434;
+              }
+              .buttonContainer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 1rem;
+                width: 4rem;
+                .btn {
+                  width: 1.2rem;
+                  height: 1.2rem;
+                  border-radius: 50%;
+                  border: 1px solid gray;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1rem;
+                  font-weight: 200;
+                  cursor: pointer;
+                  &:hover {
+                    background-color: #efeded;
+                    border: none;
+                  }
+                }
+                .qtd {
+                  font-size: 1rem;
+                  font-weight: 300;
+                }
+              }
+            }
+          }
+          .right {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 20%;
+
+            .price {
+              font-size: 0.8rem;
+              font-weight: 300;
+              margin-bottom: 0.2rem;
+            }
+            .deleteContainer {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 2rem;
+              height: 2rem;
+              cursor: pointer;
+            }
+            .delete {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+
+      .checkOutContainer {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        bottom: 0;
+        z-index: 110;
+        padding: 0.5rem 0.5rem;
+        height: 8rem;
+        box-shadow: 0px -2px 5px 3px #cac8c8;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        width: 100%;
+
+        cursor: pointer;
+        .top {
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+          .shipping {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            width: 96%;
+            border-bottom: 0.5px solid gray;
+          }
+          .total {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 500;
+            width: 95%;
+            border-bottom: 0.5px solid gray;
+          }
+        }
+        .checkOutDiv {
+          width: 5rem;
+          height: 2rem;
+          position: relative;
+          border-radius: 5rem;
+          .blockLink {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 5rem;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            z-index: 99;
+          }
+          .checkout {
+            width: 100%;
+            height: 100%;
+            background-color: #1f1e1e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f9f5f5;
+            border-radius: 5rem;
+            font-size: 0.7rem;
+            &:hover {
+              background-color: #323232;
+
+              font-size: 1rem;
+              border: 2px solid #393838;
+            }
+          }
+        }
+      }
+    }
+  }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .cartBody {
       display: flex;
@@ -598,7 +842,6 @@ const Wrapper = styled.div`
             }
           }
           .rightSide {
-            /* border: 1px solid blue; */
             height: 4rem;
             position: relative;
             .warningNoUser {
@@ -633,9 +876,9 @@ const Wrapper = styled.div`
           display: flex;
           justify-content: space-between;
           align-items: center;
-          height: 14rem;
+          height: 10rem;
           width: 100%;
-
+          margin: 1rem 0;
           .left {
             display: flex;
             justify-content: space-between;
@@ -668,15 +911,16 @@ const Wrapper = styled.div`
                 justify-content: space-between;
                 align-items: center;
                 margin-top: 1rem;
+                width: 7rem;
                 .btn {
-                  width: 3rem;
-                  height: 3rem;
+                  width: 2rem;
+                  height: 2rem;
                   border-radius: 50%;
                   border: 1px solid gray;
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  font-size: 1.9rem;
+                  font-size: 1.6rem;
                   font-weight: 200;
                   cursor: pointer;
                   &:hover {
@@ -727,7 +971,7 @@ const Wrapper = styled.div`
         bottom: 0;
         z-index: 110;
         padding: 1rem 0.5rem;
-        height: 14rem;
+        height: 9rem;
         box-shadow: 0px -2px 5px 3px #cac8c8;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
@@ -746,8 +990,8 @@ const Wrapper = styled.div`
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
             width: 96%;
             border-bottom: 0.5px solid gray;
           }
@@ -755,14 +999,14 @@ const Wrapper = styled.div`
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 1.3rem;
+            font-size: 1rem;
             font-weight: 500;
             width: 95%;
             border-bottom: 0.5px solid gray;
           }
         }
         .checkOutDiv {
-          width: 7rem;
+          width: 6rem;
           height: 2.5rem;
           position: relative;
           border-radius: 5rem;
@@ -803,7 +1047,7 @@ const Wrapper = styled.div`
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      height: 54.5rem;
+      height: auto;
       width: 100%;
       .innerCartBody {
         padding: 1rem;
@@ -831,6 +1075,7 @@ const Wrapper = styled.div`
           .rightSide {
             height: 4rem;
             position: relative;
+
             .warningNoUser {
               background-color: #a70303e2;
               height: fit-content;
@@ -863,9 +1108,9 @@ const Wrapper = styled.div`
           display: flex;
           justify-content: space-between;
           align-items: center;
-          height: 14rem;
+          height: 11.5rem;
           width: 100%;
-
+          margin-top: 0.5rem;
           .left {
             display: flex;
             justify-content: space-between;
@@ -898,15 +1143,16 @@ const Wrapper = styled.div`
                 justify-content: space-between;
                 align-items: center;
                 margin-top: 1rem;
+                width: 6rem;
                 .btn {
-                  width: 3rem;
-                  height: 3rem;
+                  width: 2rem;
+                  height: 2rem;
                   border-radius: 50%;
                   border: 1px solid gray;
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  font-size: 1.9rem;
+                  font-size: 1.6rem;
                   font-weight: 200;
                   cursor: pointer;
                   &:hover {
@@ -915,7 +1161,7 @@ const Wrapper = styled.div`
                   }
                 }
                 .qtd {
-                  font-size: 1.5rem;
+                  font-size: 1.3rem;
                   font-weight: 300;
                 }
               }
@@ -957,7 +1203,7 @@ const Wrapper = styled.div`
         bottom: 0;
         z-index: 110;
         padding: 1rem 0.5rem;
-        height: 14rem;
+        height: 9rem;
         box-shadow: 0px -2px 5px 3px #cac8c8;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
@@ -970,13 +1216,13 @@ const Wrapper = styled.div`
           flex-direction: column;
           align-items: center;
           justify-content: space-between;
-          margin-bottom: 1rem;
+          margin-bottom: 0rem;
           .shipping {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
             width: 96%;
             border-bottom: 0.5px solid gray;
@@ -985,7 +1231,7 @@ const Wrapper = styled.div`
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 1.3rem;
+            font-size: 1rem;
             font-weight: 500;
             width: 95%;
             border-bottom: 0.5px solid gray;
@@ -1029,13 +1275,13 @@ const Wrapper = styled.div`
     }
   }
 
-  @media only screen and (min-device-width: 901px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1100px) and (-webkit-min-device-pixel-ratio: 2) {
     .cartBody {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      height: 54.5rem;
+      height: auto;
       width: 100%;
 
       .innerCartBody {
@@ -1097,7 +1343,7 @@ const Wrapper = styled.div`
           display: flex;
           justify-content: space-between;
           align-items: center;
-          height: 14rem;
+          height: 11rem;
           width: 100%;
 
           .left {
@@ -1118,7 +1364,7 @@ const Wrapper = styled.div`
               align-items: left;
               justify-content: center;
               h3 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 font-weight: 600;
               }
               p {
@@ -1132,9 +1378,10 @@ const Wrapper = styled.div`
                 justify-content: space-between;
                 align-items: center;
                 margin-top: 1rem;
+                width: 6rem;
                 .btn {
-                  width: 3rem;
-                  height: 3rem;
+                  width: 2.2rem;
+                  height: 2.2rem;
                   border-radius: 50%;
                   border: 1px solid gray;
                   display: flex;
@@ -1163,7 +1410,7 @@ const Wrapper = styled.div`
             height: 100%;
             width: 28%;
             .price {
-              font-size: 1.4rem;
+              font-size: 1.2rem;
               font-weight: 300;
             }
             .deleteContainer {
@@ -1191,7 +1438,7 @@ const Wrapper = styled.div`
         bottom: 0;
         z-index: 110;
         padding: 1rem 0.5rem;
-        height: 14rem;
+        height: 9rem;
         box-shadow: 0px -2px 5px 3px #cac8c8;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
@@ -1203,13 +1450,13 @@ const Wrapper = styled.div`
           flex-direction: column;
           align-items: center;
           justify-content: space-between;
-          margin-bottom: 1rem;
+          margin-bottom: 0rem;
           .shipping {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
             width: 96%;
             border-bottom: 0.5px solid gray;
@@ -1218,14 +1465,14 @@ const Wrapper = styled.div`
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 1.3rem;
+            font-size: 1rem;
             font-weight: 500;
             width: 95%;
             border-bottom: 0.5px solid gray;
           }
         }
         .checkOutDiv {
-          width: 10rem;
+          width: 7rem;
           height: 3rem;
           position: relative;
           border-radius: 5rem;
@@ -1250,6 +1497,7 @@ const Wrapper = styled.div`
             color: #f9f5f5;
             border-radius: 5rem;
             margin-top: 1rem;
+            font-size: 0.9rem;
             &:hover {
               background-color: #323232;
 

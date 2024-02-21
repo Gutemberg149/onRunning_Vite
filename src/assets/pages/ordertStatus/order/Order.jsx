@@ -160,6 +160,8 @@ const Wrapper = styled.div`
           font-size: 0.6rem;
           font-weight: 500;
           background-color: white;
+          border-radius: 2rem;
+          width: 90%;
           cursor: pointer;
         }
         .answer {
@@ -168,6 +170,7 @@ const Wrapper = styled.div`
         }
         .answer.show {
           height: auto;
+          width: 90%;
           max-height: 25rem;
           padding: 0.5rem 0.5rem;
           margin: 0.5rem 0rem;

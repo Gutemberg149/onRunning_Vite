@@ -156,8 +156,8 @@ const Wrapper = styled.div`
           display: flex;
           align-items: center;
           height: 3rem;
-          width: 97%;
-          border-radius: 0.5rem;
+          width: 90%;
+          border-radius: 1rem;
           padding: 0 0.4rem;
           font-size: 0.6rem;
           font-weight: 500;
@@ -175,6 +175,7 @@ const Wrapper = styled.div`
           margin: 0.5rem 0rem;
           font-size: 0.6rem;
           color: #424141;
+          width: 90%;
         }
       }
       .hiddenSetOfquestion {

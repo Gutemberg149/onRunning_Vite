@@ -157,7 +157,9 @@ const Wrapper = styled.div`
         .question {
           display: flex;
           align-items: center;
-          height: 5rem;
+          height: 3rem;
+          width: 90%;
+          border-radius: 1rem;
           padding: 0 1rem;
           font-size: 0.6rem;
           font-weight: 500;
@@ -296,13 +298,15 @@ const Wrapper = styled.div`
         .question {
           display: flex;
           align-items: center;
-          height: 5rem;
+          height: 3rem;
+          width: 90%;
+          border-radius: 1rem;
           width: 90%;
           border-radius: 1rem;
           padding: 0 2rem;
           font-size: 1.1rem;
           font-weight: 500;
-          background-color: white;
+          background-color: #d40f0f;
           cursor: pointer;
         }
         .answer {
@@ -311,6 +315,7 @@ const Wrapper = styled.div`
         }
         .answer.show {
           height: auto;
+          width: 90%;
           max-height: 25rem;
           width: 90%;
           padding: 0.7rem 1rem;

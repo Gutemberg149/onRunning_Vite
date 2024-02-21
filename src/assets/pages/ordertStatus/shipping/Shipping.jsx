@@ -156,7 +156,9 @@ const Wrapper = styled.div`
         .question {
           display: flex;
           align-items: center;
-          height: 5rem;
+          height: 3rem;
+          border-radius: 1rem;
+          width: 90%;
           padding: 0 1rem;
           font-size: 0.6rem;
           font-weight: 500;
@@ -169,6 +171,7 @@ const Wrapper = styled.div`
         }
         .answer.show {
           height: auto;
+          width: 90%;
           max-height: 25rem;
           padding: 0.5rem 0.5rem;
           margin: 0.5rem 0rem;
